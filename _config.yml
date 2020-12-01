@@ -1,2 +1,5 @@
 # theme: jekyll-theme-cayman
 remote_theme: pmarsceill/just-the-docs
+
+title: Intuit API Documentation
+description: Documentation for Intuit's APIs
