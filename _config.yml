@@ -3,3 +3,5 @@ remote_theme: pmarsceill/just-the-docs
 
 title: Intuit API Docs
 description: Documentation for Intuit's APIs
+
+permalink: pretty
