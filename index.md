@@ -1,3 +1,11 @@
+---
+layout: default
+title: Home
+nav_order: 1
+description: "Documentation for Intuit APIs"
+permalink: /
+---
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/bcole/intuit-api-docs/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
