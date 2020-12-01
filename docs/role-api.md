@@ -1,3 +1,9 @@
+---
+layout: default
+title: Role API
+nav_order: 5
+---
+
 <!-- Copy and paste the converted output. -->
 
 <!-----
@@ -20,8 +26,6 @@ Conversion notes:
 * Source doc: Role API (copy)
 * Tables are currently converted to HTML tables.
 ----->
-
-
 
 ### Role API:
 
@@ -198,9 +202,7 @@ Sample Response
    <td>role
    </td>
    <td>realmId
-<p>
 (required)
-</p>
    </td>
    <td>String
    </td>
