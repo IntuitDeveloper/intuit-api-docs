@@ -1,8 +1,3 @@
----
-layout: default
-title: Role API
-nav_order: 5
----
 <!-- Copy and paste the converted output. -->
 
 <!-----
@@ -71,7 +66,7 @@ _Note: Before making the API call, make sure to generate Oauth token by sending 
 
 
 ##### Request user role for a realm
-
+```
  {
 
   user{
@@ -89,9 +84,11 @@ _Note: Before making the API call, make sure to generate Oauth token by sending 
   }
 
 }
+```
 
 Sample Response
 
+```
 {
 
   "data": {
@@ -113,10 +110,12 @@ Sample Response
   }
 
 }
+```
 
 
 ##### Request user role for an invalid realm
 
+```
  {
 
   user{
@@ -134,9 +133,11 @@ Sample Response
   }
 
 }
+```
 
 Sample Response
 
+```
 {
 
  "errors": [
@@ -174,11 +175,12 @@ Sample Response
  ]
 
 }
+```
 
 
 ### Description of Fields:
 
-_Note: Can share schema file if needed. _
+*Note: Can share schema file if needed.*
 
 
 <table>
