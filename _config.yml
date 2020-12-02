@@ -8,3 +8,6 @@ description: Documentation for Intuit's APIs
 permalink: pretty
 
 gh_edit_link: true
+gh_edit_link_text: "Edit this page on GitHub."
+gh_edit_repository: "https://github.com/bcole/intuit-api-docs"
+gh_edit_branch: "gh-pages"
