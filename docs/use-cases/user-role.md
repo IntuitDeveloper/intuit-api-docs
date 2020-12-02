@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Role API
-nav_order: 5
+title: User Role
+nav_order: 1
+parent: Use Cases
 ---
 
 <!-- Copy and paste the converted output. -->
@@ -27,7 +28,7 @@ Conversion notes:
 * Tables are currently converted to HTML tables.
 ----->
 
-### Role API:
+## User Role
 
 This document provides technical details for using the new Role API to retrieve user role information in the context of a given company.
 
