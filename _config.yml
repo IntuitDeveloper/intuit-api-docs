@@ -12,3 +12,8 @@ gh_edit_link_text: "Edit this page on GitHub."
 gh_edit_repository: "https://github.com/bcole/intuit-api-docs"
 gh_edit_branch: "gh-pages"
 gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
+
+back_to_top: true
+back_to_top_text: "Back to top"
+
+footer_content: "&copy; 2020 Intuit Inc. All rights reserved. Intuit and QuickBooks are registered trademarks of Intuit Inc. Terms and conditions, features, support, pricing, and service options subject to change without notice."
