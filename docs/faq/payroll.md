@@ -7,6 +7,8 @@ parent: FAQ
 
 ## Payroll
 
+The following are some commonly asked questions related to Payroll.
+
 **1\. Question 1**
 
  Answer 1

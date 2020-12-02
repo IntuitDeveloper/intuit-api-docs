@@ -7,6 +7,8 @@ parent: FAQ
 
 ## Accounting
 
+The following are some commonly asked questions related to Accounting.
+
 **1\. Question 1**
 
  Answer 1
