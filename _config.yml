@@ -1,7 +1,9 @@
 # theme: jekyll-theme-cayman
 # remote_theme: pmarsceill/just-the-docs
-# remote_theme: bcole/just-the-docs
-theme: "just-the-docs"
+# For GitHub:
+remote_theme: bcole/just-the-docs
+#  For local:
+# theme: "just-the-docs"
 
 title: Intuit API Docs
 description: Documentation for Intuit's APIs
