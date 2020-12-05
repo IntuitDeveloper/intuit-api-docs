@@ -33,6 +33,6 @@ Authorization: <OAuth 2.0 bearer token>
 
 ### Next Steps
 
-- Want to learn more about GraphQL concepts, like queries and mutations?  [Click here](/../../graphql-concepts)!
+- Want to learn more about GraphQL concepts, like queries and mutations?  [Click here](../../graphql-concepts)!
 
-- Want to learn about Intuit use cases, like 401k or user roles?  [Click here](/../../use-cases) to see sample queries and documentation about common use cases!
+- Want to learn about Intuit use cases, like 401k or user roles?  [Click here](../../use-cases) to see sample queries and documentation about common use cases!
