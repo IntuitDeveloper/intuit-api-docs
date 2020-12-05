@@ -1,9 +1,0 @@
-I"f<h2 id="graphql-ide">GraphQL IDE</h2>
-
-<p>Although not strictly necessary, you’ll likely want a GraphQL IDE to easily form and test GraphQL queries.  Here are a few examples of GraphQL IDEs you can use:</p>
-
-<ol>
-  <li><a href="https://insomnia.rest/graphql/">Insomnia</a></li>
-  <li><a href="https://github.com/skevy/graphiql-app">GraphiQL</a></li>
-</ol>
-:ET
