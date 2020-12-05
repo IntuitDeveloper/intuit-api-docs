@@ -12,4 +12,8 @@ Intuit's Ecosystem API is a new offering for developers wanting to integrate wit
 
 ### Getting Started
 
-TODO
+The below tracks can help you get started using Intuit's Ecosystem API, depending on your starting preferences.
+
+- Want to dive right in to making API calls?  [Click here](/docs/getting-started)!
+- Want to learn more about GraphQL concepts?  [Click here](/docs/graphql-concepts)!
+- Want to learn about Intuit domain-specific use cases, like 401k or user roles?  [Click here](/docs/use-cases)!

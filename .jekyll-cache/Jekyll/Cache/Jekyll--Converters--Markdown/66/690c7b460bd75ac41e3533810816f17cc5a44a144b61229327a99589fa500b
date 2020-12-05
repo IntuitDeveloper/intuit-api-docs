@@ -1,0 +1,9 @@
+I"-<h2 id="mutation">Mutation</h2>
+
+<p>Mutation is the GraphQL concept used to modify data.  Here is an example GraphQL mutation:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mutation modifySomeField {
+  todo() {}
+}
+</code></pre></div></div>
+:ET

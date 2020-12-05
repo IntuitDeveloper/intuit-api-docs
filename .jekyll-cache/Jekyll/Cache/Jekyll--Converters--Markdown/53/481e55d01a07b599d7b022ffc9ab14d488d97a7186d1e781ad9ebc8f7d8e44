@@ -1,0 +1,226 @@
+I"�<!-- Copy and paste the converted output. -->
+
+<!-----
+NEW: Check the "Suppress top comment" option to remove this info from the output.
+
+Conversion time: 0.68 seconds.
+
+
+Using this Markdown file:
+
+1. Paste this output into your source file.
+2. See the notes and action items below regarding this conversion run.
+3. Check the rendered output (headings, lists, code blocks, tables) for proper
+   formatting and use a linkchecker before you publish this page.
+
+Conversion notes:
+
+* Docs to Markdown version 1.0β29
+* Tue Dec 01 2020 13:22:42 GMT-0800 (PST)
+* Source doc: Role API (copy)
+* Tables are currently converted to HTML tables.
+----->
+
+<h2 id="user-role">User Role</h2>
+
+<p>This document provides technical details for using the new Role API to retrieve user role information in the context of a given company.</p>
+
+<h3 id="api-url">API URL:</h3>
+
+<p>Role API is exposed under a new endpoint. Make a POST request to the endpoint below.</p>
+
+<p><strong>Endpoint:</strong></p>
+
+<p>Prod: <a href="https://public.api.intuit.com/2020-04/graphql">https://public.api.intuit.com/2020-04/graphql</a></p>
+
+<p>E2E: <a href="https://public-e2e.api.intuit.com/2020-04/graphql">https://public-e2e.api.intuit.com/2020-04/graphql</a></p>
+
+<p><strong>Required Headers:</strong></p>
+
+<p>Content-Type: application/json</p>
+
+<p>Authorization: OAuth2 authorization header using new scope.</p>
+
+<h3 id="scopes">Scopes:</h3>
+
+<p>User role data is protected under a new scope <strong><em>com.intuit.identity.user.roles.read</em></strong>. For apps that are already using the internal Role API, we will honor the tokens that were generated using <strong><em>com.intuit.identity.accounts.restricted</em></strong> scope to support their existing customers.</p>
+
+<ul>
+  <li>For existing customers - Continue to use the tokens generated using <strong><em>com.intuit.identity.accounts.restricted</em></strong> scope.</li>
+  <li>For new customers - Use the following scope <strong><em>com.intuit.identity.user.roles.read</em>.</strong></li>
+</ul>
+
+<p>Note: App’s also should be onboarded to the new scope before they can start using it.</p>
+
+<h3 id="api-request">API request:</h3>
+
+<p><em>Note: Before making the API call, make sure to generate Oauth token by sending the scope com.intuit.identity.user.roles.read and send the token in the request header.</em></p>
+
+<h4 id="queries">Queries:</h4>
+
+<h5 id="request-user-role-for-a-realm">Request user role for a realm</h5>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> {
+
+  user{
+
+  role (realmId: "9130349878530396") {
+
+    type
+
+    status
+
+    hasPayroll
+
+  }
+
+  }
+
+}
+</code></pre></div></div>
+
+<p>Sample Response</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+
+  "data": {
+
+    "user": {
+
+      "role": {
+
+        "type": "ADMIN",
+
+        "status": "ACTIVE",
+
+        "hasPayroll": true
+
+      }
+
+    }
+
+  }
+
+}
+</code></pre></div></div>
+
+<h5 id="request-user-role-for-an-invalid-realm">Request user role for an invalid realm</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> {
+
+  user{
+
+  role (realmId: "9130349878530397") {
+
+    type
+
+    status
+
+    hasPayroll
+
+  }
+
+  }
+
+}
+</code></pre></div></div>
+
+<p>Sample Response</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+
+ "errors": [
+
+   {
+
+     "message": "User id not part of the realm!",
+
+     "locations": [
+
+       {
+
+         "line": 3,
+
+         "column": 3
+
+       }
+
+     ],
+
+     "path": [],
+
+     "extensions": {
+
+       "code": "VAL-1002",
+
+       "innerMessage": "User id not part of the realm!",
+
+       "classification": "VALIDATION_ERROR"
+
+     }
+
+   }
+
+ ]
+
+}
+</code></pre></div></div>
+
+<h3 id="description-of-fields">Description of Fields:</h3>
+
+<p><em>Note: Can share schema file if needed.</em></p>
+
+<table>
+  <tr>
+   <td>
+   </td>
+   <td><strong>Field</strong>
+   </td>
+   <td><strong>DataType</strong>
+   </td>
+   <td><strong>Description</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>role
+   </td>
+   <td>realmId
+(required)
+   </td>
+   <td>String
+   </td>
+   <td>Company id for which the user role is needed
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>type
+   </td>
+   <td>Enum - ADMIN, EMPLOYEE
+   </td>
+   <td>Indicates the role type for the user such as ADMIN or EMPLOYEE
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>status
+   </td>
+   <td>Enum - ACTIVE, INACTIVE
+   </td>
+   <td>Indicates user’s status within the company such as ACTIVE or INACTIVE
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>hasPayroll
+   </td>
+   <td>Boolean
+   </td>
+   <td>Indicates if user has payroll access
+   </td>
+  </tr>
+</table>
+
+:ET

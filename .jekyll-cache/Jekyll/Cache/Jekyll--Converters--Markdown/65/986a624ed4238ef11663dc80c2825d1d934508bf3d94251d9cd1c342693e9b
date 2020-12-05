@@ -1,0 +1,18 @@
+I"#<h2 id="query">Query</h2>
+
+<p>Query is the GraphQL concept used to fetch data.  Here is an example GraphQL query:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>query getCompanyName {
+  company {
+    companyName
+    companyType
+  }
+}
+</code></pre></div></div>
+
+<p>With GraphQL, you specify the exact data fields your use case requires, no more and no less.  In this basic query, we are simply going to fetch the <code class="language-plaintext highlighter-rouge">companyName</code> and <code class="language-plaintext highlighter-rouge">companyType</code> fields.</p>
+
+<p>This is one of the main advantages of GraphQL.  Not only is the response clean and specific for your use case, but it can often be more performant, as the Intuit API does not need to fetch and process fields that won’t even be used by the client (a term called “over-fetching”).</p>
+
+<p>Feel free to play around with different queries.  Many GraphQL IDEs have an autocomplete feature, to make forming queries easier!</p>
+:ET

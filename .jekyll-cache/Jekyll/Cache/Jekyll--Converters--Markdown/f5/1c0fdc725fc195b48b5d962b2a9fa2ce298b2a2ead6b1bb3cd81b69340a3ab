@@ -1,0 +1,37 @@
+I"Á<h2 id="graphql-ide">GraphQL IDE</h2>
+
+<p>Although not strictly necessary, youâ€™ll likely want a GraphQL IDE to easily form and test GraphQL queries.  Here are a few examples of GraphQL IDEs you can use:</p>
+
+<ol>
+  <li><a href="https://insomnia.rest/graphql/">Insomnia</a></li>
+  <li><a href="https://github.com/skevy/graphiql-app">GraphiQL</a></li>
+</ol>
+
+<p>Once you install a GraphQL IDE, you should now be set to fire your first GraphQL query!</p>
+
+<h3 id="firing-your-first-graphql-query">Firing your first GraphQL Query</h3>
+
+<p>As an example, you can try a very basic query like the following to get the name of your QuickBooks company, using the OAuth 2.0 bearer token retrieved in the previous section.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>query getCompanyName {
+  company {
+    companyName
+    companyType
+  }
+}
+</code></pre></div></div>
+<p>Headers required:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Authorization: &lt;OAuth 2.0 bearer token&gt;
+</code></pre></div></div>
+
+<h3 id="next-steps">Next Steps</h3>
+
+<ul>
+  <li>
+    <p>Want to learn more about GraphQL concepts, like queries and mutations?  Click here!</p>
+  </li>
+  <li>
+    <p>Want to learn about Intuit use cases, like 401k or user roles?  <a href="/docs/use-cases">Click here</a> to see sample queries and documentation about common use cases!</p>
+  </li>
+</ul>
+:ET

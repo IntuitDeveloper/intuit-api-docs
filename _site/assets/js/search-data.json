@@ -1,0 +1,98 @@
+{"0": {
+    "doc": "401k",
+    "title": "401k",
+    "content": "Learn about some sample queries to perform common 401k actions . Details . Details TBD . ",
+    "url": "http://localhost:4000/docs/use-cases/401k/",
+    "relUrl": "/docs/use-cases/401k/"
+  },"1": {
+    "doc": "Accounting",
+    "title": "Accounting",
+    "content": "The following are some commonly asked questions related to Accounting. 1. Question 1 . Answer 1 . 2. Question 2 . Answer 2 . ",
+    "url": "http://localhost:4000/docs/faq/accounting/",
+    "relUrl": "/docs/faq/accounting/"
+  },"2": {
+    "doc": "Authentication",
+    "title": "Authentication",
+    "content": "To make API calls, you’ll need: . | A QuickBooks company | An Intuit application | An OAuth 2.0 access token | . 1. QuickBooks company . Depending on your use case (will you be making Payroll API calls?), you’ll need a QuickBooks company setup appropriately (with Payroll, for example). Partners should reach out to their Intuit point-of-contact to get a company set up. 2. An Intuit application . You can create an Intuit application at developer.intuit.com. Partners should work with their Intuit point-of-contact to make sure the application is correctly onboarded to the new Intuit Ecosystem API. 3. OAuth 2.0 Access Token . Intuit uses the standard OAuth 2.0 protocol. For details on OAuth 2.0 at Intuit, refer to this document. The OAuth 2.0 playground may also be helpful to learn about the OAuth flow. Scopes . In the new Intuit Ecosystem API, there are new additional scopes, beyond the previous high-level “accounting” and “payment” scopes. For a list of scopes in the new Intuit Ecosystem API, check here. You’ll need to find the scopes relevant for your use case, and make sure to request them when generating the OAuth 2.0 Access Token. ",
+    "url": "http://localhost:4000/docs/getting-started/authentication/",
+    "relUrl": "/docs/getting-started/authentication/"
+  },"3": {
+    "doc": "FAQ",
+    "title": "FAQ",
+    "content": "We’ll share frequently asked questions related to the following domains (accounting, payroll, etc), so you can quickly search for answers to common questions. ",
+    "url": "http://localhost:4000/docs/faq",
+    "relUrl": "/docs/faq"
+  },"4": {
+    "doc": "Getting Started",
+    "title": "Getting Started",
+    "content": "Use the following pages to help get started with the GraphQL API. ",
+    "url": "http://localhost:4000/docs/getting-started",
+    "relUrl": "/docs/getting-started"
+  },"5": {
+    "doc": "GraphQL Concepts",
+    "title": "GraphQL Concepts",
+    "content": "The following pages describe some GraphQL concepts, like queries and mutations. ",
+    "url": "http://localhost:4000/docs/graphql-concepts",
+    "relUrl": "/docs/graphql-concepts"
+  },"6": {
+    "doc": "GraphQL IDE",
+    "title": "GraphQL IDE",
+    "content": "Although not strictly necessary, you’ll likely want a GraphQL IDE to easily form and test GraphQL queries. Here are a few examples of GraphQL IDEs you can use: . | Insomnia | GraphiQL | . Once you install a GraphQL IDE, you should now be set to fire your first GraphQL query! . Firing your first GraphQL Query . As an example, you can try a very basic query like the following to get the name of your QuickBooks company, using the OAuth 2.0 bearer token retrieved in the previous section. query getCompanyName { company { companyName companyType } } . Headers required: . Authorization: &lt;OAuth 2.0 bearer token&gt; . Next Steps . | Want to learn more about GraphQL concepts, like queries and mutations? Click here! . | Want to learn about Intuit use cases, like 401k or user roles? Click here to see sample queries and documentation about common use cases! . | . ",
+    "url": "http://localhost:4000/docs/getting-started/graphql-ide/",
+    "relUrl": "/docs/getting-started/graphql-ide/"
+  },"7": {
+    "doc": "Home",
+    "title": "Welcome to Intuit GraphQL API Documentation",
+    "content": "Intuit’s Ecosystem API is a new offering for developers wanting to integrate with the Intuit business ecosystem. This API is a GraphQL API that addresses many of the challenges of the previous versions, has a simpler schema and is more secure. Our guiding principles have been to make this a platform that delivers business domain use-case based functionality with granular access control and a simplified schema to enable deep integrations with Intuit products. Getting Started . The below tracks can help you get started using Intuit’s Ecosystem API, depending on your starting preferences. | Want to dive right in to making API calls? Click here! | Want to learn more about GraphQL concepts? Click here! | Want to learn about Intuit domain-specific use cases, like 401k or user roles? Click here! | . ",
+    "url": "http://localhost:4000/#welcome-to-intuit-graphql-api-documentation",
+    "relUrl": "/#welcome-to-intuit-graphql-api-documentation"
+  },"8": {
+    "doc": "Home",
+    "title": "Home",
+    "content": " ",
+    "url": "http://localhost:4000/",
+    "relUrl": "/"
+  },"9": {
+    "doc": "Mutation",
+    "title": "Mutation",
+    "content": "Mutation is the GraphQL concept used to modify data. Here is an example GraphQL mutation: . mutation modifySomeField { todo() {} } . ",
+    "url": "http://localhost:4000/docs/graphql-concepts/mutation/",
+    "relUrl": "/docs/graphql-concepts/mutation/"
+  },"10": {
+    "doc": "Payroll",
+    "title": "Payroll",
+    "content": "The following are some commonly asked questions related to Payroll. 1. Question 1 . Answer 1 . 2. Question 2 . Answer 2 . ",
+    "url": "http://localhost:4000/docs/faq/payroll/",
+    "relUrl": "/docs/faq/payroll/"
+  },"11": {
+    "doc": "Query",
+    "title": "Query",
+    "content": "Query is the GraphQL concept used to fetch data. Here is an example GraphQL query: . query getCompanyName { company { companyName companyType } } . With GraphQL, you specify the exact data fields your use case requires, no more and no less. In this basic query, we are simply going to fetch the companyName and companyType fields. This is one of the main advantages of GraphQL. Not only is the response clean and specific for your use case, but it can often be more performant, as the Intuit API does not need to fetch and process fields that won’t even be used by the client (a term called “over-fetching”). Feel free to play around with different queries. Many GraphQL IDEs have an autocomplete feature, to make forming queries easier! . Next, learn about modifying data with Mutations. ",
+    "url": "http://localhost:4000/docs/graphql-concepts/query/",
+    "relUrl": "/docs/graphql-concepts/query/"
+  },"12": {
+    "doc": "Scopes",
+    "title": "Scopes",
+    "content": "The following table describes the scopes and a brief description available in the Intuit Ecosystem API. | scope | description | . | com.intuit.identity.user.roles.read | Grants access for reading user role | . | qb.company.read | Grants access to company information | . | … | … | . ",
+    "url": "http://localhost:4000/docs/getting-started/scopes/",
+    "relUrl": "/docs/getting-started/scopes/"
+  },"13": {
+    "doc": "Use Cases",
+    "title": "Use Cases",
+    "content": "The following pages give some sample queries that can be helpful for common use cases. ",
+    "url": "http://localhost:4000/docs/use-cases",
+    "relUrl": "/docs/use-cases"
+  },"14": {
+    "doc": "User Role",
+    "title": "User Role",
+    "content": "This document provides technical details for using the new Role API to retrieve user role information in the context of a given company. API URL: . Role API is exposed under a new endpoint. Make a POST request to the endpoint below. Endpoint: . Prod: https://public.api.intuit.com/2020-04/graphql . E2E: https://public-e2e.api.intuit.com/2020-04/graphql . Required Headers: . Content-Type: application/json . Authorization: OAuth2 authorization header using new scope. Scopes: . User role data is protected under a new scope com.intuit.identity.user.roles.read. For apps that are already using the internal Role API, we will honor the tokens that were generated using com.intuit.identity.accounts.restricted scope to support their existing customers. | For existing customers - Continue to use the tokens generated using com.intuit.identity.accounts.restricted scope. | For new customers - Use the following scope com.intuit.identity.user.roles.read. | . Note: App’s also should be onboarded to the new scope before they can start using it. API request: . Note: Before making the API call, make sure to generate Oauth token by sending the scope com.intuit.identity.user.roles.read and send the token in the request header. Queries: . Request user role for a realm . { user{ role (realmId: \"9130349878530396\") { type status hasPayroll } } } . Sample Response . { \"data\": { \"user\": { \"role\": { \"type\": \"ADMIN\", \"status\": \"ACTIVE\", \"hasPayroll\": true } } } } . Request user role for an invalid realm . { user{ role (realmId: \"9130349878530397\") { type status hasPayroll } } } . Sample Response . { \"errors\": [ { \"message\": \"User id not part of the realm!\", \"locations\": [ { \"line\": 3, \"column\": 3 } ], \"path\": [], \"extensions\": { \"code\": \"VAL-1002\", \"innerMessage\": \"User id not part of the realm!\", \"classification\": \"VALIDATION_ERROR\" } } ] } . Description of Fields: . Note: Can share schema file if needed. | | Field | DataType | Description | . | role | realmId (required) | String | Company id for which the user role is needed | . | | type | Enum - ADMIN, EMPLOYEE | Indicates the role type for the user such as ADMIN or EMPLOYEE | . | | status | Enum - ACTIVE, INACTIVE | Indicates user’s status within the company such as ACTIVE or INACTIVE | . | | hasPayroll | Boolean | Indicates if user has payroll access | . ",
+    "url": "http://localhost:4000/docs/use-cases/user-role/#user-role",
+    "relUrl": "/docs/use-cases/user-role/#user-role"
+  },"15": {
+    "doc": "User Role",
+    "title": "User Role",
+    "content": " ",
+    "url": "http://localhost:4000/docs/use-cases/user-role/",
+    "relUrl": "/docs/use-cases/user-role/"
+  }
+}

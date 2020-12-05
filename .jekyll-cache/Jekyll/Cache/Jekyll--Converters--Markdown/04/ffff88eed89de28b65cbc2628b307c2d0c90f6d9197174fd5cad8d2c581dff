@@ -1,0 +1,21 @@
+I"5<h2 id="graphql-ide">GraphQL IDE</h2>
+
+<p>Although not strictly necessary, you’ll likely want a GraphQL IDE to easily form and test GraphQL queries.  Here are a few examples of GraphQL IDEs you can use:</p>
+
+<ol>
+  <li><a href="https://insomnia.rest/graphql/">Insomnia</a></li>
+  <li><a href="https://github.com/skevy/graphiql-app">GraphiQL</a></li>
+</ol>
+
+<p>Once you install a GraphQL IDE, you should now be set to fire your first GraphQL query!</p>
+
+<p>As an example, you can try a very basic query like the following, with your QuickBooks company and OAuth 2.0 bearer token retrieved in the previous section.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>query getCompanyName {
+  company {
+    companyName
+    companyType
+  }
+}
+</code></pre></div></div>
+:ET
