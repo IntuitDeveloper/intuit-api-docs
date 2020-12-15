@@ -64,8 +64,7 @@ Enabled : <Select>
 
 After you complete this task the setup will look like this 
 
-![](/assets/images/oauth2.png)
-![](/assets/images/intuit-logo.png)
+![](/intuit-api-docs/assets/images/oauth2.png)
 
 
 You are now ready to run the query , Click the "Send" button to run.
