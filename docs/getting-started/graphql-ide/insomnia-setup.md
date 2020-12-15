@@ -64,7 +64,7 @@ Enabled : <Select>
 
 After you complete this task the setup will look like this 
 
-![Insomnia oAuth2 tab](/assets/images/oauth2.png)
+![](/assets/images/oauth2.png)
 ![](/assets/images/intuit-logo.png)
 
 
