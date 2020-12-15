@@ -31,9 +31,6 @@ Add following environment definition. You will need to download the clientId and
   "url": "https://public.api.intuit.com/2020-04/graphql"
 }
 ```
-After you complete this task the setup will look like this 
-
-![Insomnia oAuth2 tab](/assets/images/oauth2.png)
 
 ## Create query
 
@@ -64,6 +61,10 @@ CLIENT SECRENT :  ClientSecret
 Redirect URL : RedirectUrl
 Enabled : <Select> 
 ```
+
+After you complete this task the setup will look like this 
+
+![Insomnia oAuth2 tab](/assets/images/oauth2.png)
 
 You are now ready to run the query , Click the "Send" button to run.
 Insomnia will ask you to login to your QBO company (enter trial company credentials)
