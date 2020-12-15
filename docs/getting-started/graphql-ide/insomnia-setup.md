@@ -7,7 +7,7 @@ parent: GraphQL IDE
 grand_parent: Getting Started
 ---
 
-Insomina is the recommend tool to work with GraphQL,  start with the free version and upgrade to [Paid version](https://insomnia.rest/pricing/) as you needs grow. The free version provides all the basic listed bleow, upgrade to paid version for stronger collaboration.
+Insomina is the recommended tool to work with GraphQL.  You can start with the free version and upgrade to the [paid version](https://insomnia.rest/pricing/) as your needs grow. The free version provides all the basic features listed below (or upgrade to the paid version for stronger collaboration):
 * Save and run queries
 * Browse schema 
 * Import/Export queries for sharing
@@ -24,7 +24,7 @@ Insomina is the recommend tool to work with GraphQL,  start with the free versio
 [Download the latest version](https://insomnia.rest/download/). Version *2020.5.2* or higher.
 
 ### Setup Environment
-Launch Insomnina and configure following environment definition. This step will setup  the URLs to access the APIs and Auth. You will need your applications *clientId* and *clientSecret* from the [developer portal](https://developer.intuit.com/app/developer/qbo/docs/build-your-first-app) to complete this step. Select the "[Manage environments](https://support.insomnia.rest/article/18-environment-variables)" option to setup this config.
+Launch Insomnina and configure the following environment definition. This step will setup the URLs to access the APIs and Auth. You will need your application's *clientId* and *clientSecret* from the [developer portal](https://developer.intuit.com/app/developer/qbo/docs/build-your-first-app) to complete this step. Select the "[Manage environments](https://support.insomnia.rest/article/18-environment-variables)" option to setup this config.
 
 ```json
 {
@@ -41,8 +41,8 @@ Launch Insomnina and configure following environment definition. This step will 
 * Launch Insomnia
 * Add new request from the left panel
 * Use POST method and select the *url* environment variable as value
-* Select" GraphQL Query" as query type for first tab.
-* Paste following query to retrieve deatils of the company you are connected to
+* Select "GraphQL Query" as query type for first tab.
+* Paste following query to retrieve details of the company you are connected to
 ```json
 {
 query company {
@@ -54,13 +54,13 @@ query company {
 }
 }
 ```
-* Setup Auth. Select oAuth2 tab and setup following configuration.  Values refer to names from environment variables setup above.
+* Setup Auth. Select OAuth2 tab and setup following configuration.  Values refer to names from environment variables setup above.
 ```
 GRANT TYPE : "Authorization Code"
 AUTHORIZATION URL : Authurl
 Access Token URL : AccessTokenUrl
 CLIENT ID : ClientId
-CLIENT SECRENT :  ClientSecret
+CLIENT SECRET :  ClientSecret
 Redirect URL : RedirectUrl
 Enabled : <Checked> 
 ```
@@ -68,13 +68,13 @@ After you complete this task the setup will look like this
 
 ![](/intuit-api-docs/assets/images/oauth2.png)
 
-You are now ready to run the query .
+You are now ready to run the query.
 
-### Create first query
+### Send first query
 
-* Click  "Send" button to run the query. First time you see these additional prompts
+* Click "Send" button to run the query. On the first time, you will see these additional prompts
 * Insomnia will ask you to login to your QBO company (enter trial company credentials)
-* After a successful login, you will be directed to the connection screen, follow the prompt to establish connection. You are in the process of establishing a connection between your app and a trial QBO connection.
+* After a successful login, you will be directed to the connection screen, follow the prompt to establish a connection. You are in the process of establishing a connection between your app and a trial QBO connection.
 * After successful connection, you will see tokens in the oAuth2 tab of your request in Insomnia
 
-Congratulations! .
+Congratulations!
