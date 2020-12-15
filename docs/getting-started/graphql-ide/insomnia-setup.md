@@ -65,6 +65,8 @@ Enabled : <Select>
 After you complete this task the setup will look like this 
 
 ![Insomnia oAuth2 tab](/assets/images/oauth2.png)
+![](/assets/images/intuit-logo.png)
+
 
 You are now ready to run the query , Click the "Send" button to run.
 Insomnia will ask you to login to your QBO company (enter trial company credentials)
