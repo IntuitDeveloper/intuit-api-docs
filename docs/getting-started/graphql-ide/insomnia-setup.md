@@ -44,10 +44,9 @@ Add following environment definition. You will need to download the clientId and
 {
 query company {
   company {
-		id
-		legalName
-		industryType
-		
+	id
+	legalName
+	industryType	
   }
 }
 }
@@ -64,6 +63,6 @@ Enabled : <Select>
 ```
 
 You are now ready to run the query , Click the "Send" button to run.
-Insomnia will ask you to login to your QBO company (enter credentials)
+Insomnia will ask you to login to your QBO company (enter trial company credentials)
 
 
