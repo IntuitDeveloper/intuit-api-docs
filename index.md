@@ -20,4 +20,4 @@ The below tracks can help you get started using Intuit's Ecosystem API, dependin
 
 - Want to dive right in to making API calls?  [Click here](./docs/getting-started)!
 - Want to learn more about GraphQL concepts?  [Click here](./docs/graphql-concepts)!
-- Want to learn about Intuit domain-specific use cases, like 401k or user roles?  [Click here](./docs/use-cases)
+- Want to learn about Intuit domain-specific use cases, like 401k or user roles?  [Click here](./docs/use-cases)!
