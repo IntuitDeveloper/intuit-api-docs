@@ -31,6 +31,9 @@ Add following environment definition. You will need to download the clientId and
   "url": "https://public.api.intuit.com/2020-04/graphql"
 }
 ```
+After you complete this task the setup will look like this 
+
+![Insomnia oAuth2 tab](/assets/images/oauth2.png)
 
 ## Create query
 
