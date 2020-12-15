@@ -44,9 +44,9 @@ Add following environment definition. You will need to download the clientId and
 {
 query company {
   company {
-	id
-	legalName
-	industryType	
+    id
+    legalName
+    industryType	
   }
 }
 }
@@ -64,5 +64,11 @@ Enabled : <Select>
 
 You are now ready to run the query , Click the "Send" button to run.
 Insomnia will ask you to login to your QBO company (enter trial company credentials)
+after a successful login, you will be directed to the connection screen, follow the prompt to establish connection.
+After successful connection you will see tokens in the oAuth2 tab of your request in Insomnia
+
+Congratulations! you are now ready to run the request.
+
+Clone the request above for new requests.
 
 
