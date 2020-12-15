@@ -6,20 +6,23 @@ parent: GraphQL IDE
 grand_parent: Getting Started
 ---
 
-Insomina is the recommend tool to work with GraphQL, you can start with the free version and upgrade to [Paid version](https://insomnia.rest/pricing/) as you needs expand. The free version provide enough to start
+Insomina is the recommend tool to work with GraphQL,  start with the free version and upgrade to [Paid version](https://insomnia.rest/pricing/) as you needs grow. The free version provide should give you everything thing you need, paid version is geared towards stronger collatoration.
 * Save and run queries
 * Browse schema 
 * Import/Export queries for sharing
 * Integrate with oAuth2
 
+## Asumptions
+This tutorial assume you are working with a production trial company.
+
 ## Setup
 
-### Install
+### Install Insomnia
 [Download the latest version](https://insomnia.rest/download/)
 
-## Setup Environment
+### Setup Environment
 
-Add following environment definition. You will need to download the clientId and clientSecret for your production application from the developortal and replace before saving. Instructions avialable from [here](https://developer.intuit.com/app/developer/qbo/docs/build-your-first-app). This tutorial assume you are working with a production trial company.
+Add following environment definition. You will need to retreive the clientId and clientSecret for your production application from the developer portal. Instructions avialable from [here](https://developer.intuit.com/app/developer/qbo/docs/build-your-first-app). 
 
 ```json
 {
@@ -32,7 +35,7 @@ Add following environment definition. You will need to download the clientId and
 }
 ```
 
-## Create query
+### Create first query
 
 * Make sure environment create above is selected
 * Add new request
