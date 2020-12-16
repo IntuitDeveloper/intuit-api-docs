@@ -14,7 +14,7 @@ Insomina is the recommended tool to work with GraphQL.  You can start with the f
 
 ## Setup
 
-## Asumptions
+### Prequisites
 
 * This tutorial assumes you are working with a production trial company.
 * :red_circle: You have created an app in [developer.intuit.com](https://developer.intuit.com) and worked with your partner in Intuit for access to GraphQL APIs
