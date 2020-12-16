@@ -4,7 +4,7 @@ title: GraphQL IDE
 nav_order: 3
 has_children: true
 parent: Getting Started
-permalink: /docs/getting-started/graphql-ide
+permalink: /docs/getting-started/graphql-ide/
 ---
 
 ## GraphQL IDE
