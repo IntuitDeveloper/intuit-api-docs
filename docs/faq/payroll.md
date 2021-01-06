@@ -1,4 +1,3 @@
-
 ---
 layout: default
 title: Payroll
@@ -70,4 +69,3 @@ Correct, we do not currently expose the type of hours worked, however you must s
 **7\. Are pay scheduled supported?**
 
 We are working to expose that, but it is not done yet. One partner is limiting the supported plans to be ones that only have one pay cycle until this feature is available. 
-
