@@ -32,7 +32,7 @@ Not currently. We expose type for other elements within payroll but do not show 
 
 Yes this is an outstanding issue. We recommend that our partners match at an employee level for everything they are trying to accomplish.  
 
-**5\. How can I explore more about what is available via the Payroll API?**
+**6\. How can I explore more about what is available via the Payroll API?**
 
 Once you have access to payroll (the proper scopes) you can explore the GraphQL entity with introspection (for example in Apollo Studio). We also have example Postman collections for retirement that your Intuit representative can get you set up with. 
 
@@ -70,6 +70,5 @@ Correct, we do not currently expose the type of hours worked, however you must s
 **7\. Are pay scheduled supported?**
 
 We are working to expose that, but it is not done yet. One partner is limiting the supported plans to be ones that only have one pay cycle until this feature is available. 
-
 
 
