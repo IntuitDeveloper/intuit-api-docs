@@ -7,7 +7,9 @@ parent: GraphQL Concepts
 
 ## Query
 
-Query is the GraphQL concept used to fetch data.  Here is an example GraphQL query:
+Query is the GraphQL concept used to fetch data from the server.  Think of it as a GET request in the REST API world, **but remember - GraphQL requests are always POST calls**.  You can use a query to fetch a single field, multiple fields, apply filters, or get data conditionally. 
+
+As an example, here is a simple GraphQL query that would fetch company information:
 
 ```
 query getCompanyName {
