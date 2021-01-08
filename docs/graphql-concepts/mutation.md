@@ -7,7 +7,7 @@ parent: GraphQL Concepts
 
 ## Mutation
 
-Mutation is the GraphQL concept used to modify data on the server.  Think of it as a POST, PUT or DELETE operation in the REST API world, **but remember - GraphQL requests are always POST calls**. 
+Mutation is the GraphQL concept used to modify data on the server.  This includes creates, updates, or deletion of data.  Think of it as a POST, PUT or DELETE operation in the REST API world, **but remember - GraphQL requests are always POST calls**. 
 
 As an example, here is a simple GraphQL mutation that would create an employer deduction:
 
