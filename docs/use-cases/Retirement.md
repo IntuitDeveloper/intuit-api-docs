@@ -41,8 +41,8 @@ After establishing a connection with the QBO company, run this query for company
 
 query getCompanyDetails {
   company {
-	  id
-	  industryType
+    id
+    industryType
     taxIdentifiers {
       taxIdentifierType
       value
