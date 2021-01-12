@@ -12,9 +12,9 @@ Intuit Payroll is engaged in partnerships with Retirement plan providers to offe
 ### Integration Steps
 
 * Create and configure app on Inuit Developer portal: [pre-production](https://developer-stage.intuit.com/app/developer/homepage) (do this first) and [production](https://developer.intuit.com/app/developer/homepage)
-  * read the [get started](https://developer.intuit.com/app/developer/qbo/docs/get-started)and [go live](https://developer.intuit.com/app/developer/qbo/docs/go-live) guide for a better understanding of the process for building apps with Intuit's ecosystem.  
-* Implement SSO using oAuth2.0 authentication implementation which confirms to OpenID Connection specification
-  * [OpenID Connect](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/openid-connect). Using open Id you will have access to user information.
+  * read the [get started](https://developer.intuit.com/app/developer/qbo/docs/get-started) and [go live](https://developer.intuit.com/app/developer/qbo/docs/go-live) guide for a better understanding of the process for building apps with Intuit's ecosystem.  
+* Implement SSO using OAuth2.0 authentication implementation which confirms with OpenID Connection specification
+  * [OpenID Connect](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/openid-connect). Using OpenID you will have access to user information.
   * Establish connection between your app and QBO account for authorization to make calls
 
 * Call Payroll APIs using the GraphQL end point. Rest of the document talks about the APIs you can call.
@@ -39,12 +39,10 @@ After establishing a connection with the QBO company, run this query for company
 
 ```
 
-query company {
+query getCompanyDetails {
   company {
-	id
-	
-	industryType
-    
+	  id
+	  industryType
     taxIdentifiers {
       taxIdentifierType
       value
