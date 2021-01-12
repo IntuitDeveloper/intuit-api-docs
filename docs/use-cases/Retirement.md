@@ -208,7 +208,7 @@ After establishing connection with QBO company run this  query to download Paysl
 ```
 query readAllEmployeePayslips {
   company {
-	  id
+    id
     employees{
       nodes {
         id
