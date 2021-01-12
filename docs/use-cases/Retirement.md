@@ -92,7 +92,6 @@ After establishing connection with QBO company run this  query for employee rost
 query readEmployeeRoster {
   company {
 		id
-		
     industryType
     companyType
     employees{
@@ -209,34 +208,33 @@ After establishing connection with QBO company run this  query to download Paysl
 ```
 query readAllEmployeePayslips {
   company {
-	id
+	  id
     employees{
       nodes {
         id
-        }
         payslips {
-            id
-            payDate
-            grossPay {
+          id
+          payDate
+          grossPay {
+            amount
+            yearToDateAmount
+          }
+          contributions {
+            description
+            contributionAmount {
               amount
               yearToDateAmount
             }
-            contributions {
-              description
-              contributionAmount {
-                amount
-                yearToDateAmount
-              }
-            }
-            deductions {
-              type
-              description
-              deductionAmount {
-                amount
-                yearToDateAmount
-              }
+          }
+          deductions {
+            type
+            description
+            deductionAmount {
+              amount
+              yearToDateAmount
             }
           }
+        }
       }
     }
   }
