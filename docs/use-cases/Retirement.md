@@ -38,7 +38,6 @@ This information is particularly helpful because if the company owner decides to
 After establishing a connection with the QBO company, run this query for company details
 
 ```
-
 query getCompanyDetails {
   company {
     id
