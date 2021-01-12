@@ -91,7 +91,7 @@ After establishing connection with QBO company run this  query for employee rost
 ```
 query readEmployeeRoster {
   company {
-		id
+    id
     industryType
     companyType
     employees{
