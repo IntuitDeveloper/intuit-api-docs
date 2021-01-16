@@ -200,9 +200,9 @@ Retirement providers need to download Payslips after each payroll run so they kn
   * Roth
   * Traditional
   * Loan
-* Employer contribution 
+* Employer contribution
 * Pay Schedule (Against an Employee and each Payslip)
-  * It is possible to re-assign a PaySchedule against an Employee. Historical data can be accessed against each Payslip. 
+  * It is possible to re-assign a PaySchedule against an Employee. So, historical PaySchedules can be accessed against each Payslip. 
 
 After establishing connection with QBO company run this  query to download Payslips periodically.
 
