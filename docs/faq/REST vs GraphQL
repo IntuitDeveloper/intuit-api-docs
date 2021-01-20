@@ -303,8 +303,8 @@ A common operation is to query invoices based on certain filters. Let’s say we
 
 ### REST
 Request
-GET <baseUrl>/v3/company/<realmID>/query?query=select * from Invoice where 
-TxnDate>'2020-01-18' and TxnDate<'2020-01-18' 
+`GET <baseUrl>/v3/company/<realmID>/query?query=select * from Invoice where 
+TxnDate>'2020-01-18' and TxnDate<'2020-01-18' `
 
 Response
 ```
