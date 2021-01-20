@@ -1,3 +1,10 @@
+---
+layout: default
+title: Sales Receipt Draft
+nav_order: 1
+parent: Use Cases
+---
+
 ### Sales Receipt Draft
 
 #### Mutation
