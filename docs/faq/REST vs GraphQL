@@ -284,7 +284,7 @@ Response
 
 ### GraphQL
 Request
-POST <graphBaseURL>/v1
+POST `<graphBaseURL>/v1`
 ```
 mutation Delete($id: ID!) {
   deleteInvoice(id: $id) {
