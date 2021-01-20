@@ -1,3 +1,4 @@
+
 ---
 layout: default
 title: Other Concepts
@@ -53,6 +54,28 @@ Directives are a way to conditionally control which fields are returned by a que
 query queryName($condition: Boolean) {
   fieldName1
   fieldName2 @include(if: $condition) {
+    field1
+    field2
+  }
+}
+```
+
+## Pagination
+
+When you don’t want to fetch all of the records at once, use cursor-based pagination to get a subset at a time. The pageInfo object shows you information about what data was returned and how much more there still is.
+
+Note: You can reference the schema docs or do an Introspection query to determine which fields support pagination.
+
+```
+query queryName {
+  fieldName1
+  fieldName2(pagination: {first: numOfRecords, after: cursorValue}) }) {
+    pageInfo {
+      hasNextPage
+      startCursor
+      endCursor
+      hasPreviousPage
+    }
     field1
     field2
   }
