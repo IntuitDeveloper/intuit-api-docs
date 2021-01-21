@@ -242,7 +242,7 @@ Response
 ```
 ### GraphQL
 Request
-POST <graphBaseURL>/v1
+POST `<graphBaseURL>/v1`
 ```
 mutation Update($id: ID!) {
   updateInvoice(id: $id, dueDate: "2020-09-30") {
