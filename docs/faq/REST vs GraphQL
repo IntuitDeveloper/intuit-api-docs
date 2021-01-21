@@ -18,7 +18,7 @@ In REST, you would do a GET request to retrieve data from the server and a POST,
 
   
 
-In GraphQL, all requests are POSTs and the body of the request tells the server what needs to be done. All of the HTTP calls are made the same way and to the same endpoint but with different request bodies. To retrieve data, you would use a query operation, and to modify data you would use a mutation operation. More on those operations [here](https://docs.google.com/document/d/1F75QD_P4G7DHnNmzJRkdXsB4Q0ftcuQjodOo_9Y3rIw/edit#heading=h.10cm7gygs12r).
+In GraphQL, all requests are POSTs and the body of the request tells the server what needs to be done. All of the HTTP calls are made the same way and to the same endpoint but with different request bodies. To retrieve data, you would use a query operation, and to modify data you would use a mutation operation. More on those operations [here](../../graphql-concepts).
 
 ### Single endpoint vs multiple endpoints
 
