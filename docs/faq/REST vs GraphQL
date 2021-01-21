@@ -40,7 +40,7 @@ The Ecosystem API gives you more control over what data you want from the server
 
 ### Schema updates
 
-In REST, schema updates may be notified to end-users via webhooks or release notes. GraphQL does this with the help of the [introspection query](https://docs.google.com/document/d/1F75QD_P4G7DHnNmzJRkdXsB4Q0ftcuQjodOo_9Y3rIw/edit#heading=h.10cm7gygs12r).
+In REST, schema updates may be notified to end-users via webhooks or release notes. GraphQL does this with the help of the [introspection query](../../graphql-concepts/introspection).
 
 ### Identifiers
 
