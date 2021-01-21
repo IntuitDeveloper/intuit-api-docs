@@ -34,7 +34,7 @@ Ecosystem API provides IDs to elegantly handle caching and re-fetching data with
 
 #### Introspection
 
-Querying which resources are available in the Ecosystem API schema using introspection will help to see the queries, types, fields, and directives it supports.
+Querying which resources are available in the Ecosystem API schema using introspection will help to see the queries, types, fields, and directives it supports.  [Read more on using introspection here](../../graphql-concepts/introspection)
 
 #### Using Aliases
 
@@ -42,7 +42,7 @@ We recommend using aliases or operation names to avoid confusion when multiple q
 
 #### Pagination
 
-The GraphQL type system allows for some fields to return lists of values and also allows pagination. If you expect to get a large number of results for a query, we recommend using pagination to fetch only a subset of records at a time.
+The GraphQL type system allows for some fields to return lists of values and also allows pagination. If you expect to get a large number of results for a query, we recommend using pagination to fetch only a subset of records at a time.  [Read more about pagination here](../../graphql-concepts/other-concepts/#pagination)
 
 #### API Throttling
 
@@ -50,7 +50,7 @@ Limits for each partner will be enforced manually for the beta phase.
 
 #### Using Fragments
 
-Instead of specifying a list of field names we recommend creating a fragment as a best practice once and reuse it everywhere. This makes your queries modular and easy to understand.
+Instead of specifying a list of field names we recommend creating a fragment as a best practice once and reuse it everywhere. This makes your queries modular and easy to understand.  [Read more about fragments here](../../graphql-concepts/other-concepts/#fragments)
 
 
 ## Error Handling
