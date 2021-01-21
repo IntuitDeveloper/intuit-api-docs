@@ -1,3 +1,10 @@
+---
+layout: default
+title: Sales Receipt Draft
+nav_order: 3
+parent: Use Cases
+---
+
 ### Sales Receipt Draft
 
 #### Mutation
@@ -202,4 +209,3 @@ Variables
 }
 
 ```
-
