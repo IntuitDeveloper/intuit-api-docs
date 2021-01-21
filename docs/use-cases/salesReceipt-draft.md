@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Sales Receipt Draft
-nav_order: 1
+nav_order: 3
 parent: Use Cases
 ---
 
@@ -209,4 +209,3 @@ Variables
 }
 
 ```
-
