@@ -75,7 +75,7 @@ Note that these are illustrative examples only. For exact field names and operat
 ### Create an invoice
 ### REST
 Request:
-POST <baseUrl>/v3/company/<realmID>/invoice
+POST `<baseUrl>/v3/company/<realmID>/invoice`
 ```
 {
   "Line": [
@@ -139,7 +139,7 @@ Response:
 
 ### GraphQL
 Request:
-POST <graphBaseURL>/v1
+POST `<graphBaseURL>/v1`
 ```
 mutation Create{
   createInvoice(item: {type: "inventory", amount: 100, itemref: "111"}, customerRef: "222", paymentRef: "333") {
@@ -161,7 +161,7 @@ Response:
 
 ### REST
 Request 1
-GET /v3/company/<realmID>/invoice/101
+GET `/v3/company/<realmID>/invoice/101`
 ```
 Response 1
 {
@@ -177,7 +177,7 @@ Response 1
 ```
 
 Request 2
-GET /v3/company/<realmID>/payment/801
+GET `/v3/company/<realmID>/payment/801`
 
 Response 2
 ```
@@ -191,7 +191,7 @@ Response 2
 
 ### GraphQL
 Request
-POST <graphBaseURL>/v1
+POST `<graphBaseURL>/v1`
 ```
 query getPaymentInfo  {
 	invoices (id : 1) {
@@ -214,7 +214,7 @@ Response
 
 ### REST
 Request
-POST <baseUrl>/v3/company/<realmID>/invoice
+POST `<baseUrl>/v3/company/<realmID>/invoice`
 ```
 {
   "SyncToken": "0", 
