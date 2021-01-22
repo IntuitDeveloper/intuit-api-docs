@@ -355,4 +355,4 @@ Response
 }
 ```
 
-The above are only illustrative examples. To get a full list of operations and resources available in the Ecosystem API, use the introspection query or our API reference docs here. You can also refer to our collections for Insomnia and Postman [here](https://github.intuit.com/idg-dev-rel/GlobalEcosystem-API-Collections). 
+The above are only illustrative examples. To get a full list of operations and resources available in the Ecosystem API, use the introspection query or our API reference docs here. You can also refer to our collections for Insomnia and Postman [here](https://github.com/IntuitDeveloper/HelloWorld_GlobalEcosystemAPI_Samples_Collections/tree/master/Collections). 
