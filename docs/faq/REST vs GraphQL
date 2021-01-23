@@ -56,7 +56,7 @@ The Accounting API returns HTTP status codes like 4** or 5** to indicate differe
 
   
 
-The Ecosystem API handles errors differently. Errors related to the API gateway later will return status codes 4** or 5**, but API errors will return HTTP status code 200 and provide all of the necessary information within the response body. Refer to [this section](../../graphql-concepts/error-handling-best-practices) for more details. (TODO - update section based on changes made for error responses)
+The Ecosystem API handles errors differently. Errors related to the API gateway later will return status codes 4** or 5**, but API errors will return HTTP status code 200 and provide all of the necessary information within the response body. Refer to [this section](../../graphql-concepts/error-handling-best-practices) for more details.
 
 ### Operations
 
