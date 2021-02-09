@@ -73,21 +73,13 @@ _Note: Before making the API call, make sure to generate Oauth token by sending 
 ##### Request user role for a realm
 ```
  {
-
   user{
-
   role (realmId: "9130349878530396") {
-
     type
-
     status
-
     hasPayroll
-
   }
-
   }
-
 }
 ```
 
@@ -95,25 +87,15 @@ Sample Response
 
 ```
 {
-
   "data": {
-
     "user": {
-
       "role": {
-
         "type": "ADMIN",
-
         "status": "ACTIVE",
-
         "hasPayroll": true
-
       }
-
     }
-
   }
-
 }
 ```
 
@@ -122,21 +104,13 @@ Sample Response
 
 ```
  {
-
   user{
-
   role (realmId: "9130349878530397") {
-
     type
-
     status
-
     hasPayroll
-
   }
-
   }
-
 }
 ```
 
@@ -144,41 +118,23 @@ Sample Response
 
 ```
 {
-
  "errors": [
-
    {
-
      "message": "User id not part of the realm!",
-
      "locations": [
-
        {
-
          "line": 3,
-
          "column": 3
-
        }
-
      ],
-
      "path": [],
-
      "extensions": {
-
        "code": "VAL-1002",
-
        "innerMessage": "User id not part of the realm!",
-
        "classification": "VALIDATION_ERROR"
-
      }
-
    }
-
  ]
-
 }
 ```
 
