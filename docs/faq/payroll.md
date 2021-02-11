@@ -76,7 +76,7 @@ Recently added to the schema, associated at the employee level but company wide.
 
 **1\. Bug - Contribution Caps - ASAP**
 
-We allow setting of the contribution cap field via the API but this is currently ignored. We are looking to remediate as quickly as possible, but in the meantime recommend changing contribution levels as limits are approached to prevent going over. 
+We allow setting of the contribution cap field via the API but this is currently ignored. We are looking to remediate as quickly as possible, but in the meantime recommend changing contribution levels as limits are approached to prevent going over. Reflect these changes in the UI, but not necisarilly make it editable by the SMB
 
 **2\. Bug - Default Hours - In backlog**
 
@@ -84,8 +84,12 @@ The default hours field is currently returning a static number of a full-time em
 
 **3\. Feature - Combined Contribution Caps - Unknown**
 
-Right now contribution caps are locked to single deductions, we will look to add the ability to set global caps for contribution types such as Roth and Traditional. Being able to make combined limits between deductions will allow for proper handling of retirement contributions
+Right now contribution caps are locked to single deductions, we will look to add the ability to set global caps for contribution types such as Roth and Traditional. Being able to make combined limits between deductions will allow for proper handling of retirement contributions. 
 
-**4\. Feature - Employer Matching Calculations - Unknown**
+**4\. Feature - Proper age calculations - Unknown**
 
-Right now all contributions done by employers are a simple formula based on the base salary of an employee. This makes it difficult of an employee does dollar amount and has a variable paycheck, where the employer contribution will fluctuate. We hope to be able to have a global employer match that supports step-wise contrubtuions, percentages, and profit sharing among other features requested by our payroll partners. 
+Remove the need for a "catchup" and have the calcualtion for default caps be representative of an employees age (based at the end of year for compliance purposes). Ability to pass through a null/empty value to reset caps to default levels. 
+
+**5\. Feature - Employer Matching Calculations - Unknown**
+
+Right now all contributions done by employers are a simple formula based on the base salary of an employee. This makes it difficult of an employee does dollar amount and has a variable paycheck, where the employer contribution will need fluctuate. We hope to be able to have an employer match calculation capability that supports step-wise contribtuions, percentages, and profit sharing among other features requested by our payroll partners. A retirement company tells us (payroll) how match should work. Ideally it should be stored once at a company "plan level" and applied to elections of inidivudal employees.
