@@ -1,3 +1,4 @@
+
 ---
 layout: default
 title: Payroll
@@ -68,4 +69,23 @@ Correct, we do not currently expose the type of hours worked, however you must s
 
 **7\. Are pay scheduled supported?**
 
-We are working to expose that, but it is not done yet. One partner is limiting the supported plans to be ones that only have one pay cycle until this feature is available. 
+Recently added to the schema, associated at the employee level but company wide. 
+
+
+## Outstanding Issues and Timelines
+
+**1\. Bug - Contribution Caps - ASAP**
+
+We allow setting of the contribution cap field via the API but this is currently ignored. We are looking to remediate as quickly as possible, but in the meantime recommend changing contribution levels as limits are approached to prevent going over. 
+
+**2\. Bug - Default Hours - In backlog**
+
+The default hours field is currently returning a static number of a full-time employee despite it being set via the UI at a different level. We will try to make sure this information comes back. 
+
+**3\. Feature - Combined Contribution Caps - Unknown**
+
+Right now contribution caps are locked to single deductions, we will look to add the ability to set global caps for contribution types such as Roth and Traditional. Being able to make combined limits between deductions will allow for proper handling of retirement contributions
+
+**4\. Feature - Employer Matching Calculations - Unknown**
+
+Right now all contributions done by employers are a simple formula based on the base salary of an employee. This makes it difficult of an employee does dollar amount and has a variable paycheck, where the employer contribution will fluctuate. We hope to be able to have a global employer match that supports step-wise contrubtuions, percentages, and profit sharing among other features requested by our payroll partners. 
