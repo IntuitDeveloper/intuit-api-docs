@@ -17,7 +17,7 @@ The API supports reading/writing their string representation.
 This page describes how to configure/read these fields, and their values for transactional entities like Invoice Draft, Sales Receipt Draft, and Estimate Draft.
 Along with that, this page outlines the API for reading all the defined custom fields for a company.
 
-#### Query for reading all fields defined for a company
+### Query for reading all fields defined for a company
 
 ```
 query {
@@ -42,7 +42,7 @@ query {
 ```
 For dropdown type of custom fields, the list of allowedValues is defined so that when the field takes a value, it has to be one of the allowed set.
 
-#### Query for reading a field by ID
+### Query for reading a field by ID
 
 Similar filters can be applied to read based on name, inactive status
 
@@ -69,7 +69,7 @@ query {
  }
 ```
 
-#### Mutation for defining value of field within an Invoice Draft
+### Mutation for defining value of field within an Invoice Draft
 
 **Note: The following mutation shows just the fields required for creating the custom fields object within an Invoice Draft. For all the necessary field for creating an Invoice Draft, refer to the documentation for Invoice Draft.**   
 
@@ -86,7 +86,7 @@ mutation createInvoiceDraft($invoiceDraftDetails: InvoiceDraftInput!) {
 }
 ```
 
-#### Variables
+### Variables
 **Note: The following JSON has just the fields required for custom fields object, for all the necessary variables for an Invoice Draft, refer to the documentation for Invoice Draft.**   
 
 ```
@@ -117,7 +117,7 @@ mutation createInvoiceDraft($invoiceDraftDetails: InvoiceDraftInput!) {
 }
 ```
 
-#### Query for reading custom fields within an Invoice Draft 
+### Query for reading custom fields within an Invoice Draft 
 
 This query retrieves the **string representation** of the values taken by each defined custom field for the Draft Invoice.
 Similar query can be executed for a Sales Receipt Draft or an Estimate Draft.
