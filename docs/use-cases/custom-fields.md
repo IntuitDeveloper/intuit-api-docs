@@ -71,7 +71,8 @@ query {
 
 ### Mutation for defining value of field within an Invoice Draft
 
-**Note: The following mutation shows just the fields required for creating the custom fields object within an Invoice Draft. For all the necessary field for creating an Invoice Draft, refer to the documentation for Invoice Draft.**   
+**Note**  
+The following mutation shows just the fields required for creating the custom fields object within an Invoice Draft. For all the necessary field for creating an Invoice Draft, refer to the documentation for Invoice Draft.   
 
 ```
 mutation createInvoiceDraft($invoiceDraftDetails: InvoiceDraftInput!) {
@@ -87,7 +88,8 @@ mutation createInvoiceDraft($invoiceDraftDetails: InvoiceDraftInput!) {
 ```
 
 ### Variables
-**Note: The following JSON has just the fields required for custom fields object, for all the necessary variables for an Invoice Draft, refer to the documentation for Invoice Draft.**   
+**Note**  
+The following JSON has just the fields required for custom fields object, for all the necessary variables for an Invoice Draft, refer to the documentation for Invoice Draft.
 
 ```
 {
