@@ -10,7 +10,7 @@ parent: Use Cases
 
 Custom fields could be business-specific fields that can be optionally configured. 
 For QuickBooks Online Simple Start, Plus, and Essentials, 3 custom fields can be defined and set.
-For QuickBooks Advance, upto 12 custom fields can be configured.
+For QuickBooks Advance, up to 12 custom fields can be configured.
 
 Currently, QuickBooks Advance use case supports creating custom fields of type Alphanumeric/Numeric/Date/Dropdown.
 The API supports reading/writing their string representation.
@@ -62,7 +62,6 @@ query {
         value
         id
         inactive
-        
       }
     }
   }
@@ -70,9 +69,6 @@ query {
 ```
 
 ### Mutation for defining value of field within an Invoice Draft
-
-**Note**  
-The following mutation shows just the fields required for creating the custom fields object within an Invoice Draft. For all the necessary field for creating an Invoice Draft, refer to the documentation for Invoice Draft.   
 
 ```
 mutation createInvoiceDraft($invoiceDraftDetails: InvoiceDraftInput!) {
@@ -89,7 +85,8 @@ mutation createInvoiceDraft($invoiceDraftDetails: InvoiceDraftInput!) {
 
 ### Variables
 **Note**  
-The following JSON has just the fields required for custom fields object, for all the necessary variables for an Invoice Draft, refer to the documentation for Invoice Draft.
+The following JSON has just the fields required for custom fields object.
+For all the necessary variables for an Invoice Draft, refer to the documentation for Invoice Draft.
 
 ```
 {
@@ -141,7 +138,6 @@ Similar query can be executed for a Sales Receipt Draft or an Estimate Draft.
             type
             subtype
           }
-         
           ... on TextField {
             allowedValues {
               value
