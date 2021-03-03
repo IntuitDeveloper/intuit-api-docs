@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Custom Fields
-nav_order: 5
+nav_order: 6
 parent: Use Cases
 ---
 
@@ -86,7 +86,7 @@ mutation createInvoiceDraft($invoiceDraftDetails: InvoiceDraftInput!) {
 ### Variables
 **Note**  
 The following JSON has just the fields required for custom fields object.
-For all the necessary variables for an Invoice Draft, refer to the documentation for Invoice Draft.
+For all the necessary variables for an Invoice Draft, refer to the documentation for [Invoice Draft](../invoice-draft).
 
 ```
 {
@@ -118,8 +118,8 @@ For all the necessary variables for an Invoice Draft, refer to the documentation
 
 ### Query for reading custom fields within an Invoice Draft 
 
-This query retrieves the **string representation** of the values taken by each defined custom field for the Draft Invoice.
-Similar query can be executed for a Sales Receipt Draft or an Estimate Draft.
+This query retrieves the **string representation** of the values taken by each of the defined custom field for the Draft Invoice.
+A similar query can be executed for a Sales Receipt Draft, or an Estimate Draft.
 ```
 {
   transactionDraft(id: "invoice-id-string") {
