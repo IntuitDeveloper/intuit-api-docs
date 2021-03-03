@@ -118,8 +118,8 @@ For all the necessary variables for an Invoice Draft, refer to the documentation
 
 ### Query for reading custom fields within an Invoice Draft 
 
-This query retrieves the **string representation** of the values taken by each of the defined custom field for the Draft Invoice.
-A similar query can be executed for a Sales Receipt Draft, or an Estimate Draft.
+This query retrieves the **string representation** of the values taken by each of the defined custom field for the [Invoice Draft](../invoice-draft).
+A similar query can be executed for a [Sales Receipt Draft](../salesReceipt-draft), or an [Estimate Draft](../estimate-draft).
 ```
 {
   transactionDraft(id: "invoice-id-string") {
