@@ -7,7 +7,7 @@ parent: Use Cases
 
 ## Customer
 
-### API URL:
+### API URL
 
 The Customer API allows creation and read operations, and is exposed against a new endpoint. Make a POST request to the endpoint below.
 
@@ -18,16 +18,17 @@ Prod: [https://public.api.intuit.com/2020-04/graphql](https://public.api.intuit.
 **Required Headers:**
 
 Content-Type: `application/json`
+
 Authorization: OAuth2 authorization header using scope `com.intuit.quickbooks.accounting`.
 
 
-### Scopes:
+### Scopes
 
 The Customer API is protected against the existing scope **_com.intuit.quickbooks.accounting_**. This is applicable to `mutation` as well as `query`.
 
 Note: Apps require an onboarding before using the Customer API. 
 
-### API request:
+### API request
 
 _Note: Before making the API call, make sure to generate an OAuth token by sending the scope com.intuit.quickbooks.accounting and send the token in the request header._
 
@@ -36,7 +37,7 @@ _Note: Before making the API call, make sure to generate an OAuth token by sendi
 
 This section describes the ability to create a Customer within the Intuit Ecosystem. The `displayName` should have a unique value.
 
-Mutation Query
+Mutation Query:
 
 ```
 mutation createCustomer($input: CreateCustomerInput!) {
@@ -66,10 +67,9 @@ mutation createCustomer($input: CreateCustomerInput!) {
     }
   }
 }
-
 ```
 
-Variables
+Variables:
 
 A Customer has 2 addresses i.e. `BILLING` and `SHIPPING`. If both addresses are the same, include them twice against `contactMethods` with the respective `type`. 
 
@@ -114,7 +114,7 @@ A Customer has 2 addresses i.e. `BILLING` and `SHIPPING`. If both addresses are 
   }
 ```
 
-Sample Response
+Sample Response:
 
 ```
 {
@@ -167,9 +167,10 @@ Sample Response
 
 Customer entity can be queried by `id` or `displayName`.
 
+
 #### Query by ID
 
-Query 
+Query:
 
 ```
 query fetchCustomer($id: String!){
@@ -205,7 +206,7 @@ query fetchCustomer($id: String!){
 }
 ```
 
-Variables
+Variables:
 
 ```
 {
@@ -213,7 +214,7 @@ Variables
 }
 ```
 
-Sample Response 
+Sample Response:
 
 ```
 {
@@ -270,7 +271,7 @@ Sample Response
 #### Query by Name
 
 
-Query
+Query:
 
 ```
 query fetchCustomerByName($displayName: String!){
@@ -308,7 +309,7 @@ query fetchCustomerByName($displayName: String!){
 }
 ```
 
-Variables
+Variables:
 
 ```
 {
@@ -316,7 +317,8 @@ Variables
 }
 ```
 
-Sample Response 
+
+Sample Response:
 
 ```
 {
