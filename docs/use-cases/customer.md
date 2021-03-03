@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Customer
-nav_order: 5
+nav_order: 7
 parent: Use Cases
 ---
 
@@ -13,7 +13,7 @@ The Customer API allows creation and read operations, and is exposed against a n
 
 **Endpoint:**
 
-Prod: [https://public.api.intuit.com/2020-04/graphql](https://public.api.intuit.com/2020-04/graphql)
+Prod: `https://public.api.intuit.com/2020-04/graphql`
 
 **Required Headers:**
 
@@ -75,43 +75,43 @@ A Customer has 2 addresses i.e. `BILLING` and `SHIPPING`. If both addresses are 
 
 ```
 {
-    "input": {
-      "firstName": "Obi-Wan",
-      "lastName": "Kenobi",
-      "displayName": "Obi-Wan Kenobi",
-      "companyName": "Jedi Order",
-      "notes": "some notes here",
-      "website": "https://intuit.com",
-      "email": "obi-wankenobi@intuit.com",
-      "phone": "4084129211",
-      "mobile": "4084121234",
-      "fax": "4084125678",
-      "contactMethods": [
-        {
-          "type": "BILLING",
-          "address": {
-            "streetAddress1": "2535 Garcia Ave",
-            "streetAddress2": null,
-            "city": "Mountain View",
-            "state": "CA",
-            "country": "USA",
-            "zipCode": "94043"
-          }
-        },
-        {
-          "type": "SHIPPING",
-          "address": {
-            "streetAddress1": "2525 Garcia Ave",
-            "streetAddress2": null,
-            "city": "Mountain View",
-            "state": "CA",
-            "country": "USA",
-            "zipCode": "94043"
-          }
+  "input": {
+    "firstName": "Obi-Wan",
+    "lastName": "Kenobi",
+    "displayName": "Obi-Wan Kenobi",
+    "companyName": "Jedi Order",
+    "notes": "some notes here",
+    "website": "https://intuit.com",
+    "email": "obi-wankenobi@intuit.com",
+    "phone": "4084129211",
+    "mobile": "4084121234",
+    "fax": "4084125678",
+    "contactMethods": [
+      {
+        "type": "BILLING",
+        "address": {
+          "streetAddress1": "2535 Garcia Ave",
+          "streetAddress2": null,
+          "city": "Mountain View",
+          "state": "CA",
+          "country": "USA",
+          "zipCode": "94043"
         }
-      ]
-    }
+      },
+      {
+        "type": "SHIPPING",
+        "address": {
+          "streetAddress1": "2525 Garcia Ave",
+          "streetAddress2": null,
+          "city": "Mountain View",
+          "state": "CA",
+          "country": "USA",
+          "zipCode": "94043"
+        }
+      }
+    ]
   }
+}
 ```
 
 Sample Response:
@@ -139,9 +139,9 @@ Sample Response:
             "streetAddress1": "2535 Garcia Ave",
             "streetAddress2": null,
             "city": "Mountain View",
-            "state": "CA",        
-            "country": "US"
-            "zipCode": "94043",
+            "state": "CA",
+            "country": "US",
+            "zipCode": "94043"
           }
         },
         {
@@ -151,7 +151,7 @@ Sample Response:
             "streetAddress1": "2525 Garcia Ave",
             "streetAddress2": null,
             "city": "Mountain View",
-            "state": "CA",        
+            "state": "CA",
             "country": "US",
             "zipCode": "94043"
           }
@@ -173,8 +173,8 @@ Customer entity can be queried by `id` or `displayName`.
 Query:
 
 ```
-query fetchCustomer($id: String!){
-    company {
+query fetchCustomer($id: String!) {
+  company {
     customers (filter: {id: {equals: $id}}) {
       nodes {
         id
@@ -188,16 +188,16 @@ query fetchCustomer($id: String!){
         phone
         mobile
         fax
-        contactMethods{
+        contactMethods {
           type
           primary
-          address{
+          address {
             streetAddress1
             streetAddress2
             city
             state
-            country  
-            zipCode         
+            country 
+            zipCode
           }
         }
       }
@@ -210,7 +210,7 @@ Variables:
 
 ```
 {
-	"id": "djQuMTo5MTMwMzUzMDk0NjEyODE2OjlkNjk5ZTk2MDg:0020719710b14487b54c4cb8e00baa9b3cfa55"
+  "id": "djQuMTo5MTMwMzUzMDk0NjEyODE2OjlkNjk5ZTk2MDg:0020719710b14487b54c4cb8e00baa9b3cfa55"
 }
 ```
 
@@ -274,10 +274,8 @@ Sample Response:
 Query:
 
 ```
-query fetchCustomerByName($displayName: String!){
-    company {
-    id
-    companyName
+query fetchCustomerByName($displayName: String!) {
+  company {
     customers (filter: {displayName: {equals: $displayName}}) {
       nodes {
         id
@@ -291,15 +289,15 @@ query fetchCustomerByName($displayName: String!){
         phone
         mobile
         fax
-        contactMethods{
+        contactMethods {
           type
           primary
-          address{
+          address {
             streetAddress1
             streetAddress2
             city
             state 
-            country      
+            country
             zipCode 
           }
         }
@@ -313,7 +311,7 @@ Variables:
 
 ```
 {
-	"displayName": "Obi-Wan Kenobi"
+  "displayName": "Obi-Wan Kenobi"
 }
 ```
 
