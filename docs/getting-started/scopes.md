@@ -11,7 +11,7 @@ parent: Getting Started
 
 ## Learn about Intuit Ecosystem scopes
 
-In GraphQL, scopes limit what data your app can read and update. Instead of getting broad permissions for everything, set granular permissions so apps only focus on what's necessary.
+In GraphQL, scopes limit what data your app can read and update. Instead of getting broad permissions for everything, set granular permissions so apps only focus on what's necessary. 
 
 Here are the current scopes for Ecosystem API. 
 

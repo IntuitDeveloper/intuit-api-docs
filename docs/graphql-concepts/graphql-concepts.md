@@ -8,7 +8,7 @@ permalink: /docs/graphql-concepts/
 
 # Learn about GraphQL
 
-Intuit Ecosystem API uses the [GraphQL API framework](https://graphql.org). Here's a brief overview.
+Intuit Ecosystem API uses the [GraphQL API framework](https://graphql.org). Here's a brief overview. 
 
 ## What's GraphQL?
 
@@ -26,4 +26,4 @@ All queries go to a single endpoint on the server. The server parses queries and
 - [Use directives to conditionally control return data](https://intuitdeveloper.github.io/intuit-api-docs/docs/graphql-concepts/other-concepts/)
 - [Use pagination to get data subsets](https://intuitdeveloper.github.io/intuit-api-docs/docs/graphql-concepts/other-concepts/)
 
-Also check out [GraphQL.org](https://graphql.org/learn/).
+Also check out [GraphQL.org](https://graphql.org/learn/). 
