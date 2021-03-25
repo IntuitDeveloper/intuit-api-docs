@@ -6,20 +6,24 @@ has_children: true
 permalink: /docs/graphql-concepts/
 ---
 
-# GraphQL Concepts
+# Learn about GraphQL
 
-The following pages describe some GraphQL concepts, like queries and mutations.
+Intuit Ecosystem API uses the [GraphQL API framework](https://graphql.org). Here's a brief overview.
 
-## What is GraphQL?
+## What's GraphQL?
 
-GraphQL is a query language for APIs, which allows clients to ask for the data they need (and nothing more), in the format they want, across multiple resources, in a single request. All requests are served through a single endpoint, so the request body is responsible for expressing the actions for a server to execute on resources.
+GraphQL is an API query language that simplifies client-side requests. Apps can do a lot with a single query. You can can query data across multiple resources, ask for data in a specific format, or get the server to perform several operations. 
 
-> “At its simplest, GraphQL is about asking for specific fields on objects.” [[https://graphql.org](https://graphql.org){:target="_blank"}]
+All queries go to a single endpoint on the server. The server parses queries and only returns the specific requested data in the requested format.
 
-Some of its design principles are that it is:
+### Learn GraphQL concepts 
 
-- __Customizable__: GraphQL allows you to query as many fields from the API as you actually need. There’s no over-fetching or under-fetching.
-- __Strongly typed__: A GraphQL server defines the application’s type system. This makes it easy for tools to validate that a given query is valid and can be executed. 
-- __Introspective__: Information about the schema is available by querying the schema. This provides a way to understand all of the fields and operations available and ensures that clients are always kept up-to-date with changes to the schema. 
-- __Hierarchical__: A GraphQL query is structured just like the data it returns. It naturally follows relationships between fields and helps to present this data in a user interface.
-- __Language-independent__: GraphQL can be used with any backend framework or programming language implementation.
+- [Make queries to fetch data from the server](https://intuitdeveloper.github.io/intuit-api-docs/docs/graphql-concepts/query/)
+- [Use mutations to modify data](https://intuitdeveloper.github.io/intuit-api-docs/docs/graphql-concepts/mutation/)
+- [Use introspection to get the schema](https://intuitdeveloper.github.io/intuit-api-docs/docs/graphql-concepts/introspection/)
+- [Use variables to simplify queries](https://intuitdeveloper.github.io/intuit-api-docs/docs/graphql-concepts/other-concepts/)
+- [Use fragments to reuse sets of fields](https://intuitdeveloper.github.io/intuit-api-docs/docs/graphql-concepts/other-concepts/)
+- [Use directives to conditionally control return data](https://intuitdeveloper.github.io/intuit-api-docs/docs/graphql-concepts/other-concepts/)
+- [Use pagination to get data subsets](https://intuitdeveloper.github.io/intuit-api-docs/docs/graphql-concepts/other-concepts/)
+
+Also check out [GraphQL.org](https://graphql.org/learn/).
