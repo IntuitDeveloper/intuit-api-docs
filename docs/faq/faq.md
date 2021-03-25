@@ -6,6 +6,10 @@ has_children: true
 permalink: /docs/faq/
 ---
 
-## FAQ
+# Intuit Ecosystem API FAQ
 
-We'll share frequently asked questions related to the following domains (accounting, payroll, etc), so you can quickly search for answers to common questions.
+Learn more about our API, policies, and other key info.
+
+- [Learn the differences between our REST and GraphQL API frameworks](https://intuitdeveloper.github.io/intuit-api-docs/docs/faq/graphql-vs-rest/)
+- Adopt GraphQL and Ecosystem API best practices
+- Fix error codes and types
