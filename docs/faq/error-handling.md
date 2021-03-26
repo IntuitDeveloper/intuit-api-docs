@@ -154,10 +154,3 @@ If you get a service error, you can identify the issue and fix it by reading the
     
 
 This will help our teams investigate the issue and find more information on our end.
-
-
-## Learn more 
-
-- GraphQL official documentation: [https://graphql.org/](https://graphql.org/){:target="_blank"}
-- Explore GraphQL: [https://www.graphql.com/](https://www.graphql.com/){:target="_blank"}
-- Course: [https://www.edx.org/course/exploring-graphql-a-query-language-for-api](https://www.edx.org/course/exploring-graphql-a-query-language-for-api){:target="_blank"}
