@@ -2,7 +2,7 @@
 layout: default
 title: Best Practices
 nav_order: 4
-parent: GraphQL Concepts
+parent: FAQ
 ---
 
 ## Best Practices
