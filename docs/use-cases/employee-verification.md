@@ -8,6 +8,12 @@ parent: Use Cases
 
 ## Employee Verification
 
+The following API samples show the different API calls that can be made to verify an employee.  The 3 flows documented below are:
+
+1. [Verification of Employment](#verification-of-employment) (VOE)
+2. [Verification of Income](#verification-of-income) (VOI)
+3. [Social Service Verification](#social-service-verification) (SSV)
+
 ### Verification of Employment
 
 ```
