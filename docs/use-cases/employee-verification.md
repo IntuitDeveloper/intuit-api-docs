@@ -326,7 +326,7 @@ Sample Response
 }
 ```
 
-### Social Services Verification
+### Social Service Verification
 
 ```
 mutation socialServiceVerification {
