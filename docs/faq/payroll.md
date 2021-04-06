@@ -1,4 +1,3 @@
-
 ---
 layout: default
 title: Payroll
@@ -84,7 +83,7 @@ The default hours field is currently returning a static number of a full-time em
 
 **3\. Bug - Webhooks ID filtering - Unknown**
 
-Webhooks send an ID for employee that is different from the one exposed in the schema. The workaround is to pull all employees from the realm that the Webhooks came from. 
+Webhooks sends an ID for employee that is different from the one exposed in the schema. The workaround is to pull all employees from the realm that was included in the Webhooks message. 
 
 **4\. Feature - Editing Other Contributions - In Backlog**
 
