@@ -18,7 +18,7 @@ The following API samples show the different API calls that can be made to verif
 
 ```
 mutation verificationOfEmployment {
-  verifyEmployment(input: {type: VOE, encryptedTaxIdentifier: "enc-SSN-123", employeeIdentifier: "123-emp-id", requestId: "456-req-id"}) {
+  verifyEmployment(input: {type: VERIFICATION_OF_EMPLOYMENT, encryptedTaxIdentifier: "enc-SSN-123", employeeIdentifier: "123-emp-id", requestId: "456-req-id"}) {
     type
     payrollProcessDateTime
     employeeIdentifier
@@ -77,7 +77,7 @@ Sample Response
 {
   "data": {
     "verifyEmployment": {
-      "type": "VOE",
+      "type": "VERIFICATION_OF_EMPLOYMENT",
       "payrollProcessDateTime": "2021-02-23T09:23:11Z",
       "employeeIdentifier": "123-emp-id",
       "employeeInformation": {
@@ -134,7 +134,7 @@ Sample Response
 
 ```
 mutation verificationOfIncome {
-  verifyIncome(input: {type: VOI, encryptedTaxIdentifier: "enc-SSN-123", employeeIdentifier: "123-emp-id", requestId: "456-req-id"}) {
+  verifyIncome(input: {type: VERIFICATION_OF_INCOME, encryptedTaxIdentifier: "enc-SSN-123", employeeIdentifier: "123-emp-id", requestId: "456-req-id"}) {
     type
     payrollProcessDateTime
     employeeIdentifier
@@ -190,9 +190,8 @@ mutation verificationOfIncome {
       lastPaycheckTotalHours
       yearToDatePayInformation {
         year
-        totalGrossWages
-        grossBaseWages
-        grossOtherWages {
+        totalGrossCompensation
+        grossCompensation {
           amount
           type
         }
@@ -208,7 +207,7 @@ Sample Response
 {
   "data": {
     "verifyIncome": {
-      "type": "VOI",
+      "type": "VERIFICATION_OF_INCOME",
       "payrollProcessDateTime": "2021-02-23T09:23:11Z",
       "employeeIdentifier": "123-emp-id",
       "employeeInformation": {
@@ -258,63 +257,60 @@ Sample Response
       },
       "payrollInformation": {
         "payFrequency": "BIWEEKLY",
-        "payRate": 55000.00,
+        "payRate": 55000,
         "payType": "HOURLY",
-        "lastPaycheckTotalHours": 160.0,
+        "lastPaycheckTotalHours": 160,
         "yearToDatePayInformation": [
           {
             "year": "2021",
-            "totalGrossWages": 67000.00,
-            "grossBaseWages": 55000.00,
-            "grossOtherWages": [
+            "totalGrossCompensation": 67000,
+            "grossCompensation": [
               {
-                "amount": 9000.00,
+                "amount": 9000,
                 "type": "Bonus Wage"
               },
               {
-                "amount": 2000.00,
+                "amount": 2000,
                 "type": "Overtime Wage"
               },
               {
-                "amount": 1000.00,
+                "amount": 1000,
                 "type": "Holiday Wage"
               }
             ]
           },
           {
             "year": "2020",
-            "totalGrossWages": 67000.00,
-            "grossBaseWages": 55000.00,
-            "grossOtherWages": [
+            "totalGrossCompensation": 67000,
+            "grossCompensation": [
               {
-                "amount": 9000.00,
+                "amount": 9000,
                 "type": "Bonus Wage"
               },
               {
-                "amount": 2000.00,
+                "amount": 2000,
                 "type": "Overtime Wage"
               },
               {
-                "amount": 1000.00,
+                "amount": 1000,
                 "type": "Holiday Wage"
               }
             ]
           },
           {
             "year": "2019",
-            "totalGrossWages": 67000.00,
-            "grossBaseWages": 55000.00,
-            "grossOtherWages": [
+            "totalGrossCompensation": 67000,
+            "grossCompensation": [
               {
-                "amount": 9000.00,
+                "amount": 9000,
                 "type": "Bonus Wage"
               },
               {
-                "amount": 2000.00,
+                "amount": 2000,
                 "type": "Overtime Wage"
               },
               {
-                "amount": 1000.00,
+                "amount": 1000,
                 "type": "Holiday Wage"
               }
             ]
@@ -330,7 +326,7 @@ Sample Response
 
 ```
 mutation socialServiceVerification {
-  verifyIncome(input: {type: SSV, encryptedTaxIdentifier: "enc-SSN-123", employeeIdentifier: "123-emp-id", requestId: "456-req-id"}) {
+  verifyIncome(input: {type: SOCIAL_SERVICE_VERIFICATION, encryptedTaxIdentifier: "enc-SSN-123", employeeIdentifier: "123-emp-id", requestId: "456-req-id"}) {
     type
     payrollProcessDateTime
     employeeIdentifier
@@ -390,16 +386,16 @@ mutation socialServiceVerification {
       lastPaycheckTotalHours
       yearToDatePayInformation {
         year
-        totalGrossWages
+        totalGrossCompensation
       }
       payPeriodInformation {
         payDate
         startDate
         endDate
         hoursWorked
-        grossWages
-        netWages
-        yearToDateGrossWages
+        grossCompensation
+        netCompensation
+        yearToDateGrossCompensation
       }
     }
   }
@@ -412,7 +408,7 @@ Sample Response
 {
   "data": {
     "verifyIncome": {
-      "type": "SSV",
+      "type": "SOCIAL_SERVICE_VERIFICATION",
       "payrollProcessDateTime": "2021-02-23T09:23:11Z",
       "employeeIdentifier": "123-emp-id",
       "employeeInformation": {
@@ -466,21 +462,21 @@ Sample Response
       },
       "payrollInformation": {
         "payFrequency": "BIWEEKLY",
-        "payRate": 55000.00,
+        "payRate": 55000,
         "payType": "HOURLY",
-        "lastPaycheckTotalHours": 160.0,
+        "lastPaycheckTotalHours": 160,
         "yearToDatePayInformation": [
           {
             "year": "2021",
-            "totalGrossWages": 67000.00
+            "totalGrossCompensation": 67000
           },
           {
             "year": "2020",
-            "totalGrossWages": 67000.00
+            "totalGrossCompensation": 67000
           },
           {
             "year": "2019",
-            "totalGrossWages": 67000.00
+            "totalGrossCompensation": 67000
           }
         ],
         "payPeriodInformation": [
@@ -488,37 +484,37 @@ Sample Response
             "payDate": "2021-03-19",
             "startDate": "2021-03-01",
             "endDate": "2021-03-15",
-            "hoursWorked": 40.0,
-            "grossWages": 5000.00,
-            "netWages": 2000.00,
-            "yearToDateGrossWages": 10000.00
+            "hoursWorked": 40,
+            "grossCompensation": 5000,
+            "netCompensation": 2000,
+            "yearToDateGrossCompensation": 10000
           },
           {
             "payDate": "2021-04-02",
             "startDate": "2021-03-15",
             "endDate": "2021-03-29",
-            "hoursWorked": 40.0,
-            "grossWages": 5000.00,
-            "netWages": 2000.00,
-            "yearToDateGrossWages": 10000.00
+            "hoursWorked": 40,
+            "grossCompensation": 5000,
+            "netCompensation": 2000,
+            "yearToDateGrossCompensation": 10000
           },
           {
             "payDate": "2021-04-16",
             "startDate": "2021-03-29",
             "endDate": "2021-04-12",
-            "hoursWorked": 40.0,
-            "grossWages": 5000.00,
-            "netWages": 2000.00,
-            "yearToDateGrossWages": 10000.00
+            "hoursWorked": 40,
+            "grossCompensation": 5000,
+            "netCompensation": 2000,
+            "yearToDateGrossCompensation": 10000
           },
           {
             "payDate": "2021-04-23",
             "startDate": "2021-04-12",
             "endDate": "2021-04-19",
-            "hoursWorked": 40.0,
-            "grossWages": 5000.00,
-            "netWages": 2000.00,
-            "yearToDateGrossWages": 10000.00
+            "hoursWorked": 40,
+            "grossCompensation": 5000,
+            "netCompensation": 2000,
+            "yearToDateGrossCompensation": 10000
           }
         ]
       }
