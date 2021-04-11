@@ -23,3 +23,9 @@ Some of its design principles are that it is:
 - __Introspective__: Information about the schema is available by querying the schema. This provides a way to understand all of the fields and operations available and ensures that clients are always kept up-to-date with changes to the schema. 
 - __Hierarchical__: A GraphQL query is structured just like the data it returns. It naturally follows relationships between fields and helps to present this data in a user interface.
 - __Language-independent__: GraphQL can be used with any backend framework or programming language implementation.
+
+## Learn more about GraphQL 
+
+- GraphQL official documentation: [https://graphql.org/](https://graphql.org/){:target="_blank"}
+- Explore GraphQL: [https://www.graphql.com/](https://www.graphql.com/){:target="_blank"}
+- Course: [https://www.edx.org/course/exploring-graphql-a-query-language-for-api](https://www.edx.org/course/exploring-graphql-a-query-language-for-api){:target="_blank"}

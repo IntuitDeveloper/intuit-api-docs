@@ -7,7 +7,7 @@ parent: Getting Started
 
 # Set up and authenticate your app
 
-Let's get started. Intuit Ecosystem API gives you incredible flexibility to build creative solutions around key business problems. You can create client or server apps from the ground up, or start with [common use cases](https://intuitdeveloper.github.io/intuit-api-docs/docs/use-cases/). 
+Let's get started. Intuit Ecosystem API gives you incredible flexibility to build creative solutions around key business problems. You can create client or server apps from the ground up, or [start with common use cases](https://intuitdeveloper.github.io/intuit-api-docs/docs/use-cases/). 
 
 Here's what you need to get up and running.
 
@@ -22,9 +22,9 @@ If you're new, check out these resources so you can develop with confidence:
 
 ## Step 2: Get a QuickBooks Online test company
 
-If you don't already have one, set up a QuickBooks Online company so you can test code as you develop. 
+If you don't have one already, create a QuickBooks Online company to test code with as you develop. 
  
-Your test company may need specific features for GraphQL. Will your app use Payroll data? Or fetch payment info? Reach out to your Intuit point of contact to get these features.
+Your test company may need specific features. Will your app use Payroll data? Or fetch payment info? Reach out to your Intuit point of contact so we can get you these features.
 
 ## Step 3: Get familiar with data scopes
 

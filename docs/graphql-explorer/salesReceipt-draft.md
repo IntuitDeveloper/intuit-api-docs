@@ -1,18 +1,17 @@
 ---
 layout: default
-title: Estimate Draft
-nav_order: 4
-parent: Use Cases
+title: Sales Receipt Draft
+nav_order: 2
+parent: GraphQL Explorer
 ---
 
-
-### Estimate Draft
+### Sales Receipt Draft
 
 #### Mutation
 
 ```
-mutation createEstimateDraft($estimateDraftDetails: EstimateDraftInput!) {
-  createEstimateDraft(estimateDraftDetails: $estimateDraftDetails) {
+mutation createSalesReceiptDraft($salesReceiptDraftDetails: SalesReceiptDraftInput!) {
+  createSalesReceiptDraft(salesReceiptDraftDetails: $salesReceiptDraftDetails) {
     id
     transactionDraftStatus
   }
@@ -22,7 +21,7 @@ Variables
 
 ```
 {
-	"estimateDraftDetails": {
+	"salesReceiptDraftDetails": {
 		"externalMetadata": [
 			{
 				"name": "account_id",
@@ -35,8 +34,7 @@ Variables
 		],
 		"transactionDate": "2020-09-16",
 		"customer": {
-			"id": "123",
-			"displayName": "HubSpot Customer"
+			"displayName": "Test Customer"
 		},
 		"currency": {
 			"name": "USD",
@@ -64,12 +62,8 @@ Variables
 					"id": "302300000000001842721",
 					"name": "Abcd"
 				}
-			},
-			{
-				"description": "Description only line"
 			}
 		],
-		"expirationDate": "2020-07-20",
 		"emailDeliveryInfo": {
 			"to": [
 				"a@to.com",
@@ -84,7 +78,7 @@ Variables
 				"b@bcc.com"
 			]
 		},
-		"referenceNumber": "Test 123",
+		"referenceNumber": "SomeReferenceNumber",
 		"shipping": {
 			"shipDate": "2020-12-25",
 			"shipVia": "FedEx1234",
@@ -94,23 +88,28 @@ Variables
 			"shipFromAddress": {
 				"freeFormAddressLine": "2700 Coast Ave., Mountain View, CA, 94043, USA"
 			},
-			"trackingNumber": "1234567"
+			"trackingNumber": "SomeTrackingNumber"
 		},
 		"department": {
-			"id": "Dept 123",
-			"name": "Dept 123"
+			"id": "1",
+			"name": "SomeDepartment"
 		},
 		"billingAddress": {
 			"freeFormAddressLine": "1075 Space Parkway\r\nMountain View, CA 94043\r\nUS"
 		},
-		"acceptStatus": {
-			"status": "PENDING",
-			"by": "Rohit1234",
-			"date": "2020-12-17"
-		},
 		"class": {
-			"id": "Misc",
-			"name": "Misc"
+			"id": "302300000000001842721",
+			"name": "Abcd"
+		},
+		"account": {
+			"id": "123",
+			"name": "Undeposited Funds"
+		},
+		"payment": {
+			"paymentMethod": {
+				"type": "CASH",
+				"name": "Cash"
+			}
 		},
 		"discount": {
 			"value": 10,
@@ -126,12 +125,11 @@ Variables
 ```
 {
   transactionDraft(id: "<id>") {
-    ... on EstimateDraft {
+    ... on SalesReceiptDraft {
       id
       transactionDraftStatus
-      estimateDraftDetails {
+      salesReceiptDraftDetails {
         transactionDate
-        expirationDate
         amount
         customer {
           id
@@ -142,18 +140,13 @@ Variables
           currency
           exchangeRate
         }
-        acceptStatus {
-          status
-          by
-          date
-        }
         privateMemo
         customerMemo
         itemLines {
           sequence
           description
-          serviceDate
           amount
+          serviceDate
           item {
             id
             name
@@ -183,6 +176,9 @@ Variables
           }
           trackingNumber
         }
+        billingAddress {
+          freeFormAddressLine
+        }
         department {
           id
           name
@@ -190,6 +186,18 @@ Variables
         class {
           id
           name
+        }
+        payment {
+          paymentMethod {
+            id
+            name
+            type
+          }
+        }
+        account {
+          id
+          name
+          fullyQualifiedName
         }
         discount {
           percentage
@@ -199,6 +207,5 @@ Variables
     }
   }
 }
-
 
 ```
