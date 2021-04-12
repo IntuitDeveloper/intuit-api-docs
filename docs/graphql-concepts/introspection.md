@@ -5,16 +5,17 @@ nav_order: 3
 parent: GraphQL Concepts
 ---
 
-## Use directives to control server responses 
+# Get schema info with introspection
 
-Directives let you conditionally control which keys and values the server returns in it's response. 
+Introspection is a unqie feature of GraphQL that lets you query the server any time to see the current schema. 
 
-Instead of adjusting queries to add or remove fields, use directives to only see the data you currently need. You conditionally include or skip fields based on the argument passed to the directive.    
+When you make an introspection query, the server returns the entire schema. This includes all possible fields, data types, and their relationships. It also tells you what operations the server supports.
 
+Introspection is useful for creating and keeping queries up-to-date. Whenever you need to validate your code, simply use introspection to check the current schema. 
 
-How to create directives 
-For Intuit Ecosystem API, you can use the core GraphQL @include and @skip directives. These both use Boolean arguments. 
-Here's an example query with @include for fieldName2.
+## How to create an introspection query
+
+Use this query any time to get the current Intuit Ecosystem API schema:
 
 ```
 query {
@@ -28,3 +29,6 @@ query {
   }
 }
 ```
+The server will return what's currently available for Intuit Ecosystem API. Keep in mind, [your app's scopes](../../getting-started/scopes/) determine what data you can access.
+
+Learn more about [introspection from GraphQL.org](https://graphql.org/learn/introspection/).

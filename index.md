@@ -6,16 +6,22 @@ description: "Documentation for Intuit APIs"
 permalink: /
 ---
 
-_Note: This site is in alpha and by invite-only for Intuit partners._
+# Welcome to Intuit Ecosystem API
 
-## Welcome to Intuit GraphQL API Documentation
+Intuit Ecosystem API is our newest platform. It utilizes the [GraphQL framework](https://graphql.org/) and makes developing focused solutions around specific accounting problems easier than ever.
 
-Intuit's Ecosystem API is a new offering for developers wanting to integrate with the Intuit business ecosystem. This API is a GraphQL API that addresses many of the challenges of the previous versions, has a simpler schema and is more secure. Our guiding principles have been to make this a platform that delivers business domain use-case based functionality with granular access control and a simplified schema to enable deep integrations with Intuit products. 
+Intuit Ecosystem API offers several advantages over our existing [Rest-based QuickBooks Online Accounting API](https://developer.intuit.com/app/developer/qbo/docs/develop/rest-api-features). In general, it's more dynamic, requires fewer queries, and allows granular data scoping.
 
-### Getting Started
+## Get Started
 
 The below tracks can help you get started using Intuit's Ecosystem API, depending on your starting preferences.
 
-- Want to dive right in to making API calls?  [Click here](./docs/getting-started)!
-- Want to learn more about GraphQL concepts?  [Click here](./docs/graphql-concepts)!
-- Want to learn about Intuit domain-specific use cases, like 401k or user roles?  [Click here](./docs/use-cases)!
+Learn the about QuickBooks API frameworks
+Set up and start developing
+Build apps around specific use cases
+
+- [Set up and start developing](.docs/getting-started)
+- [Learn about about GraphQL](./docs/graphql-concepts)
+- [Build apps around specific use cases](./docs/use-cases)
+
+_Note: Intuit Ecosystep API is in alpha and by invite-only for Intuit partners._

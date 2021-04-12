@@ -6,6 +6,7 @@ parent: GraphQL Concepts
 ---
 
 # Use pagination to fetch subsets of data
+
 Pagination lets you quickly search and request subsets of data within larger datasets. 
 
 In GraphQL, you can use the **pageInfo** object and cursor-based pagination (`endCursor` and `startCursor`) to set criteria or collect data after a certain point in the response. This typically yields smaller payloads and faster server responses.
@@ -31,8 +32,8 @@ query
       field2
     }
   }
-```
+```ß
 
-In this case, the server will only count records following the `cursorValue`. **Tip**: You can [use introspection](../../introspection/) to see which fields support pagination.
+In this case, the server will only count records following the `cursorValue`. **Tip**: You can [use introspection](../../graphql-concepts/introspection/) to see which fields support pagination.
 
 Learn more about [pagination from GraphQL.org](https://graphql.org/learn/pagination/).

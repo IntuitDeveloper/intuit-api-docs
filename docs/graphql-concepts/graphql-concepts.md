@@ -1,31 +1,31 @@
 ---
 layout: default
-title: GraphQL Concepts
+title: Learn GraphQL Concepts
 nav_order: 3
 has_children: true
 permalink: /docs/graphql-concepts/
 ---
 
-# GraphQL Concepts
+# Learn about GraphQL
 
-The following pages describe some GraphQL concepts, like queries and mutations.
+Intuit Ecosystem API uses the [GraphQL API framework](https://graphql.org/). Here's a brief overview of GraphQL.
 
-## What is GraphQL?
+## What's GraphQL?
 
-GraphQL is a query language for APIs, which allows clients to ask for the data they need (and nothing more), in the format they want, across multiple resources, in a single request. All requests are served through a single endpoint, so the request body is responsible for expressing the actions for a server to execute on resources.
+GraphQL is an API query language that simplifies client-side requests. Apps can do a lot with a single query: it can query data across multiple resources and entities, request data in a specific format, or get the server to perform several operations. 
 
-> “At its simplest, GraphQL is about asking for specific fields on objects.” [[https://graphql.org](https://graphql.org){:target="_blank"}]
+> “At its simplest, GraphQL is about asking for specific fields on objects.” [GraphQL.org](https://graphql.org){:target="_blank"}]
 
-Some of its design principles are that it is:
+All queries go to a single endpoint on the server. The server parses queries and only returns the requested data in the requested format. 
 
-- __Customizable__: GraphQL allows you to query as many fields from the API as you actually need. There’s no over-fetching or under-fetching.
-- __Strongly typed__: A GraphQL server defines the application’s type system. This makes it easy for tools to validate that a given query is valid and can be executed. 
-- __Introspective__: Information about the schema is available by querying the schema. This provides a way to understand all of the fields and operations available and ensures that clients are always kept up-to-date with changes to the schema. 
-- __Hierarchical__: A GraphQL query is structured just like the data it returns. It naturally follows relationships between fields and helps to present this data in a user interface.
-- __Language-independent__: GraphQL can be used with any backend framework or programming language implementation.
+## What are some of GraphQL's advantages?
 
-## Learn more about GraphQL 
+- **Get only the data you need**: GraphQL queries are highly customizable. You specify the fields and values you want the server to return. Apps only get the data it queries for - there’s no over-fetching or under-fetching.
+- **Develop with any language**: GraphQL is language-independent. You can use it with any backend framework or programming language implementation.
+- **Validate queries as you work**: GraphQL servers define the type system. That means everything about it is part of the schema. You can validate queries as you create them with [testing tools](https://intuitdeveloper.github.io/intuit-api-docs/docs/getting-started/graphql-ide/) or [introspection](https://intuitdeveloper.github.io/intuit-api-docs/docs/graphql-concepts/introspection/). You can also let the server validate requests against the current schema.
+- **Always have the current schema**: GraphQL is self-documenting. You can [make an introspection query](https://intuitdeveloper.github.io/intuit-api-docs/docs/graphql-concepts/introspection/) any time you want to see all possible fields and operations for the latest version. 
+- **Create simple data hierarchies**: GraphQL requests and responses are structured the same way and naturally follow relationships between attributes.
 
-- GraphQL official documentation: [https://graphql.org/](https://graphql.org/){:target="_blank"}
-- Explore GraphQL: [https://www.graphql.com/](https://www.graphql.com/){:target="_blank"}
-- Course: [https://www.edx.org/course/exploring-graphql-a-query-language-for-api](https://www.edx.org/course/exploring-graphql-a-query-language-for-api){:target="_blank"}
+Check out [GraphQL.org](https://graphql.org/){:target="_blank"} for a deepr dive.
+
+Also check out: [courses from edx.org](https://www.edx.org/course/exploring-graphql-a-query-language-for-apis?index=product&queryID=dce5c7752e45f9b4ffb33a5af4d0c25e&position=1){:target="_blank"}.

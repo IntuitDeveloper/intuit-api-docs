@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Authentication
+title: Set up and authenticate your app
 nav_order: 1
 parent: Getting Started
 ---
@@ -53,7 +53,7 @@ Get your app's credentials:
 
 Use the Client ID and Client Secret to [set up OAuth2.0](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0). This process grants access tokens so your app can make requests and get responses from our servers.
 
-| **Tip**: Want to try the authentication process with demo code? Check out the [OAuth 2.0 playground](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0-playground). |
+> **Tip**: Want to try the authentication process with demo code? Check out the [OAuth 2.0 playground](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0-playground).
 
 ## Step 6: Test GraphQL queries
 

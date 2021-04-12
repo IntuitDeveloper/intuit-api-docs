@@ -6,6 +6,7 @@ parent: GraphQL Concepts
 ---
 
 # Use directives to control server responses 
+
 Directives let you conditionally control which fields and values the server returns in it's response. 
 
 Instead of adjusting queries to add or remove fields, use directives to only see the data you currently need. You include or skip fields based on the argument you pass to the directive.    
