@@ -53,7 +53,7 @@ mutation verificationOfEmployment {
       }
     }
     employmentInformation {
-      employmentStatus
+      active
       originalHireDate
       hireDate
       terminationDate
@@ -111,7 +111,7 @@ Sample Response
         }
       },
       "employmentInformation": {
-        "employmentStatus": "ACTIVE",
+        "active": true,
         "originalHireDate": "2018-11-03",
         "hireDate": "2020-11-03",
         "terminationDate": "2019-11-03",
@@ -169,7 +169,7 @@ mutation verificationOfIncome {
       }
     }
     employmentInformation {
-      employmentStatus
+      active
       originalHireDate
       hireDate
       terminationDate
@@ -242,7 +242,7 @@ Sample Response
         }
       },
       "employmentInformation": {
-        "employmentStatus": "ACTIVE",
+        "active": true,
         "originalHireDate": "2018-11-03",
         "hireDate": "2020-11-03",
         "terminationDate": "2019-11-03",
@@ -339,7 +339,7 @@ mutation socialServiceVerification {
       }
     }
     employmentInformation {
-      employmentStatus
+      active
       originalHireDate
       hireDate
       terminationDate
@@ -420,7 +420,7 @@ Sample Response
         }
       },
       "employmentInformation": {
-        "employmentStatus": "ACTIVE",
+        "active": true,
         "originalHireDate": "2018-11-03",
         "hireDate": "2020-11-03",
         "terminationDate": "2019-11-03",
