@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Learn GraphQL Concepts
+title: GraphQL Concepts
 nav_order: 3
 has_children: true
 permalink: /docs/graphql-concepts/
@@ -28,4 +28,4 @@ All queries go to a single endpoint on the server. The server parses queries and
 
 Check out [GraphQL.org](https://graphql.org/){:target="_blank"} for a deepr dive.
 
-Also check out: [courses from edx.org](https://www.edx.org/course/exploring-graphql-a-query-language-for-apis?index=product&queryID=dce5c7752e45f9b4ffb33a5af4d0c25e&position=1){:target="_blank"}.
+Also check out: [courses from edx.org](https://www.edx.org/course/exploring-graphql-a-query-language-for-apis){:target="_blank"}.

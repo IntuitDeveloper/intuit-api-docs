@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Set up and authenticate your app
+title: Authenticate your app
 nav_order: 1
 parent: Getting Started
 ---
@@ -57,7 +57,7 @@ Use the Client ID and Client Secret to [set up OAuth2.0](https://developer.intui
 
 ## Step 6: Test GraphQL queries
 
-Use a [GraphQL Integrated Developer Environment (IDE)](https://intuitdeveloper.github.io/intuit-api-docs/docs/getting-started/graphql-ide/) to test queries during development. You can use Insomnia or GraphiQL.
+We suggest using a [GraphQL Integrated Developer Environment (IDE)](https://intuitdeveloper.github.io/intuit-api-docs/docs/getting-started/graphql-ide/), like Insomnia or GraphiQL, to test queries during development.
 
 ## Step 7: Develop your app
 

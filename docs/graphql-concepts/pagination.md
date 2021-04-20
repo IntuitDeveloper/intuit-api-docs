@@ -32,7 +32,7 @@ query
       field2
     }
   }
-```ß
+```
 
 In this case, the server will only count records following the `cursorValue`. **Tip**: You can [use introspection](../../graphql-concepts/introspection/) to see which fields support pagination.
 

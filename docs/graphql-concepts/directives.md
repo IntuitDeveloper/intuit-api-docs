@@ -12,7 +12,7 @@ Directives let you conditionally control which fields and values the server retu
 Instead of adjusting queries to add or remove fields, use directives to only see the data you currently need. You include or skip fields based on the argument you pass to the directive.    
 
 ## How to create directives 
-For Intuit Ecosystem API, use the core GraphQL **@include** and **@ski** directives. Both use Boolean arguments.
+For Intuit Ecosystem API, use the core GraphQL **@include** and **@skip** directives. Both use Boolean arguments.
 
 Here's an example query with **@include** for `fieldName2`.
 
