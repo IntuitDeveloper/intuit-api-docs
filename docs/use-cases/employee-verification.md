@@ -13,12 +13,13 @@ The following API samples show the different API calls that can be made to verif
 1. [Verification of Employment](#verification-of-employment) (VOE)
 2. [Verification of Income](#verification-of-income) (VOI)
 3. [Social Service Verification](#social-service-verification) (SSV)
+4. [Verification Data Feed URL](#verification-data-feed-url) (Cache File)
 
 ### Verification of Employment
 
 ```
 mutation verificationOfEmployment {
-  verifyEmployment(input: {type: VERIFICATION_OF_EMPLOYMENT, encryptedTaxIdentifier: "enc-SSN-123", employeeIdentifier: "123-emp-id", requestId: "456-req-id"}) {
+  verifyEmployment(input: {type: VERIFICATION_OF_EMPLOYMENT, encryptedTaxIdentifier: "enc-SSN-123", saltIdentifier: "saltId-123", employeeIdentifier: "123-emp-id", requestId: "456-req-id"}) {
     type
     payDate
     employeeIdentifier
@@ -134,7 +135,7 @@ Sample Response
 
 ```
 mutation verificationOfIncome {
-  verifyIncome(input: {type: VERIFICATION_OF_INCOME, encryptedTaxIdentifier: "enc-SSN-123", employeeIdentifier: "123-emp-id", requestId: "456-req-id"}) {
+  verifyIncome(input: {type: VERIFICATION_OF_INCOME, encryptedTaxIdentifier: "enc-SSN-123", saltIdentifier: "saltId-123", employeeIdentifier: "123-emp-id", requestId: "456-req-id"}) {
     type
     payDate
     employeeIdentifier
@@ -258,35 +259,35 @@ Sample Response
       },
       "payrollInformation": {
         "payFrequency": "BIWEEKLY",
-        "payRate": 55000.00,
+        "payRate": 55000,
         "payType": "HOURLY",
-        "lastPaycheckTotalHours": 160.0,
+        "lastPaycheckTotalHours": 160,
         "yearToDatePayInformation": [
           {
             "year": "2021",
-            "totalGrossCompensation": 67000.00,
-            "grossBaseCompensation": 55000.00,
-            "grossOvertimeCompensation": 2000.00,
-            "grossBonusCompensation": 9000.00,
-            "grossCommissionCompensation": 1000.00,
+            "totalGrossCompensation": 67000,
+            "grossBaseCompensation": 55000,
+            "grossOvertimeCompensation": 2000,
+            "grossBonusCompensation": 9000,
+            "grossCommissionCompensation": 1000,
             "grossOtherCompensation": 0
           },
           {
             "year": "2020",
-            "totalGrossCompensation": 67000.00,
-            "grossBaseCompensation": 55000.00,
-            "grossOvertimeCompensation": 2000.00,
-            "grossBonusCompensation": 9000.00,
-            "grossCommissionCompensation": 1000.00,
+            "totalGrossCompensation": 67000,
+            "grossBaseCompensation": 55000,
+            "grossOvertimeCompensation": 2000,
+            "grossBonusCompensation": 9000,
+            "grossCommissionCompensation": 1000,
             "grossOtherCompensation": 0
           },
           {
             "year": "2019",
-            "totalGrossCompensation": 67000.00,
-            "grossBaseCompensation": 55000.00,
-            "grossOvertimeCompensation": 2000.00,
-            "grossBonusCompensation": 9000.00,
-            "grossCommissionCompensation": 1000.00,
+            "totalGrossCompensation": 67000,
+            "grossBaseCompensation": 55000,
+            "grossOvertimeCompensation": 2000,
+            "grossBonusCompensation": 9000,
+            "grossCommissionCompensation": 1000,
             "grossOtherCompensation": 0
           }
         ]
@@ -300,7 +301,7 @@ Sample Response
 
 ```
 mutation socialServiceVerification {
-  verifyIncome(input: {type: SOCIAL_SERVICE_VERIFICATION, encryptedTaxIdentifier: "enc-SSN-123", employeeIdentifier: "123-emp-id", requestId: "456-req-id"}) {
+  verifyIncome(input: {type: SOCIAL_SERVICE_VERIFICATION, encryptedTaxIdentifier: "enc-SSN-123", saltIdentifier: "saltId-123", employeeIdentifier: "123-emp-id", requestId: "456-req-id"}) {
     type
     payDate
     employeeIdentifier
@@ -436,21 +437,21 @@ Sample Response
       },
       "payrollInformation": {
         "payFrequency": "BIWEEKLY",
-        "payRate": 55000.00,
+        "payRate": 55000,
         "payType": "HOURLY",
-        "lastPaycheckTotalHours": 160.0,
+        "lastPaycheckTotalHours": 160,
         "yearToDatePayInformation": [
           {
             "year": "2021",
-            "totalGrossCompensation": 67000.00
+            "totalGrossCompensation": 67000
           },
           {
             "year": "2020",
-            "totalGrossCompensation": 67000.00
+            "totalGrossCompensation": 67000
           },
           {
             "year": "2019",
-            "totalGrossCompensation": 67000.00
+            "totalGrossCompensation": 67000
           }
         ],
         "payPeriodInformation": [
@@ -458,40 +459,75 @@ Sample Response
             "payDate": "2021-03-19",
             "startDate": "2021-03-01",
             "endDate": "2021-03-15",
-            "hoursWorked": 40.0,
-            "grossCompensation": 5000.00,
-            "netCompensation": 2000.00,
-            "yearToDateGrossCompensation": 10000.00
+            "hoursWorked": 40,
+            "grossCompensation": 5000,
+            "netCompensation": 2000,
+            "yearToDateGrossCompensation": 10000
           },
           {
             "payDate": "2021-04-02",
             "startDate": "2021-03-15",
             "endDate": "2021-03-29",
-            "hoursWorked": 40.0,
-            "grossCompensation": 5000.00,
-            "netCompensation": 2000.00,
-            "yearToDateGrossCompensation": 10000.00
+            "hoursWorked": 40,
+            "grossCompensation": 5000,
+            "netCompensation": 2000,
+            "yearToDateGrossCompensation": 10000
           },
           {
             "payDate": "2021-04-16",
             "startDate": "2021-03-29",
             "endDate": "2021-04-12",
-            "hoursWorked": 40.0,
-            "grossCompensation": 5000.00,
-            "netCompensation": 2000.00,
-            "yearToDateGrossCompensation": 10000.00
+            "hoursWorked": 40,
+            "grossCompensation": 5000,
+            "netCompensation": 2000,
+            "yearToDateGrossCompensation": 10000
           },
           {
             "payDate": "2021-04-23",
             "startDate": "2021-04-12",
             "endDate": "2021-04-19",
-            "hoursWorked": 40.0,
-            "grossCompensation": 5000.00,
-            "netCompensation": 2000.00,
-            "yearToDateGrossCompensation": 10000.00
+            "hoursWorked": 40,
+            "grossCompensation": 5000,
+            "netCompensation": 2000,
+            "yearToDateGrossCompensation": 10000
           }
         ]
       }
+    }
+  }
+}
+```
+
+### Verification Data Feed URL
+
+```
+mutation verificationDataFeedURL {
+  generateEmployeeVerificationDataFeedUrl {
+    fileName
+    url
+    expiry
+    fileGeneratedTimestamp
+    recordCount
+    saltIdentifier
+    encryptedSalt
+    publicKeyName
+  }
+}
+```
+
+Sample Response
+```
+{
+  "data": {
+    "generateEmployeeVerificationDataFeedUrl": {
+      "fileName": "Intuit_Cache.txt",
+      "url": "https://intuit-qbo-prod-4.s3.amazonaws.com/123146276328424/attachments/4e61e3c9-d0b9-4b69-b407-e49fb0202eb9Intuit_Cache.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20210303T212431Z&X-Amz-SignedHeaders=host&X-Amz-Expires=900&X-Amz-Credential=AKIA3V3MBG4KOIC66PTF%2F20210303%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=392da39ba07d4286a9ee055aed4833202dfdf4eca8597615cb82e0663eb10783",
+      "expiry": "2021-04-22T11:23:11Z",
+      "fileGeneratedTimestamp": "2021-04-22T09:23:11Z",
+      "recordCount": 1000000,
+      "saltIdentifier": "12w9523523",
+      "encryptedSalt": "wr3wr32rwrf3f3r23rwr2rn23rij23oir2oi3rhsfwerwerwerfwerfwewewer",
+      "publicKeyName": "12w9523523"
     }
   }
 }
