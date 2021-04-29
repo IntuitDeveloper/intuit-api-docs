@@ -43,6 +43,7 @@ mutation verificationOfEmployment {
       }
     }
     employerInformation {
+      employerIdentifier
       legalName
       legalAddress {
         streetAddress1
@@ -101,6 +102,7 @@ Sample Response
         }
       },
       "employerInformation": {
+        "employerIdentifier": "3691470",
         "legalName": "Alice Art Shop",
         "legalAddress": {
           "streetAddress1": "321 Center Street",
@@ -159,6 +161,7 @@ mutation verificationOfIncome {
       }
     }
     employerInformation {
+      employerIdentifier
       legalName
       legalAddress {
         streetAddress1
@@ -232,6 +235,7 @@ Sample Response
         }
       },
       "employerInformation": {
+        "employerIdentifier": "3691470",
         "legalName": "Alice Art Shop",
         "legalAddress": {
           "streetAddress1": "321 Center Street",
@@ -306,6 +310,7 @@ mutation socialServiceVerification {
     payDate
     employeeIdentifier
     employeeInformation {
+      employerIdentifier
       taxIdentifier {
         taxIdentifierType
         value
@@ -406,6 +411,7 @@ Sample Response
         }
       },
       "employerInformation": {
+        "employerIdentifier": "3691470",
         "legalName": "Alice Art Shop",
         "taxIdentifier": {
           "taxIdentifierType": "FEIN",
