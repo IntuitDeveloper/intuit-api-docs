@@ -18,22 +18,21 @@ Pagination can help when there's lots of comingled data. For example, you may on
 Here's an example query to get the number of records following the `cursorValue`.
 
 ```
-query 
-  queryName {
-    fieldName1
-    fieldName2(pagination: {first: numOfRecords, after: cursorValue}) }) {
-     pageInfo {
-        hasNextPage
-        startCursor
-        endCursor
-        hasPreviousPage
-      }
-      field1
-      field2
+query queryName {
+  fieldName1
+  fieldName2(pagination: {first: numOfRecords, after: cursorValue}) {
+   pageInfo {
+      hasNextPage
+      startCursor
+      endCursor
+      hasPreviousPage
     }
+    field1
+    field2
   }
+}
 ```
 
-In this case, the server will only count records following the `cursorValue`. **Tip**: You can [use introspection](../../graphql-concepts/introspection/) to see which fields support pagination.
+In this case, the server will only count records following the `cursorValue`. **Tip**: You can [use introspection](./introspection/) to see which fields support pagination.
 
 Learn more about [pagination from GraphQL.org](https://graphql.org/learn/pagination/).
