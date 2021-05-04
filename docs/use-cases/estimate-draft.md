@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Estimate Draft
-nav_order: 3
-parent: GraphQL Explorer
+nav_order: 7
+parent: Use Cases
 ---
 
 

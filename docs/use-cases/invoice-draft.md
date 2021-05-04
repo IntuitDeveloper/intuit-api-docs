@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Invoice Draft
-nav_order: 1
-parent: GraphQL Explorer
+nav_order: 5
+parent: Use Cases
 ---
 
 

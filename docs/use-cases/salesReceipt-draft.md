@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Sales Receipt Draft
-nav_order: 2
-parent: GraphQL Explorer
+nav_order: 6
+parent: Use Cases
 ---
 
 ### Sales Receipt Draft
