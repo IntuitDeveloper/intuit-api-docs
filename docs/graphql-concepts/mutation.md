@@ -5,11 +5,19 @@ nav_order: 2
 parent: GraphQL Concepts
 ---
 
-## Mutation
+# Use mutations to modify data
 
-Mutation is the GraphQL concept used to modify data on the server.  This includes creates, updates, or deletion of data.  Think of it as a POST, PUT or DELETE operation in the REST API world, **but remember - GraphQL requests are always POST calls**. 
+Mutations are what apps use to perform operations to change, update, or delete data on the server.
 
-As an example, here is a simple GraphQL mutation that would create an employer deduction:
+In GraphQL, you can use mutations to modify multiple fields with a single request. If you're familiar with REST API, mutations are similar to the **POST**, **PUT**, and **DELETE** operations. 
+
+While it's possible to create and update data with queries in GraphQL, it's best practice to use mutations to change or update data. And unlike queries, mutations run in series instead of in parallel. 
+
+## How to use mutations 
+
+For Intuit Ecosystem API, you'll use mutations often for things like transactions and invoices. 
+
+Here's a simple mutation to create an employer deduction:
 
 ```
 mutation {
@@ -24,5 +32,8 @@ mutation {
   }
 }
 ```
+Mutations typically take input data and define fields based on the response the server returns. 
 
-Mutations typically take an input data type (in this case, the "deduction" input data), and define fields from the response type to be returned (in this case, return the generated `id` and `name` fields of the created deduction).
+In this example, the mutation took the `deduction` argument and let the server define the `id` and `name` fields based on the response. 
+
+Learn more about [mutations from GraphQL.org](https://graphql.org/learn/queries/#mutations).

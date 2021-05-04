@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Custom Fields
-nav_order: 6
+nav_order: 4
 parent: Use Cases
 ---
 

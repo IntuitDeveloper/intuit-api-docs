@@ -5,10 +5,17 @@ nav_order: 3
 parent: GraphQL Concepts
 ---
 
-## Introspection
+# Get schema info with introspection
 
-Introspection allows you to query the schema for information about itself. That means the response of an introspection query contains the entire schema structure, including all the field names, types, and relationships. This is useful as you build your queries but it is especially useful to find out about updates to the schema. 
-Note: Developers can query the full Ecosystem API schema but will have access to only certain parts of it based on the scopes their app is authorized for.
+Introspection is a unqie feature of GraphQL that lets you query the server any time to see the current schema. 
+
+When you make an introspection query, the server returns the entire schema. This includes all possible fields, data types, and their relationships. It also tells you what operations the server supports.
+
+Introspection is useful for creating and keeping queries up-to-date. Whenever you need to validate your code, simply use introspection to check the current schema. 
+
+## How to create an introspection query
+
+Use this query any time to get the current Intuit Ecosystem API schema:
 
 ```
 query {
@@ -22,3 +29,6 @@ query {
   }
 }
 ```
+The server will return what's currently available for Intuit Ecosystem API. Keep in mind, [your app's scopes](../../getting-started/scopes/) determine what data you can access.
+
+Learn more about [introspection from GraphQL.org](https://graphql.org/learn/introspection/).

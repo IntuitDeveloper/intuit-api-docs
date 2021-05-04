@@ -5,11 +5,19 @@ nav_order: 1
 parent: GraphQL Concepts
 ---
 
-## Query
+# Create queries to request data
 
-Query is the GraphQL concept used to fetch data from the server.  Think of it as a GET request in the REST API world, **but remember - GraphQL requests are always POST calls**.  You can use a query to fetch a single field, multiple fields, apply filters, or get data conditionally. 
+In GraphQL, queries can fetch data for single or multiple fields, apply filters, and get conditional data. If you're familiar with REST API, this is very similar to the GET operation. However, queries in GraphQL are always **POST** operations. 
 
-As an example, here is a simple GraphQL query that would fetch company information:
+GraphQL queries are very efficient. When apps send requests with queries, the server only returns the requested data. The response will be the same shape and format as the query. 
+
+Server responses are clean, specific, and easy to work with. This also boosts app performance. Servers don't slow down to fetch unusable or extraneous data.
+
+## How to create queries
+
+For Intuit Ecosystem API, use queries to get data for accounts, transactions, and other resources. Specify the exact fields you want the server to return in the query body.
+ 
+Here's a simple query to get company information:
 
 ```
 query getCompanyName {
@@ -19,11 +27,6 @@ query getCompanyName {
   }
 }
 ```
+The server will return values for the `companyName` and `companyType` fields. 
 
-With GraphQL, you specify the exact data fields your use case requires, no more and no less.  In this basic query, we are simply going to fetch the `companyName` and `companyType` fields.
-
-This is one of the main advantages of GraphQL.  Not only is the response clean and specific for your use case, but it can often be more performant, as the Intuit API does not need to fetch and process fields that won't even be used by the client (a term called "over-fetching").
-
-Feel free to play around with different queries.  Many GraphQL IDEs have an autocomplete feature, to make forming queries easier!
-
-Next, learn about modifying data with [Mutations](../mutation).
+Learn more about queries [from GraphQL.org](https://graphql.org/learn/queries/). 
