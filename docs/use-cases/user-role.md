@@ -96,8 +96,7 @@ For this query, we'll use the following entities and fields:
   </tr>
   <tr>
    <tr>
-   <td>
-   role
+   <td>role
    </td>
    <td>
    </td>
