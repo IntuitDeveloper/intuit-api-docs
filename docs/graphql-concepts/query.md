@@ -20,14 +20,13 @@ For Intuit Ecosystem API, use queries to get data for accounts, transactions, an
 Here's a simple query to get company information:
 
 ```
-query 
-  getCompanyName {
-    company {
-     companyName
-     companyType
-    }
+query getCompanyName {
+  company {
+    companyName
+    companyType
   }
+}
 ```
-The server will return values for the companyName and companyType fields. 
+The server will return values for the `companyName` and `companyType` fields. 
 
 Learn more about queries [from GraphQL.org](https://graphql.org/learn/queries/). 

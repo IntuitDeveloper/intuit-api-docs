@@ -7,7 +7,7 @@ parent: Getting Started
 
 # Set up and authorize your app
 
-Let's get started. Intuit Ecosystem API gives you incredible flexibility to build creative solutions around key business problems. You can create client or server apps from the ground up, or [start with common use cases](https://intuitdeveloper.github.io/intuit-api-docs/docs/use-cases/). 
+Let's get started. Intuit Ecosystem API gives you incredible flexibility to build creative solutions around key business problems. You can create client or server apps from the ground up, or [start with common use cases](../../use-cases/). 
 
 Here's what you need to get up and running.
 
@@ -16,8 +16,8 @@ Already familiar with Intuit Ecosystem API and GraphQL? Feel free to skip this s
 
 If you're new, check out these resources so you can develop with confidence:
 
-* [Learn about Intuit Ecosystem API](https://intuitdeveloper.github.io/intuit-api-docs/docs/faq/graphql-vs-rest/)
-* [Learn about GraphQL](https://intuitdeveloper.github.io/intuit-api-docs/docs/graphql-concepts/)
+* [Learn about Intuit Ecosystem API](../../faq/graphql-vs-rest/)
+* [Learn about GraphQL](../../graphql-concepts/)
 * [Learn basic accounting concepts](https://developer.intuit.com/app/developer/qbo/docs/concepts)
 
 ## Step 2: Set up your developer account 
@@ -67,4 +67,4 @@ We suggest using a [GraphQL Integrated Developer Environment (IDE)](https://intu
 
 Your app is onboarded and authorized. You have everything you need to build and test queries!
 
-Check out [GraphQL best practices](https://intuitdeveloper.github.io/intuit-api-docs/docs/faq/best-practices/) to develop fast, robust, and reliable apps.
+Check out [GraphQL best practices](../../faq/best-practices/) to develop fast, robust, and reliable apps.

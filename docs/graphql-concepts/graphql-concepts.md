@@ -22,8 +22,8 @@ All queries go to a single endpoint on the server. The server parses queries and
 
 - **Get only the data you need**: GraphQL queries are highly customizable. You specify the fields and values you want the server to return. Apps only get the data it queries for - there’s no over-fetching or under-fetching.
 - **Develop with any language**: GraphQL is language-independent. You can use it with any backend framework or programming language implementation.
-- **Validate queries as you work**: GraphQL servers define the type system. That means everything about it is part of the schema. You can validate queries as you create them with [testing tools](https://intuitdeveloper.github.io/intuit-api-docs/docs/getting-started/graphql-ide/) or [introspection](https://intuitdeveloper.github.io/intuit-api-docs/docs/graphql-concepts/introspection/). You can also let the server validate requests against the current schema.
-- **Always have the current schema**: GraphQL is self-documenting. You can [make an introspection query](https://intuitdeveloper.github.io/intuit-api-docs/docs/graphql-concepts/introspection/) any time you want to see all possible fields and operations for the latest version. 
+- **Validate queries as you work**: GraphQL servers define the type system. That means everything about it is part of the schema. You can validate queries as you create them with [testing tools](../getting-started/graphql-ide/) or [introspection](./introspection/). You can also let the server validate requests against the current schema.
+- **Always have the current schema**: GraphQL is self-documenting. You can [make an introspection query](./introspection/) any time you want to see all possible fields and operations for the latest version. 
 - **Create simple data hierarchies**: GraphQL requests and responses are structured the same way and naturally follow relationships between attributes.
 
 Check out [GraphQL.org](https://graphql.org/){:target="_blank"} for a deepr dive.

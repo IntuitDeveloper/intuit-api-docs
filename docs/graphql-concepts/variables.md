@@ -19,14 +19,13 @@ In GraphQL, variables are JSON objects. You can use variables for both [queries]
 Here's an example. First, we'll replace the static value in the query with $**variable**. 
 
 ```
-query 
-  queryName ($variable : type) {
-    fieldName1
-    fieldName2 (filter: {field1 {in : $variable}}) {
-      field1
-      field2
-   }
+query queryName ($variable : type) {
+  fieldName1
+  fieldName2 (filter: {field1 {in : $variable}}) {
+    field1
+    field2
   }
+}
 ```
 We replaced the value for the `in` field in `fieldName2` with the **$variable**. 
 
