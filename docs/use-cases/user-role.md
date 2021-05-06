@@ -40,13 +40,13 @@ This also lets you build features around role-specific workflows. Since your app
 
 ## Step 1: Set up your app in the Intuit Developer Portal
 
-If you haven't already, [get a QuickBooks Online sandbox company](https://intuitdeveloper.github.io/intuit-api-docs/docs/getting-started/authentication/) for testing and [create your app](https://intuitdeveloper.github.io/intuit-api-docs/docs/getting-started/authentication/).
+If you haven't already, [get a QuickBooks Online sandbox company](../../getting-started/authentication/) for testing and [create your app](../../getting-started/authentication/).
 
 <br>
 
 ## Step 2: Set your app's scopes
 
-Intuit Ecosystem API [uses scopes to limit the type of data](https://intuitdeveloper.github.io/intuit-api-docs/docs/getting-started/scopes/) your app can access. You'll set the scope when you create your app.
+Intuit Ecosystem API [uses scopes to limit the type of data](../../getting-started/scopes/) your app can access. You'll set the scope when you create your app.
 
 For user role features, use these scopes:
 * **com.intuit.identity.user.roles.read**
@@ -85,8 +85,6 @@ For this query, we'll use the following entities and fields:
 
 <table>
   <tr>
-   <td>
-   </td>
    <td><strong>Field</strong>
    </td>
    <td><strong>DataType</strong>
@@ -95,18 +93,6 @@ For this query, we'll use the following entities and fields:
    </td>
   </tr>
   <tr>
-   <tr>
-   <td>role
-   </td>
-   <td>
-   </td>
-   <td>
-   </td>
-   <td>
-   </td>
-   </tr>
-   <td>
-   </td>
    <td>realmId
 (*Required)
    </td>
@@ -116,8 +102,6 @@ For this query, we'll use the following entities and fields:
    </td>
   </tr>
   <tr>
-   <td>
-   </td>
    <td>type
    </td>
    <td>Enum - ADMIN, EMPLOYEE
@@ -126,8 +110,6 @@ For this query, we'll use the following entities and fields:
    </td>
   </tr>
   <tr>
-   <td>
-   </td>
    <td>status
    </td>
    <td>Enum - ACTIVE, INACTIVE
@@ -136,8 +118,6 @@ For this query, we'll use the following entities and fields:
    </td>
   </tr>
   <tr>
-   <td>
-   </td>
    <td>hasPayroll
    </td>
    <td>Boolean
@@ -168,12 +148,12 @@ After [generating an OAuth token](https://developer.intuit.com/app/developer/qbo
 Here's a basic query to get user role info: 
 ```
  {
-  user{
-  role (realmId: "9130349878530396") {
-    type
-    status
-    hasPayroll
-  }
+  user {
+    role (realmId: "9130349878530396") {
+      type
+      status
+      hasPayroll
+    }
   }
 }
 ```
@@ -211,12 +191,12 @@ If the `realmID` is incorrect, you'll get the following response:
 
 ```
  {
-  user{
-  role (realmId: "9130349878530397") {
-    type
-    status
-    hasPayroll
-  }
+  user {
+    role (realmId: "9130349878530397") {
+      type
+      status
+      hasPayroll
+    }
   }
 }
 ```
