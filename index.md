@@ -14,14 +14,10 @@ Intuit Ecosystem API offers several advantages over our existing [REST-based Qui
 
 ## Get Started
 
-The below tracks can help you get started using Intuit's Ecosystem API, depending on your starting preferences.
-
-Learn the about QuickBooks API frameworks
-Set up and start developing
-Build apps around specific use cases
+The below tracks can help you get started using Intuit's Ecosystem API:
 
 - [Set up and start developing](./docs/getting-started)
 - [Learn about about GraphQL](./docs/graphql-concepts)
 - [Build apps around specific use cases](./docs/use-cases)
 
-_Note: Intuit Ecosystep API is in alpha and by invite-only for Intuit partners._
+_Note_: Intuit Ecosystep API is in alpha and by invite-only for Intuit partners.
