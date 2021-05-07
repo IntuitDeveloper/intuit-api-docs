@@ -9,24 +9,24 @@ parent: Use Cases
 
 The Vendor entity represents the seller from whom your company purchases any service or product.
 The Vendor API provides support for create, read, update and delete operations.
-#### Operations for Vendor entity
+### Operations for Vendor entity
 
 -   Read - Query (POST)
 -   Create - Mutation (POST)
 -   Update - Mutation (POST)
 -   Delete - Mutation (POST)
 
-#### Endpoints
+### Endpoints
 
 -   For production apps:  https://public.api.intuit.com/2020-04/graphql
 -   For sandbox environments and testing: https://public-e2e.api.intuit.com/2020-04/graphql
 
-#### Sample query header
+### Sample query header
 
 -   Content-type: **application/json**
 -   User the vendor scope **[com.intuit.quickbooks.accounting]** for the authorization header 
 
-#### Sample query body
+### Sample query body
 
 Do an [introspection query](../../graphql-concepts/introspection)  to see the current schema for the vendor entity.
 Here's an example query using every possible field. Remember, with GraphQL you only need to query for the data you need:
@@ -122,7 +122,7 @@ Response:
   }
 ```
 
-#### Filter support:
+### Filter support:
 
 You can choose to **query by id** (as shown above) or by **displayName** by changing the filter for the query as follows -
 
@@ -227,7 +227,7 @@ Response:
   }
 }
 ```
-#### Create mutation
+### Create mutation
 
 Mutation:
 
@@ -340,7 +340,7 @@ Sample response:
 }
 ```
 
-#### Update mutation
+### Update mutation
 
 Mutation:
 
@@ -445,7 +445,7 @@ Response:
 }
 ```
 
-#### Delete Mutation
+### Delete Mutation
 
 Mutation:
 ``` 
