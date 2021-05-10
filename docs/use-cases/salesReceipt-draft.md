@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Sales Receipt Draft
-nav_order: 6
+nav_order: 7
 parent: Use Cases
 ---
 
