@@ -10,7 +10,7 @@ permalink: /
 
 Intuit Ecosystem API is our newest platform. It utilizes the [GraphQL framework](https://graphql.org/) and makes developing focused solutions around specific accounting problems easier than ever.
 
-Intuit Ecosystem API offers several advantages over our existing [REST-based QuickBooks Online Accounting API](https://developer.intuit.com/app/developer/qbo/docs/develop/rest-api-features). In general, it's more dynamic, requires fewer queries, and allows granular data scoping.
+Intuit Ecosystem API offers several advantages over our existing [REST-based QuickBooks Online Accounting API](https://developer.intuit.com/app/developer/qbo/docs/develop/rest-api-features). In general, this new paradigm is more dynamic, requires fewer queries, and allows granular data scoping.
 
 ## Get Started
 
@@ -20,4 +20,4 @@ The below tracks can help you get started using Intuit's Ecosystem API:
 - [Learn about about GraphQL](./docs/graphql-concepts)
 - [Build apps around specific use cases](./docs/use-cases)
 
-_Note_: Intuit Ecosystep API is in alpha and by invite-only for Intuit partners.
+_Note_: Intuit Ecosystem API is currently in alpha. Paritcipation is by invite-only for Intuit partners.
