@@ -8,4 +8,4 @@ permalink: /docs/faq/
 
 ## FAQ
 
-We'll share frequently asked questions related to the following domains (accounting, payroll, etc), so you can quickly search for answers to common questions.
+Here are answers to common questions and topics related to specific feature domains (accounting, payroll, etc).
