@@ -8,4 +8,4 @@ permalink: /docs/getting-started/
 
 # Getting Started
 
-Use the following pages to help get started with the GraphQL API.
+Follow a link to get started with Intuit Ecosystem API.
