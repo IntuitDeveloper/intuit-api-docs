@@ -2,7 +2,9 @@
 layout: default
 title: GraphiQL
 nav_order: 1
-parent: Testing
+parent: Testing GraphQL
+grand_parent: Getting Started
+permalink: /docs/getting-started/graphql-ide/graphiql
 ---
 
 ## Set up and test with GraphiQL 
