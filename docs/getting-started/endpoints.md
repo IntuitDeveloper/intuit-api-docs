@@ -11,5 +11,5 @@ Endpoints are the locations on our server where apps send requests to call APIs.
 
 Since Intuit Ecosystem API is a GraphQL paradigm, there's only one endpoint. No matter which entities you call or fields you include in your queries, requests all go to the same endpoint. 
 
-- For production apps: https://public.api.intuit.com/2020-04/graphql
-- For sandbox companies and testing environments: https://public-e2e.api.intuit.com/2020-04/graphql
+- For production apps: `https://public.api.intuit.com/2020-04/graphql`
+- For sandbox companies and testing environments: `https://public-e2e.api.intuit.com/2020-04/graphql`
