@@ -1,15 +1,9 @@
 ---
 layout: default
-title: Test queries
-nav_order: 4
-parent: Getting Started
+title: Insomnia
+nav_order: 1
+parent: Testing
 ---
-
-## Test queries with Insomnia or GraphiQL 
-
-Use an Integrated Developer Environment (IDE) to test and validate queries during development.
-
-There are a couple IDEs we recommend for Intuit Ecosystem API: Insomnia and GraphiQL. In particular, we prefer Insomnia for it's collection and built-in authorization features. Here's how to set up and use IDEs to test queries. 
 
 ## Set up and test with Insomnia 
 
@@ -25,12 +19,7 @@ If you haven't already, [get a QuickBooks Online sandbox company](../authenticat
  
 ### Step 2: Get your app's credentials
 
-1. [Sign in](https://developer.intuit.com/app/developer/myapps) to your developer account.
-2. Select the **Dashboard** link on the toolbar. 
-3. Select and open your app. 
-4. In the **Development** section, select **Keys & OAuth**. Info in this section is only for your [sandbox test company](https://developer.intuit.com/app/developer/qbo/docs/develop/sandboxes/manage-your-sandboxes).
-5. Copy the **Client ID** and **Client Secret**. 
- 
+[Sign in](https://developer.intuit.com/app/developer/myapps) to your developer account and [get your sandbox company's **Client ID** and **Client Secret**](../authentication/). 
 
 ### Step 3: Add the Insomnia redirect URI
 
@@ -101,34 +90,3 @@ Everything is ready to go. Select **Send** to send the test query.
 The first time you send a query, Insomnia will ask you to sign in to your sandbox QuickBooks Online company. Follow the on-screen steps to connect them.
 
 You'll see access tokens in the **OAuth 2.0** tab. Use these to test code and queries in Insomnia.
-
-<br>
-
-## Set up and test with GraphiQL 
-
-### Step 1: Get GraphiQL
-
-Go to GitHub to [download and install GraphiQL](https://github.com/skevy/graphiql-app).
-
-### Step 2: Set up OAuth2.0
-If you haven't already, [set up OAuth 2.0](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization) for your app. This gives you access tokens to make API calls with GraphiQL.
-
-### Step 3: Create a test query in GraphiQL
-
-After you install GraphiQL and set up OAuth 2.0, use this basic test query to get the `companyName` of your [sandbox test company](https://developer.intuit.com/app/developer/qbo/docs/develop/sandboxes/manage-your-sandboxes). 
-
-**Query header**
-```
-Authorization: <OAuth 2.0 bearer token>
-```
-**Query body**
-```
-query 
-getCompanyName {
-  company {
-    companyName
-    companyType
-  }
-}
-```
-You're now ready to test queries in GraphiQL.

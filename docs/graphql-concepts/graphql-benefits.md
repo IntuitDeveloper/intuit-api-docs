@@ -1,11 +1,11 @@
 ---
 layout: default
-title: GraphQL best practices and benefits
+title: GraphQL best practices
 nav_order: 8
 parent: GraphQL Concepts
 ---
 
-# Adopt Intuit Ecosystem API and GraphQL best practices
+# Adopt Intuit Ecosystem API best practices
 
 GraphQL is a powerful and efficient API language. Here are a few ways you can structure and craft your code to build world-class apps.
 
