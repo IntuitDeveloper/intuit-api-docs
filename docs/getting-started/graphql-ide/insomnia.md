@@ -2,12 +2,12 @@
 layout: default
 title: Insomnia
 nav_order: 1
-parent: Testing GraphQL
+parent: Testing
 grand_parent: Getting Started
 permalink: /docs/getting-started/graphql-ide/insomnia
 ---
 
-## Set up and test with Insomnia 
+# Set up and test with Insomnia 
 
 You can [start with the free version of Insomnia](https://insomnia.rest/products/insomnia). This gives you basic features that cover most testing requirements. If you need more features, you can always upgrade later on.
 
@@ -15,15 +15,11 @@ Insomnia lets you keep collections of sample GraphQL queries you can use over an
 
 **Tip**: You can also follow the [install guide from Insomnia](https://support.insomnia.rest/article/23-installation). 
  
-### Step 1: Set up your app in the Intuit Developer Portal
+## Step 1: Set up your app in the Intuit Developer Portal
 
-If you haven't already, [get a QuickBooks Online sandbox company](../authentication/) for testing and [create your app](../authentication/) on the Intuit Developer Portal. 
- 
-### Step 2: Get your app's credentials
+If you haven't already, [get a QuickBooks Online sandbox company](../authentication/) for testing, [create your app](../authentication/), and get your sandbox company's [**Client ID** and **Client Secret**](../authentication/).
 
-[Sign in](https://developer.intuit.com/app/developer/myapps) to your developer account and [get your sandbox company's **Client ID** and **Client Secret**](../authentication/). 
-
-### Step 3: Add the Insomnia redirect URI
+## Step 2: Add the Insomnia redirect URI
 
 1. [Sign in](https://developer.intuit.com/app/developer/myapps) to your developer account.
 2. Select the **Dashboard** link on the toolbar. 
@@ -32,7 +28,7 @@ If you haven't already, [get a QuickBooks Online sandbox company](../authenticat
 5. In the **Redirect URIs** section, select **Add URI**. 
 5. Enter the insomnia redirect URI: **https://insomnia.rest**. 
  
-### Step 4: Set up Insomnia
+## Step 3: Download and set up Insomnia
 1. [Download the latest version](https://insomnia.rest/download) of Insomnia.
 2. Launch and install Insomnia.
 3. Select the **Manage environments** option.
@@ -50,7 +46,7 @@ If you haven't already, [get a QuickBooks Online sandbox company](../authenticat
 ```
 This configures and connects Insomnia to your app and Intuit Ecosystem API. 
 
-### Step 5: Start a test query in Insomnia
+## Step 4: Start a test query in Insomnia
 1. Select the **(+)** icon and then **New Request**. 
 2. Name the request. 
 3. Select the **POST** method from the dropdown. 
@@ -58,7 +54,7 @@ This configures and connects Insomnia to your app and Intuit Ecosystem API.
 5. Select **GraphQL query** as the query type.
 6. Select **Create**. 
 
-This opens a query window. Use this basic test query to get `company` data for your sandbox test company:
+This opens a query window. Use this basic test query to get `company` data for your [sandbox test company](https://developer.intuit.com/app/developer/qbo/docs/develop/sandboxes/manage-your-sandboxes):
 
 ```
 query company {
@@ -69,9 +65,8 @@ query company {
   }
 }
 ```
-The server should return details about your sandbox test company.
 
-### Step 6: Set up authorization in Insomnia
+## Step 5: Configure authorization variables Insomnia
 In the query window, set the OAuth2.0 environment variables: 
 
 1. Select the **OAuth 2.0** tab. 
@@ -85,7 +80,7 @@ In the query window, set the OAuth2.0 environment variables:
 
 ![](/intuit-api-docs/assets/images/oauth2.png)
 
-### Step 7: Send a test query
+## Step 6: Send the test query
 
 Everything is ready to go. Select **Send** to send the test query. 
 
