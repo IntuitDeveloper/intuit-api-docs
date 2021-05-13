@@ -23,7 +23,7 @@ Take the time to properly log your app development process. It saves time in the
 
 <table>
 <tr>
-<td><strong>Tip</strong>: Always [log value of the `intuit_tid` field](../../faq/error-handling/) in the server response. It will help our support team quickly find and address any reported issues.
+<td><strong>Tip</strong>: Always <a href="https://intuitdeveloper.github.io/intuit-api-docs/docs/faq/error-handling/log">log the value of the <strong>intuit_tid</strong> field</a> in the server response. It will help our support team quickly find and address any reported issues.
 </td>
 </tr>
 </table>
@@ -71,11 +71,11 @@ Note: We'll have more details around versioning in the future.
 
 ## Advantages of GraphQL
 
-#### Single endpoints
+### Single endpoints
 
 Imagine a use-case where you want to get all the invoices created within a date range along with the items sold and the name and address of the customer for each invoice. You’d need to make several calls to different endpoints to achieve this. One for the Invoice, one for each Customer, and one for each Item. GraphQL has one endpoint for everything, all of this data can be obtained by making one call to a single endpoint.
 
-#### Get only the data you need
+### Get only the data you need
 
 Each call would give you all the information about the entity you’ve queried. You may not need the account information or the payment status on the invoice, for example. With a GraphQL query, specify which fields you want and only data for those fields gets returned. 
 
@@ -86,7 +86,7 @@ GraphQL is language-independent. You can use it with any backend framework or pr
 
 ### Validate queries as you work
 
-Because GraphQL is a type system and everything about it is part of its schema, it’s easy to check if your request is valid or not while it’s being created. You don’t have to wait until runtime to know if your request is invalid. There are multiple ways to validate a request: use a GraphQL tool (which has a built-in parser), use introspection queries to check the schema, or let the server validate the request against the schema version on the server.
+Since GraphQL is a type system and everything about it is part of its schema, it’s easy to check if your request is valid or not while it’s being created. You don’t have to wait until runtime to know if your request is invalid. There are multiple ways to validate a request: use a GraphQL tool (which has a built-in parser), use introspection queries to check the schema, or let the server validate the request against the schema version on the server.
 
 GraphQL servers define the type system. That means everything about it is part of the schema. You can validate queries as you create them with testing tools or introspection. You can also let the server validate requests against the current schema.
 
