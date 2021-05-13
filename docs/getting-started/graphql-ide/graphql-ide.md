@@ -36,8 +36,7 @@ Authorization: <OAuth 2.0 bearer token>
 ```
 **Query body**
 ```
-query 
-getCompanyName {
+query getCompanyName {
   company {
     companyName
     companyType
