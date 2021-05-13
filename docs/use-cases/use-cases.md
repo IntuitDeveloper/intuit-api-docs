@@ -8,6 +8,6 @@ permalink: /docs/use-cases/
 
 # Build apps around use cases
 
-If you already know what you want to develop, [create custom queries](../../graphql-explorer/) around a bespoke experience. 
+If you already know what you want to develop, [create custom queries](../graphql-concepts/query/) and build a bespoke experience. 
 
-Or, if you need examples to see what's possible, we've got you covered. Here use cases for common small business workflows. You can use these as a foundation for your app.
+If you need inspiration, we've got you covered. Here common use cases and small business workflows. You can use these guides as a foundation for your app.

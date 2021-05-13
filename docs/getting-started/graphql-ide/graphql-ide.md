@@ -1,25 +1,40 @@
 ---
 layout: default
-title: GraphQL IDE
-nav_order: 3
+title: Testing
+nav_order: 4
 has_children: true
-parent: Getting Started
 permalink: /docs/getting-started/graphql-ide/
+parent: Getting Started
 ---
 
-## GraphQL IDE
+# Testing queries using a GraphQL IDE
 
-Although not strictly necessary, you'll likely want a GraphQL IDE to easily form and test GraphQL queries.  Here are a few examples of GraphQL IDEs you can use:
+Use a GraphQL Integrated Developer Environment (IDE) to test and validate queries during development. 
 
-1. [Insomnia](https://insomnia.rest/graphql/) - for detailed Insomnia setup, [click here](./insomnia-setup)
-2. [GraphiQL](https://github.com/skevy/graphiql-app)
+Here are the basic steps to set up, download a GraphQL IDE, and send a test query to get the `companyName` for your [sandbox test company](https://developer.intuit.com/app/developer/qbo/docs/develop/sandboxes/manage-your-sandboxes).
 
-Once you install a GraphQL IDE, you should now be set to fire your first GraphQL query!
+## Step 1: Set up your app in the Intuit Developer Portal
 
-### Firing your first GraphQL Query
+If you haven't already, [get a QuickBooks Online sandbox company](../authentication/) for testing, [create your app](../authentication/), and get your sandbox company's [**Client ID** and **Client Secret**](../authentication/). 
 
-As an example, you can try a very basic query like the following to get the name of your QuickBooks company, using the OAuth 2.0 bearer token retrieved in the previous section.
+## Step 2: Get a GraphQL IDE
 
+There are many GraphQL IDEs available. Use the one you prefer. 
+
+Here are a couple we recommend. In particular, we prefer Insomnia for its collection and built-in authorization features. 
+
+* [Set up and test with Insomnia](./insomnia/)
+* [Set up and test with GraphiQL](./graphiql/)
+
+## Step 3: Send a test query
+
+After you install a GraphQL IDE, use this basic query to get the `companyName` for your [sandbox test company](https://developer.intuit.com/app/developer/qbo/docs/develop/sandboxes/manage-your-sandboxes). 
+
+**Query header**
+```
+Authorization: <OAuth 2.0 bearer token>
+```
+**Query body**
 ```
 query getCompanyName {
   company {
@@ -28,13 +43,4 @@ query getCompanyName {
   }
 }
 ```
-Headers required:
-```
-Authorization: <OAuth 2.0 bearer token>
-```
-
-### Next Steps
-
-- Want to learn more about GraphQL concepts, like queries and mutations?  [Click here](../../graphql-concepts)!
-
-- Want to learn about Intuit use cases, like 401k or user roles?  [Click here](../../use-cases) to see sample queries and documentation about common use cases!
+The server should return details about your sandbox test company.
