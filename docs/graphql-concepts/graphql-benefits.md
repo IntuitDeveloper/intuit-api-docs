@@ -52,7 +52,7 @@ Instead of querying frequently used fields individually, [create and reuse fragm
 
 [Introspection](../introspection/) is the quickest way to see the latest Intuit Ecosystem API schema.  Simply send an introspection query. The server response includes all possible queries, data types, fields, and operations. 
 
-[Pagination](/pagination/) lets you quickly navigate large datasets. If you expect a query to return lots of data, use pagination to fetch specific subsets. 
+[Pagination](../pagination/) lets you quickly navigate large datasets. If you expect a query to return lots of data, use pagination to fetch specific subsets. 
 
 
 ## Intuit Ecosystem API best practices
