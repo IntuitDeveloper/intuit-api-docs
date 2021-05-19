@@ -1,7 +1,7 @@
 ---
 layout: default
 title: GraphiQL
-nav_order: 1
+nav_order: 2
 parent: Testing
 grand_parent: Getting Started
 permalink: /docs/getting-started/graphql-ide/graphiql
