@@ -57,7 +57,12 @@ To start, you need to get your app's credentials:
 
 Use the Client ID and Client Secret to [set up OAuth2.0](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0). 
 
-> **Tip**: Want to try the authentication process with demo code? Check out the [OAuth 2.0 playground](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0-playground).
+<table>
+<tr>
+<td><Strong>Tip</strong>: Want to try the authentication process with demo code? Check out the <a href="https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0-playground">OAuth 2.0 playground</a>.
+</td>
+</tr>
+</table>
 
 ## Step 7: Get tools to test GraphQL queries
 

@@ -162,9 +162,7 @@ You can include all of these fields, or add fields, depending on your app's need
 ```
 The `type` and `status` field values define the user's `role`. You'll only see fields like `hasPayroll` if these features are active for the QuickBooks company. 
 
-<br>
-
-##### Request user role for an invalid realm
+#### Request user role for an invalid realm
 
 If the `realmID` is incorrect, you'll get the following response: 
 
