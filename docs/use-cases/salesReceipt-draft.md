@@ -56,7 +56,6 @@ Variables
 					"value": 10,
 					"percentage": false
 				},
-				"taxable": true,
 				"serviceDate": "2020-12-09",
 				"class": {
 					"id": "302300000000001842721",
@@ -157,7 +156,6 @@ Variables
             percentage
             percentage
           }
-          taxable
         }
         referenceNumber
         emailDeliveryInfo {
