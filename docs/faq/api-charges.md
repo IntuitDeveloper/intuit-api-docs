@@ -1,3 +1,9 @@
+---
+layout: default
+title: API Charges
+nav_order: 4
+parent: FAQ
+---
 
 # API charges & reporting (retirement partners)
 
@@ -9,7 +15,7 @@ Access to Intuit's Payroll API service incurs a fee for each connected QuickBook
 To track API fees and automate invoicing, retirement providers are required to upload a monthly usage report via Intuit's Partner File Transfer System (PFTS). 
 
 ## 1) Setup access to PFTS
-Refer to [PFTS setup instructions](tbd) for specific commands on Linux, Mac or Windows. 
+Refer to [PFTS setup instructions](../../../assets/files/HowToConnectToPFTS.pdf) for specific commands on Linux, Mac or Windows. 
 
 1. **Create a public SSH key**
 2. **Submit your public key to Intuit to enable PFTS access**.  Copy paste the contents of your public key and submit as an attachment to your Intuit point of contact. 
@@ -25,7 +31,7 @@ Refer to [PFTS setup instructions](tbd) for specific commands on Linux, Mac or W
 
 ## 3) File format
 
-Upload the report as comma separated values (.csv) . See sample monthly report [here](tbd).
+Upload the report as comma separated values (.csv). See sample monthly report [here](../../../assets/files/partnername_202104.csv).
 
 *Important notes:*
  - *Keep columns in the exact same order in your generated csv file*
