@@ -87,7 +87,7 @@ GraphQL is language-independent. You can use it with any backend framework or pr
 
 ### Validate queries as you work
 
-Since GraphQL is a type system, everything about it is part of its schema. You can validate queries as you create them with [testing tools like GraphiQL](../..graphiql-ide/) (which has a built-in parser) or [by using introspection](../introspection/). You can also let the server validate requests against the current schema version.
+Since GraphQL is a type system, everything about it is part of its schema. You can validate queries as you create them with [testing tools like GraphiQL](../..graphiql-ide/) (which has a built-in parser) or [by making an introspection query](../introspection/). You can also let the server validate requests against the current schema version.
 
 ### Everything is documented
 

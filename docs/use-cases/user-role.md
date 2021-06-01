@@ -90,17 +90,21 @@ For this query, we'll use the following entities and fields:
   <tr>
    <td>type
    </td>
-   <td>Enum - ADMIN, EMPLOYEE
+   <td>Enum - enum roleType {
+      ADMIN, EMPLOYEE}
+    }
    </td>
-   <td>The user's level, "Admin" or "Employee"
+   <td>The user's level of access in the given company, "Admin" or "Employee"
    </td>
   </tr>
   <tr>
    <td>status
    </td>
-   <td>Enum - ACTIVE, INACTIVE
+   <td>Enum - enum roleStatus { 
+      ACTIVE, INACTIVE
+   }
    </td>
-   <td>The employee's status, "Active" or "Inactive"
+   <td>The user's access status in the given company, "Active" or "Inactive"
    </td>
   </tr>
   <tr>
@@ -108,7 +112,7 @@ For this query, we'll use the following entities and fields:
    </td>
    <td>Boolean
    </td>
-   <td>Indicates if the user has payroll access
+   <td>Value will be "TRUE" if the company has the payroll feature turned on
    </td>
   </tr>
 </table> 
