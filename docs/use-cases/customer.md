@@ -32,7 +32,7 @@ Send POST requests to one of these endpoints:
 
 Apps can new customers in QuickBooks. The `displayName` field in the mutation should have a unique value.
 
-**Tip**: Do[an introspection query](../../introspection/) to see the latest entity schema. 
+**Tip**: Do [an introspection query](../../graphql-concepts/introspection/) to see the latest entity schema. 
 
 ## Sample mutation body
 
