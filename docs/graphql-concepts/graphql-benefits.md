@@ -23,7 +23,7 @@ Take the time to properly log your app development process. It saves time in the
 
 <table>
 <tr>
-<td><strong>Tip</strong>: Always <a href="https://intuitdeveloper.github.io/intuit-api-docs/docs/faq/error-handling/log">log the value of the <strong>intuit_tid</strong> field</a> in the server response. It will help our support team quickly find and address any reported issues.
+<td><strong>Tip</strong>: Always <a href="../../faq/error-handling/">log the value of the <strong>intuit_tid</strong> field</a> in the server response. It will help our support team quickly find and address any reported issues.
 </td>
 </tr>
 </table>
