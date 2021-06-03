@@ -91,7 +91,7 @@ For this query, we'll use the following entities and fields:
    <td>type
    </td>
    <td>Enum - enum roleType {
-      ADMIN, EMPLOYEE}
+      ADMIN, EMPLOYEE
     }
    </td>
    <td>The user's level of access in the given company, "Admin" or "Employee"
