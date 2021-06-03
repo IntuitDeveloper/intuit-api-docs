@@ -7,7 +7,7 @@ parent: Use Cases
 
 # Customer entity
 
-The Customer entity lets apps create and read customer info in QuickBooks nline. It's exposed against a new endpoint.
+The Customer entity lets apps create and read customer info in QuickBooks Online. It's exposed against a new endpoint.
 
 **Note**: Apps require onboarding before using the Customer API. 
 
