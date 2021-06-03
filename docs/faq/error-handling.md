@@ -156,6 +156,7 @@ The following 4 digits identify the source of the error from the underlying serv
 <ul>
 <li>Extensions.innerCode — Internal unique identifier returned by downstream services (Example: PAY-000008 - payroll). </li>
 <li>Extensions.innerMessage — Original internal message from downstream services. </li>  
+</ul>
 </td>
 </tr>
 </table>
