@@ -74,7 +74,7 @@ Service errors only apply to a subset of requests, not the entire request. Respo
 400 - GraphQL validation errors such as invalid or malformed requests and missing variables, or system errors
 ```
 
-Most service errors are in response to [malformed queries](../../graphql-concepts/query/), parsing problems, validation issues, or [incorrect scopes](../../gettig-started/scopes/). As a result, the server won't authorize the request.
+Most service errors are in response to [malformed queries](../../graphql-concepts/query/), parsing problems, validation issues, or [incorrect scopes](../../getting-started/scopes/). As a result, the server won't authorize the request.
 
 Here's an example of an HTTP status code 400:
 ```
