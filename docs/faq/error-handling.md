@@ -17,7 +17,7 @@ Capture this field's value. It will help our support team quickly find and addre
 
 ## Step 2: Identify the error type 
 
-When requests from apps go to our servers, they first pass through a gateway layer. Then they pass through the GraphQL Service layer. Thus, there are two genearl types: **gateway** errors and **service** errors. 
+When requests from apps go to our servers, they first pass through a gateway layer. Then they pass through the GraphQL Service layer. Thus, there are two general types: **gateway** errors and **service** errors. 
 
 Review the HTTP Status Code (xxx). This tells you the error type:
 
