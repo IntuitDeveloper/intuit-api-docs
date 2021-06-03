@@ -65,9 +65,11 @@ If you haven't already, use your Client ID, Client Secret, and scopes to [set up
 
 ## Step 5: Create a query for user role info
 
-For this query, we'll use the following entities and fields:
+For this query, we'll use the following entities:
 
 * **User role**
+
+We'll use the following fields:
 
 <table>
   <tr>
@@ -119,8 +121,7 @@ For this query, we'll use the following entities and fields:
 
 ### Endpoints
 
-* For production apps: **[https://public.api.intuit.com/2020-04/graphql](https://public.api.intuit.com/2020-04/graphql)**   
-* For sandbox environments and testing: **[https://public-e2e.api.intuit.com/2020-04/graphql](https://public-e2e.api.intuit.com/2020-04/graphql)**   
+Send POST requests to one of [these endpoints](../../endpoints/).
 
 ### Query header
 * `Content-Type`: **application/json**

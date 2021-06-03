@@ -45,7 +45,7 @@ In the server response, review the following fields:
 * `code` - Tells you what went wrong
 * `detail` - Tells you what to fix
 
-Many gateway errors are self-explanatory. Some require a bit more digging. For 403 errors, you may need to [adjust code for user roles](../../use-cases/user-role/). For 401 errors, you may need to [update your app's access or refresh tokens](https://developer.intuit.com/app/developer/appdetail/test/keys?appId=djQuMTo6OGQzYmJlYTI3Yg:91ec0282-dc3b-4e2d-b065-5b89a6822e85). 
+Many gateway errors are self-explanatory. Some require a bit more digging. For 403 errors, you may need to [adjust code for user roles](../../use-cases/user-role/). For 401 errors, you may need to [update your app's access or refresh tokens](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0). 
 
 #### See all gateway errors
 ```

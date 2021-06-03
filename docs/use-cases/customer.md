@@ -18,10 +18,7 @@ The Customer entity lets apps create and read customer info in QuickBooks Online
 
 ## Endpoints
 
-Send POST requests to one of these endpoints:
-
-* For production apps: **https://public.api.intuit.com/2020-04/graphql**
-* For sandbox environments and testing: **https://public-e2e.api.intuit.com/2020-04/graphql**
+Send POST requests to one of [these endpoints](../../endpoints/).
 
 ## Sample query and mutation header 
 
