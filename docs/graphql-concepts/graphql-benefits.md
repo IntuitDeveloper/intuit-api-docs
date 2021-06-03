@@ -13,7 +13,7 @@ For more tips, [visit GraphQL.org](https://graphql.org/learn/best-practices/).
 
 ## GraphQL best practices
 
-### Only query for data your app needs
+### Only query for the data your app needs
 
 In GraphQL, less is more. Create queries that only request the specific fields and data required for your QuickBooks integration to be fully functional. You can change queries later and add more fields as needed. 
  
@@ -23,7 +23,7 @@ Take the time to properly log your app development process. It saves time in the
 
 <table>
 <tr>
-<td><strong>Tip</strong>: Always [log value of the `intuit_tid` field](../../faq/error-handling/) in the server response. It will help our support team quickly find and address any reported issues.
+<td><strong>Tip</strong>: Always <a href="../../faq/error-handling/">log the value of the <strong>intuit_tid</strong> field</a> in the server response. It will help our support team quickly find and address any reported issues.
 </td>
 </tr>
 </table>
@@ -54,7 +54,6 @@ Instead of querying frequently used fields individually, [create and reuse fragm
 
 [Pagination](../pagination/) lets you quickly navigate large datasets. If you expect a query to return lots of data, use pagination to fetch specific subsets. 
 
-
 ## Intuit Ecosystem API best practices
 
 ### Learn about API throttling
@@ -66,34 +65,34 @@ The Intuit Ecosystem API base URL is versioned for schema updates. Meaning, the 
 
 We'll release notes about updates when they become available. Update your apps to the latest version to get the latest enhancements with each new version.
 
-Note: We'll have more details around versioning in the future.
+**Note**: We'll have more details around versioning in the future.
 
 
 ## Advantages of GraphQL
 
-#### Single endpoints
+### Single endpoints
 
-Imagine a use-case where you want to get all the invoices created within a date range along with the items sold and the name and address of the customer for each invoice. You’d need to make several calls to different endpoints to achieve this. One for the Invoice, one for each Customer, and one for each Item. GraphQL has one endpoint for everything, all of this data can be obtained by making one call to a single endpoint.
+Let's say you want to build an invoicing app. It needs to constantly request data for a specific set of invoices. The invoices contain particular items for a specific date range. And, the app needs current business addresses for each customer. 
 
-#### Get only the data you need
+With REST API, you’d need to make several queries to different endpoints: one for the invoice, one for each customer, and one for each item.
 
-Each call would give you all the information about the entity you’ve queried. You may not need the account information or the payment status on the invoice, for example. With a GraphQL query, specify which fields you want and only data for those fields gets returned. 
+GraphQL only requires a single query, [sent to a single endpoint](../../getting-started/endpoints/). 
 
-GraphQL queries are highly customizable. You specify the fields and values you want the server to return. Apps only get the data it queries for - there’s no over-fetching or under-fetching.
+### Get only the data you need
+
+GraphQL queries are highly customizable. You specify the exact fields and values you want the server to return. Apps only get the data you query for - there’s no over-fetching or under-fetching.
 
 ### Develop with any language
 GraphQL is language-independent. You can use it with any backend framework or programming language implementation.
 
 ### Validate queries as you work
 
-Because GraphQL is a type system and everything about it is part of its schema, it’s easy to check if your request is valid or not while it’s being created. You don’t have to wait until runtime to know if your request is invalid. There are multiple ways to validate a request: use a GraphQL tool (which has a built-in parser), use introspection queries to check the schema, or let the server validate the request against the schema version on the server.
-
-GraphQL servers define the type system. That means everything about it is part of the schema. You can validate queries as you create them with testing tools or introspection. You can also let the server validate requests against the current schema.
+Since GraphQL is a type system, everything about it is part of its schema. You can validate queries as you create them with [testing tools like GraphiQL](../../getting-started/graphql-ide/) (which has a built-in parser) or [by making an introspection query](../introspection/). You can also let the server validate requests against the current schema version.
 
 ### Everything is documented
 
-Accurate and up-to-date documentation is always available along with the schema. You can make an introspection query any time you want to see all possible fields and operations for the latest version.
+Accurate and up-to-date documentation is always available along with the schema. You can [make an introspection query](../introspection/) any time you want to see all possible fields and operations for the latest version.
 
 ### Simple data hierarchies
 
-GraphQL requests and responses are structured the same way and naturally follow relationships between attributes.
+GraphQL requests and responses are structured the same way. It naturally follows relationships between attributes.

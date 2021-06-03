@@ -65,9 +65,11 @@ If you haven't already, use your Client ID, Client Secret, and scopes to [set up
 
 ## Step 5: Create a query for user role info
 
-For this query, we'll use the following entities and fields:
+For this query, we'll use the following entities:
 
 * **User role**
+
+We'll use the following fields:
 
 <table>
   <tr>
@@ -90,17 +92,21 @@ For this query, we'll use the following entities and fields:
   <tr>
    <td>type
    </td>
-   <td>Enum - ADMIN, EMPLOYEE
+   <td>Enum - enum roleType {
+      ADMIN, EMPLOYEE
+    }
    </td>
-   <td>The user's level, "Admin" or "Employee"
+   <td>The user's level of access in the given company, "Admin" or "Employee"
    </td>
   </tr>
   <tr>
    <td>status
    </td>
-   <td>Enum - ACTIVE, INACTIVE
+   <td>Enum - enum roleStatus { 
+      ACTIVE, INACTIVE
+   }
    </td>
-   <td>The employee's status, "Active" or "Inactive"
+   <td>The user's access status in the given company, "Active" or "Inactive"
    </td>
   </tr>
   <tr>
@@ -108,15 +114,14 @@ For this query, we'll use the following entities and fields:
    </td>
    <td>Boolean
    </td>
-   <td>Indicates if the user has payroll access
+   <td>Value will be "TRUE" if the company has the payroll feature turned on
    </td>
   </tr>
 </table> 
 
 ### Endpoints
 
-* For production apps: **[https://public.api.intuit.com/2020-04/graphql](https://public.api.intuit.com/2020-04/graphql)**   
-* For sandbox environments and testing: **[https://public-e2e.api.intuit.com/2020-04/graphql](https://public-e2e.api.intuit.com/2020-04/graphql)**   
+Send POST requests to one of [these endpoints](../../endpoints/).
 
 ### Query header
 * `Content-Type`: **application/json**
@@ -162,9 +167,7 @@ You can include all of these fields, or add fields, depending on your app's need
 ```
 The `type` and `status` field values define the user's `role`. You'll only see fields like `hasPayroll` if these features are active for the QuickBooks company. 
 
-<br>
-
-##### Request user role for an invalid realm
+#### Request user role for an invalid realm
 
 If the `realmID` is incorrect, you'll get the following response: 
 

@@ -5,39 +5,33 @@ nav_order: 3
 parent: Use Cases
 ---
 
-## Customer
+# Customer entity
 
-### API URL
+The Customer entity lets apps create and read customer info in QuickBooks Online. It's exposed against a new endpoint.
 
-The Customer API allows creation and read operations, and is exposed against a new endpoint. Make a POST request to the endpoint below.
+**Note**: Apps require onboarding before using the Customer API. 
 
-**Endpoint:**
+## Operations for the Customer entity
 
-Prod: `https://public.api.intuit.com/2020-04/graphql`
+* **Read** - Query (POST)
+* **Create** - Mutation (POST)
 
-**Required Headers:**
+## Endpoints
 
-Content-Type: `application/json`
+Send POST requests to one of [these endpoints](../../endpoints/).
 
-Authorization: OAuth2 authorization header using scope `com.intuit.quickbooks.accounting`.
+## Sample query and mutation header 
 
+* Content-type: `application/json`
+* Use the `com.intuit.quickbooks.accounting` scope to generate OAuth tokens for mutations and queries. Put the token in the authorization header
 
-### Scopes
+## Use mutations to create customers
 
-The Customer API is protected against the existing scope **_com.intuit.quickbooks.accounting_**. This is applicable to `mutation` as well as `query`.
+Apps can new customers in QuickBooks. The `displayName` field in the mutation should have a unique value.
 
-Note: Apps require an onboarding before using the Customer API. 
+**Tip**: Do [an introspection query](../../graphql-concepts/introspection/) to see the latest entity schema. 
 
-### API request
-
-_Note: Before making the API call, make sure to generate an OAuth token by sending the scope com.intuit.quickbooks.accounting and send the token in the request header._
-
-
-### Mutation
-
-This section describes the ability to create a Customer within the Intuit Ecosystem. The `displayName` should have a unique value.
-
-Mutation Query:
+## Sample mutation body
 
 ```
 mutation createCustomer($input: CreateCustomerInput!) {
@@ -69,9 +63,11 @@ mutation createCustomer($input: CreateCustomerInput!) {
 }
 ```
 
-Variables:
+### Variables
 
-A Customer has 2 addresses i.e. `BILLING` and `SHIPPING`. If both addresses are the same, include them twice against `contactMethods` with the respective `type`. 
+Each customer has two addresses: `BILLING` and `SHIPPING`. 
+
+If both addresses are the same, include them twice against `contactMethods` with the respective `type`. 
 
 ```
 {
@@ -114,7 +110,7 @@ A Customer has 2 addresses i.e. `BILLING` and `SHIPPING`. If both addresses are 
 }
 ```
 
-Sample Response:
+### Sample server response
 
 ```
 {
@@ -163,14 +159,13 @@ Sample Response:
 ```
 
 
-### Query
+## Use queries to read customers
 
-Customer entity can be queried by `id` or `displayName`.
+Here’s are example queries using every possible field. Remember, with GraphQL you only need to query for the fields you need.
 
+Apps can query the Customer entity by `id` or `displayName`.
 
-#### Query by ID
-
-Query:
+## Sample query body by ID
 
 ```
 query fetchCustomer($id: String!) {
@@ -206,7 +201,7 @@ query fetchCustomer($id: String!) {
 }
 ```
 
-Variables:
+### Variables
 
 ```
 {
@@ -214,7 +209,7 @@ Variables:
 }
 ```
 
-Sample Response:
+### Sample server response
 
 ```
 {
@@ -268,10 +263,7 @@ Sample Response:
 }
 ```
 
-#### Query by Name
-
-
-Query:
+## Sample query body by displayName
 
 ```
 query fetchCustomerByName($displayName: String!) {
@@ -307,7 +299,7 @@ query fetchCustomerByName($displayName: String!) {
 }
 ```
 
-Variables:
+### Variables
 
 ```
 {
@@ -315,8 +307,7 @@ Variables:
 }
 ```
 
-
-Sample Response:
+### Sample server response
 
 ```
 {

@@ -9,7 +9,7 @@ parent: Getting Started
 
 **Read time**: 1 min
 
-## Learn about Intuit Ecosystem scopes
+# Learn about Intuit Ecosystem scopes
 
 In GraphQL, scopes limit what data your app can read and update. Instead of getting broad permissions for everything, set granular permissions so your app only focuses on what's necessary.
 
@@ -24,3 +24,5 @@ Here are the current scopes for Intuit Ecosystem API.
 | qb.employee.birthdate.read                    | Grants access to employee birth date | |
 | qb.payroll.compensation.read                  | Grants access to payroll compensation | |
 | qb.payroll.benefits                           | Grants access to payroll benefits | |
+
+**Note**: Sensitive data requires additional legal agreement and manual onboarding with our support team. 
