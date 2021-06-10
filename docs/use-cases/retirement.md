@@ -5,37 +5,92 @@ nav_order: 2
 parent: Use Cases
 ---
 
-# Build apps around retirement benefits
+# Build retirement benefits apps
 
-Intuit Payroll is engaged in partnerships with Retirement plan providers to offer Retirement benefits to Small Business Owners. This will allow businesses to provide retirement benefits to their employees. This guide will help you understand the high level integration.
+As a retirement benefit provider, you can build retirement benefits apps that let small businesses connect their QuickBooks Online Payroll (not Intuit Payroll) data. This data tells you each employee's eligibility - use it to decide if they qualify for your retirement benefits plans. 
 
-### Integration Steps
+Employees can then sign up directly for retirement benefits. Your app gets accurate employee eligibility and deduction data from QuickBooks Online Payroll. Every time a change is made or payroll is run, you get a webhook with the new available data. 
 
-* Create and configure app on Inuit Developer portal: [pre-production](https://developer-stage.intuit.com/app/developer/homepage) (do this first) and [production](https://developer.intuit.com/app/developer/homepage)
-  * read the [get started](https://developer.intuit.com/app/developer/qbo/docs/get-started) and [go live](https://developer.intuit.com/app/developer/qbo/docs/go-live) guide for a better understanding of the process for building apps with Intuit's ecosystem.  
-* Implement SSO using OAuth2.0 authentication implementation which confirms with OpenID Connection specification
-  * [OpenID Connect](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/openid-connect). Using OpenID you will have access to user information.
-  * Establish connection between your app and QBO account for authorization to make calls
+Here's what to set up and our suggested build. We'll provide example queries and specific API entities you can use as a foundation for your app. 
 
-* Call Payroll APIs using the GraphQL end point. Rest of the document talks about the APIs you can call.
+## Step 1: Create your app in the Intuit Developer Portal
 
-### Use Cases
+If you haven’t already, [create your app](/../../authentication/) on the developer portal.
 
-There are four major connection points into payroll for the third party Retirement providers 
+## Step 2: Set your app's scopes
 
-#### Company Setup
+The Intuit Ecosystem API [uses scopes](/../../scopes/) to limit the type of data your app can access. You'll set scopes when you create your app.
 
-When first setting up a company with a new Retirement provider, information about the company needs to be sent back to map the authorization to the information in their system. Here are the fields as they have described it.
+Which scopes you use depend on what you want your retirement benefits app to do. The key difference is the `qb.payroll.benefits scope`. This scope lets apps write and read data. If you don't use the `qb.payroll.benefits` scope, your app can only read data from QuickBooks Online Payroll. 
 
-* Company ID
-* taxidentifiers (EIN)
-* Company Name
-* Company Address (primary address -> formatted address)
-* Admin Email
+### If you want your app to be able to read and write data
 
-This information is particularly helpful because if the company owner decides to subscribe to a Retirement provider through the QB App Store, then this information will be pre-filled for them. And if the Retirement provider has been authorized they can pull an employee roster which will help their recommendation engine about what kind of plan to pick for everyone. 
+To read QuickBooks Online Payroll data, and write in how much individual employees request for deductions, use these scopes:
 
-After establishing a connection with the QBO company, run this query for company details
+* qb.company.read
+* qb.company.taxidentifier.read
+* qb.employee.read
+* qb.employee.taxidentifier.read
+* qb.payroll.benefits
+* qb.payroll.compensation.read
+* qb.employee.birthdate.read
+
+### If you want your app to only read data
+
+To read QuickBooks Online Payroll data, but not write, use these scopes:
+
+* qb.company.read
+* qb.company.taxidentifier.read
+* qb.employee.read
+* qb.employee.taxidentifier.read
+* qb.payroll.compensation.read
+* qb.employee.birthdate.read
+
+## Step 3: Get your app's credentials
+
+1. [Sign in](https://developer.intuit.com/) to your developer account.
+2. Select the **Dashboard** link on the toolbar. 
+3. Select and open your app. 
+4. In the **Production** section, select **Keys & OAuth**. 
+5. Copy the **Client ID** and **Client Secret**. 
+
+## Step 4: Authorize your app
+
+If you haven't already, use your Client ID, Client Secret, and scopes to [set up OAuth 2.0](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0). 
+
+## Step 5: Create queries for your app 
+
+Use the sample queries in the following sections as guides. The field and value data comes directly from QuickBooks Online Payroll. You don't need to use every field, but we've included most to show what types of data your app can utilize. 
+
+There are four main tasks to set up for retirement benefits apps:
+
+* Get info from small businesses that connect to your app
+* Get employee lists
+* Capture employee contribution amounts (write only)
+* Take deductions based on payslip data
+
+### Endpoints
+
+The endpoint for all queries is the same: **https://public.api.intuit.com/2020-04/graphql**
+
+## Get info from small businesses that connect to your app
+
+When small businesses connect to your retirement benefits app, you need to get info about the small business and their employees. Use this info to connect and map benefits data to the right people. 
+
+### Create query
+
+After small businesses connect to your app, use this sample query to call the getCompanyDetails entity and get info about their QuickBooks Online company: 
+
+**Required entities**
+
+* **getCompanyDetails**
+
+**Query header** 
+
+* Content-Type: **application/json**
+* Authorization: [Use the scopes](/../../scopes/) you picked for your app to get access tokens. After [generating an OAuth token](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0), put it in the request header.
+
+**Query body**
 
 ```
 query getCompanyDetails {
@@ -59,33 +114,36 @@ query getCompanyDetails {
   }
 }
 ```
+**Tip**: If the small business decides to [subscribe to your app through the QuickBooks App store](https://quickbooks.intuit.com/app/apps/home/), their info will be prefilled.
 
-#### Employee roster
+## Get employee lists
 
-When setting up the plan, the Retirement provider has access to the company's employee roster and their current status (active/not). Other endpoints will enhance this employee info such as the Payslips for the year (being eligible for the plan requires 1000 hours worked in the US) and previous deduction elections if converting from another plan. 
+After small businesses authorize your retirement benefits app, you get access to the `realmId` for their QuickBooks Online company. Use the `realmID` to get info about the businesses' employee roster. 
 
-* Employee ID
-* First Name
-* Last Name
-* Employment Type
-* Date of birth
-* Hire Date
-* Termination Date
-* Compensations (Salary, bonus, etc)
-* Email
-* Physical Address (preferred to be in separate field, add 1, add 2, city, state, zip)
-* Employee Status
-* SSN 
+When small businesses first sign up for a plan, your app needs to query to get their last fiscal year's payslip data. You also may want to query for multiple years at once. Employee roster info comes directly from QuickBooks Online Payroll. You get full info for each employee and their status. This info all helps determine their eligibility.
 
-SSN is the preferred way of mapping, but payroll ID can work as well up to a point. For legal reasons to be part of a plan, all employees participating in the plan must have SSN by the time of filing at the end of the year. Providers choose to do this differently:
+Once you know an employee is eligible, you can invite them to your platform.
+In order to map deductions correctly, use a field that uniquely identifies individual employees. For example, you can use their SSN. This offers the most flexibility. But, you can also map to other fields like their payroll IDs.
 
-* Some Retirement providers chose to not enroll those employees that didn’t log in to select an election (and provide SSN)
-* others will just fail due to auto-enroll preferences. 
-* Some companies will enroll everyone and then near the end of the fiscal year (for us is always with calendar year QBO) just notify the owner of the plan of missing compliance data (SSN or Tax ID)
+**Learn more about mapping to SSNs** 
 
-*Access to employee SSN and date of birth is not included by default, work with your Intuit partner to get the necessary scopes associated with your app.*
+Access to sensitive employee data, like SSN and date of birth, isn't enabled by default. Reach out to your Intuit partner to get the correct scopes for your app. 
 
-After establishing connection with QBO company run this  query for employee roster
+All employees participating in a retirement plan through a small business are legally required to have a SSN by end of the year tax filing. However, as the benefits provider, you can choose how you validate the collected SSNs.
+
+### Create a query
+
+Use this sample query to call the `readEmployeeRoster` entity. This gets info for the employees on the small business' employee roster: 
+
+**Required entities**
+* **readEmployeeRoster** 
+
+**Query header** 
+
+* Content-Type: **application/json**
+* Authorization: [Use the scopes](/../../scopes/) you picked for your app to get access tokens. After [generating an OAuth token](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0), put it in the request header.
+
+**Query body**
 
 ```
 query readEmployeeRoster {
@@ -124,23 +182,32 @@ query readEmployeeRoster {
   }
 }
 ```
+**Tip**: Remember, your app only sees the employees small business owners add to QuickBooks Online Payroll, not everyone who potentially works for them.
 
-#### Contribution Level
+## Capture employee contribution amounts (write only)
 
-Retirement Providers will have their own screens for sign up and enrollment of employees of the company, but will require that information be transferred back to QBO Payroll so that the correct deductions can be taken. 
- 
-They will then need to write (and read) these fields for contribution per employee level. The only person who can edit the names or fields of each contribution will be the creator. If you are taking over from a different company as Retirement provider you will need to work with QBO company's payroll Admins to sunset contributions from previous plan. 
+Your retirement benefits app needs a way to let the individual employees sign up and enroll for benefits and make contributions. They should sign up for plans and select contribution levels in your app. 
 
-* Traditional % or Traditional $
-* Roth % or Roth $
-* loan amount $ 
-* Loan ID
-* Employer contribution %
-* Employer contributions limit
-* Nonelective contribution 
-* Deduction Code
+If your app has write permissions (via scopes), you can transfer deduction info back to QuickBooks Online Payroll so it has matching data. Use the mutations below if your app can write info back to QuickBooks Online. 
 
-Setup up a deduction for the employer 
+### Create a mutation
+
+You'll need to create separate mutations for the `createEmployeeDeduction` entity: 
+* One mutation to set up deductions with the small business
+* As many mutations as needed to record contributions for each employee
+
+**Required entities** 
+* **createEmployeeDeduction** 
+
+**Mutation header**
+
+* Content-Type: **application/json**
+* Authorization: [Use the scopes](/../../scopes/) you picked for your app to get access tokens. After [generating an OAuth token](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0), put it in the request header.
+
+**Mutation body**
+
+Use this mutation to call the `createEmployeeDeduction` entity and write deductions and contributions to QuickBooks Online Payroll. This covers business and employee benefits: 
+
 ````
 mutation {
  
@@ -157,7 +224,9 @@ mutation {
 }
 ````
 
-For each employee on the plan, get their ID using the roster query and setup a deduction.
+Use this mutation for each employee to create (or modify) deductions in QuickBooks Online Payroll. This ensures payroll data matches the contributions employees set in your retirement benefits app. 
+
+You'll need to get the `employeeId` value using the employee roster query: 
 
 ```
 mutation {
@@ -182,29 +251,25 @@ mutation {
   }
 }
 ```
+**Note**: If you as the retirement plan provider are taking over for an existing provider, please work directly with the small business' payroll admins to stop contributions from the previous plan. 
 
-#### Paycheck Information
+## Take deductions based on payslips
 
-Retirement providers need to download Payslips after each payroll run so they know how much in deductions to take out for the employees, and this is where deductions details are most important.   At the beginning of the plan, providers will need to query for up to all of last fiscal year’s Payslips to determine plan eligibility for each employee:
+Each time a small business runs payroll, your retirement benefits app gets a webhook with each employees' payslip data. This tells you how much to take out for deductions for each employee. 
 
-* Pay date
-* Payroll Process Date (approved date)
-* Employee ID
-* SSN (again above entitlements)
-* Paycheck ID
-* Gross Pay
-* YTD Pay (optional, not launch blocker)
-* Payroll Type (optional - bonus, overtime, regular, etc)
-* Hours Worked
-* Amount deducted for each category (employee)
-  * Roth
-  * Traditional
-  * Loan
-* Employer contribution
-* Pay Schedule (Against an Employee and each Payslip)
-  * It is possible to re-assign a PaySchedule against an Employee. So, historical PaySchedules can be accessed against each Payslip. 
+### Create a query
 
-After establishing connection with QBO company run this  query to download Payslips periodically.
+Use this sample query daily (preferably syncing during low traffic hours) to call the `readAllEmployeePayslips` entity and get employee payslip info:
+
+**Required entities**
+* **readAllEmployeePlayslips**
+
+**Query header** 
+
+* Content-Type: **application/json**
+* Authorization: [Use the scopes](/../../scopes/) you picked for your app to get access tokens. After [generating an OAuth token](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0), put it in the request header.
+
+**Query body**
 
 ```
 query readAllEmployeePayslips {
@@ -255,3 +320,8 @@ query readAllEmployeePayslips {
   }
 }
 ```
+**Note**: It's possible to reassign a PaySchedule against an Employee. This means historical `paySchedules` can be accessed against each payslip. This may change which group they are paid with.
+
+## Step 6: Go live with your app
+
+Follow these steps when you're ready to [publish your app](https://developer.intuit.com/app/developer/qbo/docs/go-live). 
