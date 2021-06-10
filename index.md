@@ -20,4 +20,4 @@ The below tracks can help you get started using Intuit's Ecosystem API:
 - [Learn about about GraphQL](./docs/graphql-concepts)
 - [Build apps around specific use cases](./docs/use-cases)
 
-_Note_: Intuit Ecosystem API is currently in alpha. Paritcipation is by invite-only for Intuit partners.
+**Note**: Intuit Ecosystem API is currently in alpha. Paritcipation is by invite-only for Intuit partners.
