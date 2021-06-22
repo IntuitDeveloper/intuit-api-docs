@@ -267,7 +267,7 @@ Use this sample query daily (preferably syncing during low traffic hours) to cal
 **Query header** 
 
 * Content-Type: **application/json**
-* Authorization: [Use the scopes](/../../scopes/) you picked for your app to get access tokens. After [generating an OAuth token](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0), put it in the request header.
+* Authorization: [Use the scopes](../../getting-started/scopes/) you picked for your app to get access tokens. After [generating an OAuth token](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0), put it in the request header.
 
 **Query body**
 
