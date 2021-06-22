@@ -15,7 +15,7 @@ Here's what to set up and our suggested build. We'll provide example queries and
 
 ## Step 1: Create your app in the Intuit Developer Portal
 
-If you haven’t already, [create your app](/../../authentication/) on the developer portal.
+If you haven’t already, [create your app](../../getting-started/authentication/) on the developer portal.
 
 ## Step 2: Set your app's scopes
 
