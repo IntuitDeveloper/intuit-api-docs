@@ -118,7 +118,7 @@ query getCompanyDetails {
 
 ## Get employee lists
 
-After small businesses authorize your retirement benefits app, you get access to the `realmId` for their QuickBooks Online company. Use the `realmID` to get info about the businesses' employee roster. 
+After small businesses authorize your retirement benefits app, you get access to the `realmId` for their QuickBooks Online company. Use the `realmId` to get info about the businesses' employee roster. 
 
 When small businesses first sign up for a plan, your app needs to query to get their last fiscal year's payslip data. You also may want to query for multiple years at once. Employee roster info comes directly from QuickBooks Online Payroll. You get full info for each employee and their status. This info all helps determine their eligibility.
 
