@@ -19,7 +19,7 @@ If you haven’t already, [create your app](../../getting-started/authentication
 
 ## Step 2: Set your app's scopes
 
-The Intuit Ecosystem API [uses scopes](/../../scopes/) to limit the type of data your app can access. You'll set scopes when you create your app.
+The Intuit Ecosystem API [uses scopes](../../getting-started/scopes/) to limit the type of data your app can access. You'll set scopes when you create your app.
 
 Which scopes you use depend on what you want your retirement benefits app to do. The key difference is the `qb.payroll.benefits scope`. This scope lets apps write and read data. If you don't use the `qb.payroll.benefits` scope, your app can only read data from QuickBooks Online Payroll. 
 
