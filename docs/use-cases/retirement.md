@@ -44,7 +44,7 @@ To read QuickBooks Online Payroll data, but not write, use these scopes:
 * qb.payroll.compensation.read
 * qb.employee.birthdate.read
 
-  **Important**: The scopes you use depend on what you want your retirement benefits app to do. If you want your app to read and write data, use the `qb.payroll.benefits scope`. If you don't include the `qb.payroll.benefits scope` scope, your app can only read data from QuickBooks Online Payroll. It won't be able to write."
+  **Important**: The scopes you use depend on what you want your retirement benefits app to do. If you want your app to read and write data, use the `qb.payroll.benefits` scope. If you don't include the `qb.payroll.benefits` scope, your app can only read data from QuickBooks Online Payroll. It won't be able to write."
 
 ## Step 3: Get your app's credentials
 
