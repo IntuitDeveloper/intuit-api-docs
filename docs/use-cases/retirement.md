@@ -15,11 +15,11 @@ Here's what to set up and our suggested build. We'll provide example queries and
 
 ## Step 1: Create your app in the Intuit Developer Portal
 
-If you haven’t already, [create your app](/../../authentication/) on the developer portal.
+If you haven’t already, [create your app](../../getting-started/authentication/) on the developer portal.
 
 ## Step 2: Set your app's scopes
 
-The Intuit Ecosystem API [uses scopes](/../../scopes/) to limit the type of data your app can access. You'll set scopes when you create your app.
+The Intuit Ecosystem API [uses scopes](../../getting-started/scopes/) to limit the type of data your app can access. You'll set scopes when you create your app.
 
 The scopes you use depend on what you want your retirement benefits app to do.
 
@@ -91,7 +91,7 @@ After small businesses connect to your app, use this sample query to call the ge
 **Query header** 
 
 * Content-Type: **application/json**
-* Authorization: [Use the scopes](/../../scopes/) you picked for your app to get access tokens. After [generating an OAuth token](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0), put it in the request header.
+* Authorization: [Use the scopes](../../getting-started/scopes/) you picked for your app to get access tokens. After [generating an OAuth token](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0), put it in the request header.
 
 **Query body**
 
@@ -121,7 +121,7 @@ query getCompanyDetails {
 
 ## Get employee lists
 
-After small businesses authorize your retirement benefits app, you get access to the `realmId` for their QuickBooks Online company. Use the `realmID` to get info about the businesses' employee roster. 
+After small businesses authorize your retirement benefits app, you get access to the `realmId` for their QuickBooks Online company. Use the `realmId` to get info about the businesses' employee roster. 
 
 When small businesses first sign up for a plan, your app needs to query to get their last fiscal year's payslip data. You also may want to query for multiple years at once. Employee roster info comes directly from QuickBooks Online Payroll. You get full info for each employee and their status. This info all helps determine their eligibility.
 
@@ -144,7 +144,7 @@ Use this sample query to call the `readEmployeeRoster` entity. This gets info fo
 **Query header** 
 
 * Content-Type: **application/json**
-* Authorization: [Use the scopes](/../../scopes/) you picked for your app to get access tokens. After [generating an OAuth token](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0), put it in the request header.
+* Authorization: [Use the scopes](../../getting-started/scopes/) you picked for your app to get access tokens. After [generating an OAuth token](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0), put it in the request header.
 
 **Query body**
 
@@ -205,7 +205,7 @@ You'll need to create separate mutations for the `createEmployeeDeduction` entit
 **Mutation header**
 
 * Content-Type: **application/json**
-* Authorization: [Use the scopes](/../../scopes/) you picked for your app to get access tokens. After [generating an OAuth token](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0), put it in the request header.
+* Authorization: [Use the scopes](../../getting-started/scopes/) you picked for your app to get access tokens. After [generating an OAuth token](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0), put it in the request header.
 
 **Mutation body**
 
@@ -270,7 +270,7 @@ Use this sample query daily (preferably syncing during low traffic hours) to cal
 **Query header** 
 
 * Content-Type: **application/json**
-* Authorization: [Use the scopes](/../../scopes/) you picked for your app to get access tokens. After [generating an OAuth token](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0), put it in the request header.
+* Authorization: [Use the scopes](../../getting-started/scopes/) you picked for your app to get access tokens. After [generating an OAuth token](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0), put it in the request header.
 
 **Query body**
 
