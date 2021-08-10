@@ -123,7 +123,7 @@ Variables
 ```
 {
   company{
-    transactionDraft(id: "<Id>") {
+    transactionDraft(id: "<id>") {
       ... on SalesReceiptDraft {
         id
         transactionDraftStatus

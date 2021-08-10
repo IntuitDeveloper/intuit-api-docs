@@ -124,7 +124,7 @@ Variables
 ```
 {
   company {
-    transactionDraft(id: "") {
+    transactionDraft(id: "<id>") {
       ... on EstimateDraft {
         id
         transactionDraftStatus
