@@ -18,7 +18,7 @@ The Customer entity lets apps create and read customer info in QuickBooks Online
 
 ## Endpoints
 
-Send POST requests to one of [these endpoints](../../endpoints/).
+Send POST requests to one of [these endpoints](../../getting-started/endpoints/).
 
 ## Sample query and mutation header 
 

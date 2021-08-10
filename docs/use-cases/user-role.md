@@ -121,7 +121,7 @@ We'll use the following fields:
 
 ### Endpoints
 
-Send POST requests to one of [these endpoints](../../endpoints/).
+Send POST requests to one of [these endpoints](../../getting-started/endpoints/).
 
 ### Query header
 * `Content-Type`: **application/json**
