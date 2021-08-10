@@ -35,9 +35,10 @@ Variables
       ],
       "transactionDate": "2020-09-16",
       "customer": {
-        "id": "123",
+        "id": "djQuMTo5MTMwMzUyMzI1NzU4Mjk2OjlkNjk5ZTk2MDg:123",
         "displayName": "HubSpot Customer"
       },
+      "amount": 22.95,
       "currency": {
         "name": "USD",
         "currency": "USD",
@@ -51,17 +52,12 @@ Variables
           "amount": 22.95,
           "quantity": 1,
           "item": {
-            "name": "Legrand radiant 15 Amp Receptacle Decorator Outlet",
-            "sku": "885WCP8"
+            "id" : "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjExMmRlNzQ2OTk:4"
           },
-          "rate": {
-            "value": 10,
-            "percentage": false
-          },
+          "unitPrice": 22.95,
           "serviceDate": "2020-12-09",
           "class": {
-            "id": "302300000000001842721",
-            "name": "Abcd"
+            "id": "302300000000001842721"
           }
         },
         {
@@ -106,15 +102,18 @@ Variables
         "name": "Misc"
       },
       "discount": {
-        "value": 10,
-        "percentage": false
+        "amount": {
+          "value": 10,
+          "percentage": false
+        },
+        "applyTaxAfterDiscount": false
       },
       "dueDate": "2020-12-09",
       "term": {
         "name": "Net 30"
       }
     }
-  }
+}
 ```
 
 
@@ -122,76 +121,79 @@ Variables
 
 ```
 {
-  transactionDraft(id: "<id>") {
-    ... on InvoiceDraft {
-      id
-      transactionDraftStatus
-      invoiceDraftDetails {
-        transactionDate
-        dueDate
-        amount
-        customer {
-          id
-          displayName
-        }
-        currency {
-          name
-          currency
-          exchangeRate
-        }
-        term {
-          id
-          name
-        }
-        privateMemo
-        customerMemo
-        itemLines {
-          sequence
-          description
-          serviceDate
+  company{
+    transactionDraft(id: "<id>") {
+      ... on InvoiceDraft {
+        id
+        transactionDraftStatus
+        invoiceDraftDetails {
+       transactionDate
+          dueDate
           amount
-          item {
+          customer {
+            id
+            displayName
+          }
+          currency {
+            name
+            currency
+            exchangeRate
+          }
+          term {
             id
             name
-            sku
           }
-          quantity
-          rate {
-            percentage
-            percentage
+          privateMemo
+          customerMemo
+          itemLines {
+            sequence
+            description
+            serviceDate
+            amount
+            item {
+              id
+              name
+              sku
+            }
+            quantity
+            unitPrice
+            class 
+            { 
+              id 
+            }  
           }
-        }
-        referenceNumber
-        emailDeliveryInfo {
-          to
-          cc
-          bcc
-        }
-        billingAddress{
-          freeFormAddressLine
-        }
-        shipping {
-          shipDate
-          shipVia
-          shipAddress {
+          referenceNumber
+          emailDeliveryInfo {
+            to
+            cc
+            bcc
+          }
+          billingAddress{
             freeFormAddressLine
           }
-          shipFromAddress {
-            freeFormAddressLine
+          shipping {
+            shipDate
+            shipVia
+            shipAddress {
+              freeFormAddressLine
+            }
+            shipFromAddress {
+              freeFormAddressLine
+            }
+            trackingNumber
           }
-          trackingNumber
-        }
-        department {
-          id
-          name
-        }
-        class {
-          id
-          name
-        }
-        discount {
-          percentage
-          value
+          department {
+            id
+            name
+          }
+          class {
+            id
+            name
+          }
+          discount {
+            percentage
+            value
+          }
         }
       }
     }
