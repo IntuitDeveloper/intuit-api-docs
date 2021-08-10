@@ -21,100 +21,99 @@ Variables
 
 ```
 {
-	"salesReceiptDraftDetails": {
-		"externalMetadata": [
-			{
-				"name": "account_id",
-				"value": "a-1234"
-			},
-			{
-				"name": "deal_id",
-				"value": "d-12345"
-			}
-		],
-		"transactionDate": "2020-09-16",
-		"customer": {
-			"displayName": "Test Customer"
-		},
-		"currency": {
-			"name": "USD",
-			"currency": "USD",
-			"exchangeRate": 1.34444
-		},
-		"privateMemo": "Message displayed on statement",
-		"customerMemo": "Message displayed on estimate",
-		"itemLines": [
-			{
-				"description": "2017 model, color steel",
-				"amount": 22.95,
-				"quantity": 1,
-				"item": {
-					"name": "Legrand radiant 15 Amp Receptacle Decorator Outlet",
-					"sku": "885WCP8"
-				},
-				"rate": {
-					"value": 10,
-					"percentage": false
-				},
-				"serviceDate": "2020-12-09",
-				"class": {
-					"id": "302300000000001842721",
-					"name": "Abcd"
-				}
-			}
-		],
-		"emailDeliveryInfo": {
-			"to": [
-				"a@to.com",
-				"b@to.com"
-			],
-			"cc": [
-				"a@cc.com",
-				"b@cc.com"
-			],
-			"bcc": [
-				"a@bcc.com",
-				"b@bcc.com"
-			]
-		},
-		"referenceNumber": "SomeReferenceNumber",
-		"shipping": {
-			"shipDate": "2020-12-25",
-			"shipVia": "FedEx1234",
-			"shipAddress": {
-				"freeFormAddressLine": "201 S 4th St\r\nSan Jose, CA 95112\r\nUS"
-			},
-			"shipFromAddress": {
-				"freeFormAddressLine": "2700 Coast Ave., Mountain View, CA, 94043, USA"
-			},
-			"trackingNumber": "SomeTrackingNumber"
-		},
-		"department": {
-			"id": "1",
-			"name": "SomeDepartment"
-		},
-		"billingAddress": {
-			"freeFormAddressLine": "1075 Space Parkway\r\nMountain View, CA 94043\r\nUS"
-		},
-		"class": {
-			"id": "302300000000001842721",
-			"name": "Abcd"
-		},
-		"account": {
-			"id": "123",
-			"name": "Undeposited Funds"
-		},
-		"payment": {
-			"paymentMethod": {
-				"type": "CASH",
-				"name": "Cash"
-			}
-		},
-		"discount": {
-			"value": 10,
-			"percentage": false
-		}
-	}
+    "salesReceiptDraftDetails": {
+      "externalMetadata": [
+        {
+          "name": "account_id",
+          "value": "a-1234"
+        },
+        {
+          "name": "deal_id",
+          "value": "d-12345"
+        }
+      ],
+      "transactionDate": "2020-09-16",
+      "customer": {
+        "id": "djQuMTo5MTMwMzUyMzI1NzU4Mjk2OjlkNjk5ZTk2MDg:123"
+      },
+      "amount": 22.95,
+      "currency": {
+        "name": "USD",
+        "currency": "USD",
+        "exchangeRate": 1.34444
+      },
+      "privateMemo": "Message displayed on statement",
+      "customerMemo": "Message displayed on sales receipt",
+      "itemLines": [
+        {
+          "description": "2017 model, color steel",
+          "amount": 22.95,
+          "quantity": 1,
+          "item": {
+            "id" : "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjExMmRlNzQ2OTk:4"
+          },
+          "unitPrice": 22.95,
+          "serviceDate": "2020-12-09",
+          "class": {
+            "id": "302300000000001842721"
+          }
+        }
+      ],
+      "emailDeliveryInfo": {
+        "to": [
+          "a@to.com",
+          "b@to.com"
+        ],
+        "cc": [
+          "a@cc.com",
+          "b@cc.com"
+        ],
+        "bcc": [
+          "a@bcc.com",
+          "b@bcc.com"
+        ]
+      },
+      "referenceNumber": "SomeReferenceNumber",
+      "shipping": {
+        "shipDate": "2020-12-25",
+        "shipVia": "FedEx1234",
+        "shipAddress": {
+          "freeFormAddressLine": "201 S 4th St\r\nSan Jose, CA 95112\r\nUS"
+        },
+        "shipFromAddress": {
+          "freeFormAddressLine": "2700 Coast Ave., Mountain View, CA, 94043, USA"
+        },
+        "trackingNumber": "SomeTrackingNumber"
+      },
+      "department": {
+        "id": "1",
+        "name": "SomeDepartment"
+      },
+      "billingAddress": {
+        "freeFormAddressLine": "1075 Space Parkway\r\nMountain View, CA 94043\r\nUS"
+      },
+      "class": {
+        "id": "302300000000001842721",
+        "name": "Abcd"
+      },
+      "account": {
+        "id": "123",
+        "name": "Undeposited Funds"
+      },
+      "payment": {
+        "paymentMethod": {
+          "type": "CASH",
+          "name": "Cash"
+        }
+      },
+      "discount": {
+        "amount": {
+          "value": 10,
+          "percentage": false
+        },
+        "applyTaxAfterDiscount": false
+      }
+    }
 }
 ```
 
@@ -123,83 +122,85 @@ Variables
 
 ```
 {
-  transactionDraft(id: "<id>") {
-    ... on SalesReceiptDraft {
-      id
-      transactionDraftStatus
-      salesReceiptDraftDetails {
-        transactionDate
-        amount
-        customer {
-          id
-          displayName
-        }
-        currency {
-          name
-          currency
-          exchangeRate
-        }
-        privateMemo
-        customerMemo
-        itemLines {
-          sequence
-          description
+  company{
+    transactionDraft(id: "<id>") {
+      ... on SalesReceiptDraft {
+        id
+        transactionDraftStatus
+        salesReceiptDraftDetails {
+          transactionDate
           amount
-          serviceDate
-          item {
+          customer {
             id
+            displayName
+          }
+          currency {
             name
-            sku
+            currency
+            exchangeRate
           }
-          quantity
-          rate {
-            percentage
-            percentage
+          privateMemo
+          customerMemo
+          itemLines {
+            sequence
+            description
+            amount
+            serviceDate
+            item {
+              id
+              name
+              sku
+            }
+            quantity
+            unitPrice
+            class {
+              id 
+            } 
           }
-        }
-        referenceNumber
-        emailDeliveryInfo {
-          to
-          cc
-          bcc
-        }
-        shipping {
-          shipDate
-          shipVia
-          shipAddress {
+          referenceNumber
+          emailDeliveryInfo {
+            to
+            cc
+            bcc
+          }
+          shipping {
+            shipDate
+            shipVia
+            shipAddress {
+              freeFormAddressLine
+            }
+            shipFromAddress {
+              freeFormAddressLine
+            }
+            trackingNumber
+          }
+          billingAddress {
             freeFormAddressLine
           }
-          shipFromAddress {
-            freeFormAddressLine
-          }
-          trackingNumber
-        }
-        billingAddress {
-          freeFormAddressLine
-        }
-        department {
-          id
-          name
-        }
-        class {
-          id
-          name
-        }
-        payment {
-          paymentMethod {
+          department {
             id
             name
-            type
           }
-        }
-        account {
-          id
-          name
-          fullyQualifiedName
-        }
-        discount {
-          percentage
-          value
+          class {
+            id
+            name
+          }
+          payment {
+            paymentMethod {
+              id
+              name
+              type
+            }
+          }
+          account {
+            id
+            name
+            fullyQualifiedName
+          }
+          discount {
+            percentage
+            value
+          }
         }
       }
     }
