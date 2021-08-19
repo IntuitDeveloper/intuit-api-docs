@@ -70,9 +70,9 @@ Correct, we do not currently expose the type of hours worked, however you must s
 
 Recently added to the schema, associated at the employee level but company wide. 
 
-**8\. Can we detect Reimbursements against Employee Payslips ?**
+**8\. How is Compensation Type determined against Employee Payslips ?**
 
-A Reimbursement is a compenstation type, which can be assigned a custom name and is unique within a company. To determine the compensation type, query for `compensations` against `payrollProfile`  and determine the value against `statutoryCompensationPolicy` (value should be `REIMBURSEMENT`). Finally match the `name` against `description` on Employee Payslip `compensations`.
+Each Payslip compensation is associated with a compensation type (e.g. Hourly Pay, Reimbursement, Commision, etc). e.g. A Reimbursement is a compenstation type, which can be assigned a custom name and is unique within a company. To determine the compensation type, query for `compensations` against `payrollProfile`  and determine the value against `statutoryCompensationPolicy` (value should be `REIMBURSEMENT`). Finally list Employee Payslip `compensations` and match with the `description` i.e. match `payrollProfile.compensations.employerCompensation.name` with `payslips.compensations.description`
 
 
 
