@@ -309,10 +309,10 @@ query readAllEmployeePayslips {
             }
           }
           paySchedule {
-	        id
-	        name
-	        initialPayDate
-	        frequency
+  	        id
+  	        name
+  	        initialPayDate
+  	        frequency
           }
         }
       }
