@@ -32,7 +32,7 @@ Your test company may need specific features. Will your app use Payroll data? Or
 
 ## Step 4: Create your app on the Intuit Developer Portal
 
-1. [Sign in to](https://developer.intuit.com/) your developer account.
+1. [Sign in](https://developer.intuit.com/) to your developer account.
 2. Select the **Dashboard** tab on the toolbar. 
 3. Select **+ Create an app**. 
 4. Follow the on-screen steps. 
@@ -57,7 +57,12 @@ To start, you need to get your app's credentials:
 
 Use the Client ID and Client Secret to [set up OAuth2.0](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0). 
 
-> **Tip**: Want to try the authentication process with demo code? Check out the [OAuth 2.0 playground](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0-playground).
+<table>
+<tr>
+<td><Strong>Tip</strong>: Want to try the authentication process with demo code? Check out the <a href="https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0-playground">OAuth 2.0 playground</a>.
+</td>
+</tr>
+</table>
 
 ## Step 7: Get tools to test GraphQL queries
 

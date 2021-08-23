@@ -42,8 +42,6 @@ This also lets you build features around role-specific workflows. Since your app
 
 If you haven't already, [get a QuickBooks Online sandbox company](../../getting-started/authentication/) for testing and [create your app](../../getting-started/authentication/).
 
-<br>
-
 ## Step 2: Set your app's scopes
 
 Intuit Ecosystem API [uses scopes to limit the type of data](../../getting-started/scopes/) your app can access. You'll set the scope when you create your app.
@@ -51,15 +49,7 @@ Intuit Ecosystem API [uses scopes to limit the type of data](../../getting-start
 For user role features, use these scopes:
 * **com.intuit.identity.user.roles.read**
 
-<table>
-  <tr>
-   <td><strong>Note</strong>: If your app is using the previous user role scope (<strong>com.intuit.identity.accounts.restricted</strong>), you can keep using it. We'll accept tokens for this scope so you can continue supporting your current users.</td>
-   </tr>
-</table>
-
-**Note**: Apps need to be onboarded to the new scope before they can start using it. 
-
-<br>
+**Note**: Apps need to be onboarded to scopes before they can start using them. 
 
 ## Step 3: Get your app's credentials
 
@@ -69,19 +59,17 @@ For user role features, use these scopes:
 4. In the **Production** section, select **Keys & OAuth**. 
 5. Copy the **Client ID** and **Client Secret**. 
 
-<br>
-
 ## Step 4: Authorize your app
 
 If you haven't already, use your Client ID, Client Secret, and scopes to [set up OAuth 2.0](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0). 
 
-<br>
-
 ## Step 5: Create a query for user role info
 
-For this query, we'll use the following entities and fields:
+For this query, we'll use the following entities:
 
 * **User role**
+
+We'll use the following fields:
 
 <table>
   <tr>
@@ -104,17 +92,21 @@ For this query, we'll use the following entities and fields:
   <tr>
    <td>type
    </td>
-   <td>Enum - ADMIN, EMPLOYEE
+   <td>Enum - enum roleType {
+      ADMIN, EMPLOYEE
+    }
    </td>
-   <td>The user's level, "Admin" or "Employee"
+   <td>The user's level of access in the given company, "Admin" or "Employee"
    </td>
   </tr>
   <tr>
    <td>status
    </td>
-   <td>Enum - ACTIVE, INACTIVE
+   <td>Enum - enum roleStatus { 
+      ACTIVE, INACTIVE
+   }
    </td>
-   <td>The employee's status, "Active" or "Inactive"
+   <td>The user's access status in the given company, "Active" or "Inactive"
    </td>
   </tr>
   <tr>
@@ -122,26 +114,18 @@ For this query, we'll use the following entities and fields:
    </td>
    <td>Boolean
    </td>
-   <td>Indicates if the user has payroll access
+   <td>Value will be "TRUE" if the company has the payroll feature turned on
    </td>
   </tr>
-</table>
-
-<br> 
+</table> 
 
 ### Endpoints
 
-* For production apps: **[https://public.api.intuit.com/2020-04/graphql](https://public.api.intuit.com/2020-04/graphql)**   
-* For sandbox environments and testing: **[https://public-e2e.api.intuit.com/2020-04/graphql](https://public-e2e.api.intuit.com/2020-04/graphql)**   
-<br>
+Send POST requests to one of [these endpoints](../../getting-started/endpoints/).
 
 ### Query header
 * `Content-Type`: **application/json**
-* `Authorization`: Use the user role scope **[com.intuit.identity.user.roles.read]** to get an access token
-
-After [generating an OAuth token](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0), put it in the request header. 
-
-<br>
+* `Authorization`: Use the user role scope **[com.intuit.identity.user.roles.read]** to [get an access token](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0) and put the token in the request header
 
 ### Query body
 
@@ -183,9 +167,7 @@ You can include all of these fields, or add fields, depending on your app's need
 ```
 The `type` and `status` field values define the user's `role`. You'll only see fields like `hasPayroll` if these features are active for the QuickBooks company. 
 
-<br>
-
-##### Request user role for an invalid realm
+#### Request user role for an invalid realm
 
 If the `realmID` is incorrect, you'll get the following response: 
 
@@ -201,7 +183,7 @@ If the `realmID` is incorrect, you'll get the following response:
 }
 ```
 
-Sample Response
+Sample sever response for an error
 
 ```
 {
@@ -225,8 +207,6 @@ Sample Response
 }
 ```
 Make sure the `realmID` is for the correct end-users' QuickBooks Online company ID. 
-
-<br>
 
 ## Step 6: Go live with your app
 
