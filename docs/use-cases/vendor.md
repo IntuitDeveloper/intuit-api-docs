@@ -9,6 +9,7 @@ parent: Use Cases
 
 The Vendor entity represents the seller from whom your company purchases any service or product.
 The Vendor API provides support for create, read, update and delete operations.
+
 ### Operations for Vendor entity
 
 -   Read - Query (POST)
