@@ -331,8 +331,8 @@ Sample response:
   "data": {
     "createProject": {
       "id": "djQuMTo5MTMwMzU1MjAyMDI4NDY2OjY4ZDAxMTQ3ZGQ:27462404",
-      "name": "New project -TBD",
-      "description": "test description",
+      "name": "MyProject",
+      "description": "My project to track progress for xyz customer",
       "completedDate": null,
       "status": "IN_PROGRESS",
       "customer": {
@@ -389,8 +389,8 @@ Response:
   "data": {
     "updateProject": {
       "id": "djQuMTo5MTMwMzU1MjAyMDI4NDY2OjY4ZDAxMTQ3ZGQ:27011655",
-      "name": "New project - demo1",
-      "description": "completed Project",
+      "name": "MyProject",
+      "description": "My project to track progress for xyz customer",
       "completedDate": "2021-07-21T00:09:46.546Z",
       "status": "COMPLETE",
       "active": true,
@@ -441,8 +441,8 @@ Response:
   "data": {
     "deleteProject": {
       "id": "djQuMTo5MTMwMzU1MjAyMDI4NDY2OjY4ZDAxMTQ3ZGQ:27462404",
-      "name": "New project -TBD",
-      "description": "test description",
+      "name":"MyProject",
+      "description": "My project to track progress for xyz customer",
       "completedDate": null,
       "active": false,
       "status": "IN_PROGRESS",
