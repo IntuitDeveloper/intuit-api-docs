@@ -35,7 +35,7 @@ Here's an example query using every possible field. Remember, with GraphQL you o
 Sample query (Read all Projects):
 
 ```
-query fetchProjects{
+query fetchProjects {
   company {
     projects{
       nodes {
@@ -193,7 +193,7 @@ For ex, to read all the projects which have status = 'IN_PROGRESS' for the custo
 Sample query with filters:
 
 ```
-query fetchProjects{
+query fetchProjects {
   company {
     projects (
       filter : {
@@ -305,14 +305,18 @@ mutation createProject($input_0: CreateProjectInput!) {
   }
 }
 ```
- 
-Sample Variables: 
 
+Required fields:
+- name: Name for the project
+- description: Short description for the project's purpose
+- customer.id: ID for the customer for whom you are creating this project
+  
+Sample Variables: 
 ``` 
 {
 	"input_0": {
-		"name": "New project -TBD",
-		"description": "test description",
+		"name": "MyProject",
+		"description": "My project to track progress for xyz customer",
 		"customer": {
 			"id": "djQuMTo5MTMwMzU1MjAyMDI4NDY2OjlkNjk5ZTk2MDg:1"
 		}
@@ -327,8 +331,8 @@ Sample response:
   "data": {
     "createProject": {
       "id": "djQuMTo5MTMwMzU1MjAyMDI4NDY2OjY4ZDAxMTQ3ZGQ:27462404",
-      "name": "New project -TBD",
-      "description": "test description",
+      "name": "MyProject",
+      "description": "My project to track progress for xyz customer",
       "completedDate": null,
       "status": "IN_PROGRESS",
       "customer": {
@@ -363,6 +367,9 @@ mutation updateProject($input_0: UpdateProjectInput!) {
 }
 ```
 
+Required fields:
+- id: ID of an existing project
+
 Variables:
 
 ```
@@ -382,8 +389,8 @@ Response:
   "data": {
     "updateProject": {
       "id": "djQuMTo5MTMwMzU1MjAyMDI4NDY2OjY4ZDAxMTQ3ZGQ:27011655",
-      "name": "New project - demo1",
-      "description": "completed Project",
+      "name": "MyProject",
+      "description": "My project to track progress for xyz customer",
       "completedDate": "2021-07-21T00:09:46.546Z",
       "status": "COMPLETE",
       "active": true,
@@ -400,7 +407,6 @@ Response:
 The deleteProjects mutation takes in the ID for the project, and returns the project with active = "false".
 
 Mutation:
-
 ``` 
 mutation deleteProject($id: ID!) {
   deleteProject(id: $id) {
@@ -418,8 +424,10 @@ mutation deleteProject($id: ID!) {
 }
 ```
 
-Variables:
+Required fields:
+- id: ID of an existing project
 
+Variables:
 ``` 
 {
 	"id": "djQuMTo5MTMwMzU1MjAyMDI4NDY2OjY4ZDAxMTQ3ZGQ:27462404"
@@ -433,8 +441,8 @@ Response:
   "data": {
     "deleteProject": {
       "id": "djQuMTo5MTMwMzU1MjAyMDI4NDY2OjY4ZDAxMTQ3ZGQ:27462404",
-      "name": "New project -TBD",
-      "description": "test description",
+      "name":"MyProject",
+      "description": "My project to track progress for xyz customer",
       "completedDate": null,
       "active": false,
       "status": "IN_PROGRESS",
