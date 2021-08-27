@@ -918,9 +918,11 @@ mutation updateBill($input: UpdateBillInput!) {
   }
 }
 ```
+Required fields:
+- id: ID of an existing bill
+- metadata: you need to provide the entity version returned from a previous create/update/read operation. 
 
 Variables:
-
 ```
 {
 	"input": {
@@ -1266,6 +1268,10 @@ mutation deleteBill($input: ID!) {
   }
 }
 ```
+
+Required fields:
+- id: ID of an existing bill
+- metadata: you need to provide the entity version returned from a previous create/update/read operation. 
 
 Variables:
 ``` 

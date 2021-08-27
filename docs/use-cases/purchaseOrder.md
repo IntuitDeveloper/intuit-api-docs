@@ -1067,6 +1067,10 @@ mutation updatePurchaseOrder($input0: UpdatePurchaseOrderInput!) {
 
 ```
 
+Required fields:
+- id: ID of an existing purchase order.
+- metadata: you need to provide the entity version returned from a previous create/update/read operation. 
+
 Variables:
 ```
 {
@@ -1140,6 +1144,7 @@ Variables:
 	}
 }
 ```
+
 Response:
 ```
 {
@@ -1324,6 +1329,9 @@ mutation deletePurchaseOrder($input: ID!) {
   }
 }
 ```
+
+Required fields:
+- id: ID of an existing purchase order
 
 Variables:
 ``` 

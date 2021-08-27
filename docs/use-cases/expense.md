@@ -1106,6 +1106,10 @@ mutation updateExpense($input0: UpdateExpenseInput!) {
 }
 ```
 
+Required fields:
+- id: ID of an existing expense
+- metadata: you need to provide the entity version returned from a previous create/update/read operation. 
+
 Variables:
 ```
 {
@@ -1399,6 +1403,10 @@ mutation deleteExpense($input: ID!) {
   }
 }
 ```
+
+Required fields:
+- id: ID of an existing expense
+- metadata: you need to provide the entity version returned from a previous create/update/read operation. 
 
 Variables:
 ``` 

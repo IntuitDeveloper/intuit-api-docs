@@ -1360,6 +1360,10 @@ mutation updateEstimate($input: UpdateEstimateInput!) {
 
 Variables:
 
+Required fields:
+- id: ID of an existing estimate
+- metadata: you need to provide the entity version returned from a previous create/update/read operation. 
+
 ```
 {
 "input": {
@@ -1688,6 +1692,8 @@ mutation deleteEstimate($input: ID!) {
   }
 }
 ```
+Required fields:
+- id: ID of an existing estimate
 
 Variables:
 ``` 

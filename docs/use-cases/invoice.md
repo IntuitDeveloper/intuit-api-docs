@@ -1612,6 +1612,10 @@ mutation updateInvoice($input : UpdateInvoiceInput!){
 }
 ```
 
+Required fields:
+- id: ID of an existing invoice
+- metadata: you need to provide the entity version returned from a previous create/update/read operation. 
+
 Variables:
 
 ```
@@ -1905,6 +1909,9 @@ mutation deleteInvoice($input: ID!) {
   }
 }
 ```
+
+Required fields:
+- id: ID of an existing invoice
 
 Variables:
 ``` 
