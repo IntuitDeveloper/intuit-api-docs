@@ -1,7 +1,7 @@
 ---
 layout: default
 title: InvoicePayment
-nav_order: 5
+nav_order: 10
 parent: Use Cases
 ---
 

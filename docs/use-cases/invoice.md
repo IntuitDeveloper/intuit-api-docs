@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Invoice
-nav_order: 5
+nav_order: 8
 parent: Use Cases
 ---
 
