@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Estimate Draft
-nav_order: 8
+nav_order: 6
 parent: Use Cases
 ---
 

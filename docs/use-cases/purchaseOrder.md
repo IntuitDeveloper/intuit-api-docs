@@ -1,7 +1,7 @@
 ---
 layout: default
 title: PurchaseOrder
-nav_order: 5
+nav_order: 12
 parent: Use Cases
 ---
 
