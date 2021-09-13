@@ -23,26 +23,10 @@ The Intuit Ecosystem API [uses scopes](../../getting-started/scopes/) to limit t
 
 To read QuickBooks Online Payroll data, and write in how much individual employees request for deductions, use these scopes:
 
-* qb.company.read
-* qb.company.taxidentifier.read
-* qb.employee.read
-* qb.employee.taxidentifier.read
 * qb.payroll.benefits
-* qb.payroll.compensation.read
-* qb.employee.birthdate.read
 
-### If you want your app to only read data
 
-To read QuickBooks Online Payroll data, but not write, use these scopes:
-
-* qb.company.read
-* qb.company.taxidentifier.read
-* qb.employee.read
-* qb.employee.taxidentifier.read
-* qb.payroll.compensation.read
-* qb.employee.birthdate.read
-
-  **Important**: The scopes you use depend on what you want your payroll benefits app to do. If you want your app to read and write data, use the `qb.payroll.benefits` scope. If you don't include the `qb.payroll.benefits` scope, your app can only read data from QuickBooks Online Payroll. It won't be able to write."
+  **Important**: The scopes you use depend on what you want your payroll benefits app to do. If you want your app to read and write data, use the `qb.payroll.benefits` scope.
 
 ## Step 3: Get your app's credentials
 
@@ -62,7 +46,7 @@ If you haven't already, use your Client ID, Client Secret, and scopes to [set up
 Use the sample queries in the following sections as guides. The field and value data comes directly from QuickBooks Online Payroll. You don't need to use every field, but we've included most to show what types of data your app can utilize. 
 
 
-## Create Employer Benefit
+## Create an Employer Benefit
 
 Use this method to create an Employer Benefit such as HSA, FSA, etc. The field `statutoryBenefitPolicy` depicts the actual benefit type, and can have the following values - 
 
@@ -103,7 +87,7 @@ Variables -
 ```
 
 
-## Create Employee Benefit (i.e. Assign Employer Benefit against an Employee)
+## Create an Employee Benefit (i.e. Assign Employer Benefit against an Employee)
 
 An Employer Benefit once created can be assigned against an existing Employee. The Employer as well as Employee can contribute against an Employee Benefit (e.g HSA plan).
 
