@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Use Cases
-nav_order: 16
+nav_order: 18
 has_children: true
 permalink: /docs/use-cases/
 ---

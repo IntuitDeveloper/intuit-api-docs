@@ -1,14 +1,14 @@
 ---
 layout: default
-title: salesReciept
-nav_order: 14
+title: creditMemo
+nav_order: 2
 parent: Use Cases
 ---
 
 ## Invoice
 
-The APIs related to the reFundReceipt entity allow you to manage sales receipts for your customer to track accomplished payments.
-The salesReciept API provides support for create, read, update and delete operations.
+The APIs related to the creditMemo entity allow you to manage creditMemos for your customer to track accomplished payments.
+The creditMemo API provides support for create, read, update and delete operations.
 
 ### Operations for Invoice entity
 
@@ -33,72 +33,50 @@ Here's an example query using every possible field. Remember, with GraphQL you o
 
 Sample query (Read an Invoice by Id):
 ```
-query fetchRefundReceipt($id: String!) {
-  company {
-    refundReceipts (filter: {id: {equals: $id}}){
+query fetchCreditMemo($id: String!) {
+  company{
+  creditMemos(filter: {id: { equals: $id}}) {
       nodes {
         id
-       type
-        amount
-        voided
-        location {
-          id
-          name
-        }
-        tax{
-          totalTaxAmount
-          taxable
-          taxGroup {
+        customFields {
+          fieldId
+          value
+          fieldName
+          fieldDefinition {
             id
             name
-            description
-          }
-           taxDetails {
-            taxRate {
-              id
-              name
-              description
+            inactive
+            associatedEntityTypes {
+              type
+              subtype
             }
-            taxAmount
+            
+            ... on TextField {
+              allowedValues {
+                id
+                value
+                inactive
+              }
+            }
           }
-        }
-        emailDeliveryInfo{
-          to
-          cc
-          bcc
-          status
         }
         transactionDate
         referenceNumber
-        metadata{
+        amount
+        voided
+        metadata {
           entityVersion
         }
         privateMemo
         customerMemo
-        class{
-          id
-          name
+      currency {
+            currency
+            symbol
+            exchangeRate
         }
-        discount {
-          amount {
-            percentage
-            value
-          }
-          applyTaxAfterDiscount
-        }
-        billingAddress {
-          freeFormAddressLine
-        }
-        shipping{
-          shipFromAddress {
-            freeFormAddressLine
-          }
-        }
-        currency{
-          name
-          currency
-          symbol
-          exchangeRate
+        location {
+            id
+            name
         }
         customer {
           id
@@ -125,53 +103,140 @@ query fetchRefundReceipt($id: String!) {
             }
           }
         }
-        payment{
-          paymentMethod {
+          billingAddress {
+            freeFormAddressLine
+        }
+        emailDeliveryInfo {
+            to
+            cc
+            bcc
+            status
+        }
+        class {
             id
             name
-            type
-          }
-          
         }
-        account{
-          id
-          name
-          fullyQualifiedName
+        shipping {
+            shipAddress {
+                freeFormAddressLine
+            }
+            shipFromAddress {
+                freeFormAddressLine
+            }
+            shipDate
+            shipVia
+            trackingNumber
+            shippingAmount
         }
-        customFields {
-          fieldId
-          fieldName
-          value
-          fieldDefinition {
-            id
-            name
-            inactive
-          }
+        discount {
+            amount {
+                percentage
+                value
+            }
+            applyTaxAfterDiscount
         }
-        itemLines{
-          sequence
-          description
-          quantity
-          item{
-            id
-            name
-            sku
-          }
-          amount
-          unitPrice
-          class{
-            id
-            name        
-          }
-          tax{ 
+        tax {
+            totalTaxAmount
+            taxDetails {
+                taxRate {
+                    id
+                    name
+                    description
+                    rate
+                    status
+                    startDate
+                    endDate
+                }
+                taxAmount
+               taxableAmount
+            }
+            taxGroup {
+                id
+                name
+                code
+                description
+                saleRates {
+                    taxRate {
+                    id
+                    name
+                    rate
+                    description
+                    status
+                    startDate
+                    endDate
+                    }
+                }
+                purchaseRates {
+                    taxRate {
+                        id
+                        name
+                        description
+                        rate
+                        status
+                        startDate
+                        endDate
+                        }
+                }
+            }
             taxable
-          }
         }
-      }
+        itemLines {
+            sequence
+            description
+            amount
+            class {
+                id
+                name
+            }
+            item {
+                id
+                name
+              sku
+              }
+            tax {
+                taxAmount
+                taxGroup {
+                    id
+                    name
+                    code
+                    description
+                    saleRates {
+                        taxRate {
+                        id
+                        name
+                        rate
+                        description
+                        status
+                        startDate
+                        endDate
+                        }
+                    }
+                    purchaseRates {
+                        taxRate {
+                            id
+                            name
+                            description
+                            rate
+                            status
+                            startDate
+                            endDate
+                            }
+                    }
+                }
+                taxable
+            }
+            serviceDate
+            quantity
+            unitPrice
+            account {
+                id
+               name
+            }
+        }
     }
-  }
-}
-
+    }
+   }
+   }
 ```
 
 Variables:
@@ -605,7 +670,7 @@ Response:
 
 ## Filter support:
 
-You can choose to **query by id of salesReceipt** (as shown above).
+You can choose to **query by id of creditMemo** (as shown above).
 
 ### Create mutation
 
@@ -1528,7 +1593,7 @@ mutation updateCreditMemo($input : UpdateCreditMemoInput!){
 ```
 
 Required fields:
-- id: ID of an existing salesReceipt
+- id: ID of an existing creditMemo
 - metadata: you need to provide the entity version returned from a previous create/update/read operation.
 - the entity version must match with the last entity version
   Variables:
@@ -1645,9 +1710,8 @@ Required fields:
 Mutation:
 
 ``` 
-mutation deleteSalesReceipt($input : ID!){
-  deleteSalesReceipt(id: $input) 
-  {
+mutation deleteCreditMemo($input: ID!) {
+  deleteCreditMemo(id: $input){
     id
     success
   }
@@ -1655,7 +1719,7 @@ mutation deleteSalesReceipt($input : ID!){
 ```
 
 Required fields:
-- id: ID of an existing salesReceipt
+- id: ID of an existing creditMemo
 
 Variables:
 ``` 

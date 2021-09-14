@@ -1,7 +1,7 @@
 ---
 layout: default
 title: salesReciept
-nav_order: 14
+nav_order: 16
 parent: Use Cases
 ---
 
@@ -28,9 +28,6 @@ The salesReciept API provides support for create, read, update and delete operat
 -   Use the invoice scope **[com.intuit.quickbooks.accounting]** for the authorization header
 
 ### Sample query body
-
-Do an [introspection query](../../graphql-concepts/introspection) to see the current schema for the invoice entity.
-Here's an example query using every possible field. Remember, with GraphQL you only need to query for the data you need:
 
 Sample query (Read an Invoice by Id):
 ```
@@ -1781,7 +1778,6 @@ Response:
     }
   }
 }
-#### fix later
 {
   "data": {
     "deleteSalesReceipt": {

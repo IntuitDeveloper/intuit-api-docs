@@ -1,14 +1,14 @@
 ---
 layout: default
-title: salesReciept
+title: refundReciept
 nav_order: 14
 parent: Use Cases
 ---
 
 ## Invoice
 
-The APIs related to the reFundReceipt entity allow you to manage sales receipts for your customer to track accomplished payments.
-The salesReciept API provides support for create, read, update and delete operations.
+The APIs related to the reFundReceipt entity allow you to manage refund reciepts for your customer to track accomplished payments.
+The refundReciept API provides support for create, read, update and delete operations.
 
 ### Operations for Invoice entity
 
@@ -881,7 +881,7 @@ mutation updateRefundReceipt($input: UpdateRefundReceiptInput!) {
 ```
 
 Required fields:
-- id: ID of an existing salesReceipt
+- id: ID of an existing refundReciept
 - metadata: you need to provide the entity version returned from a previous create/update/read operation.
 - the entity version must match with the last entity version
   Variables:
@@ -1190,7 +1190,7 @@ mutation deleteRefundReceipt($input: ID!) {
 ```
 
 Required fields:
-- id: ID of an existing salesReceipt
+- id: ID of an existing refundReciept
 
 Variables:
 ``` 

@@ -1,14 +1,14 @@
 ---
 layout: default
-title: salesReciept
-nav_order: 14
+title: vendorCredit
+nav_order: 21
 parent: Use Cases
 ---
 
 ## Invoice
 
-The APIs related to the reFundReceipt entity allow you to manage sales receipts for your customer to track accomplished payments.
-The salesReciept API provides support for create, read, update and delete operations.
+The APIs related to the vendorCredit entity allow you to manage vendorCredit for your customer to track accomplished payments.
+The vendorCredit API provides support for create, read, update and delete operations.
 
 ### Operations for Invoice entity
 
@@ -383,7 +383,7 @@ Response:
 
 ## Filter support:
 
-You can choose to **query by id of salesReceipt** (as shown above).
+You can choose to **query by id of vendorCredit** (as shown above).
 
 ### Create mutation
 
@@ -959,7 +959,7 @@ mutation updateVendorCredit($input: UpdateVendorCreditInput!) {
 ```
 
 Required fields:
-- id: ID of an existing salesReceipt
+- id: ID of an existing vendorCredit
 - metadata: you need to provide the entity version returned from a previous create/update/read operation.
 - the entity version must match with the last entity version
   Variables:
@@ -1312,7 +1312,7 @@ Response:
 Mutation:
 
 ``` 
-mutation deleteSalesReceipt($input : ID!){
+mutation deleteVendorCredit($input : ID!){
   deleteSalesReceipt(id: $input) 
   {
     id
@@ -1322,7 +1322,7 @@ mutation deleteSalesReceipt($input : ID!){
 ```
 
 Required fields:
-- id: ID of an existing salesReceipt
+- id: ID of an existing vendorCredit
 
 Variables:
 ``` 
