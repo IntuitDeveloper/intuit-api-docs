@@ -13,10 +13,12 @@ You can also add transactions to your project by configuring the ID for the proj
 
 This page outlines - 
 - The CRUD operations for Projects.
-- The CRUD operations for Invoice (sales transaction) and Bill (purchase transaction).
+- The CRUD operations for Invoice (sales transaction) with Projects. 
+- The CRUD operations for Bill (purchase transaction) with Projects.
 
-Currently, we have added support for configuring project ID and reading back information about the project to which the transaction belongs to a few transactions.
-These include: 
+Currently, we have added support to a few transactions so that you can configure a project ID. 
+This will allow you to read back information about the project to which this transaction belongs to (if any).
+These include a few transactions like - 
 - Supported sales Transactions for your customers -
     - Invoice
     - Invoice payment
@@ -139,12 +141,12 @@ Response:
 ### Filter support:
 
 Currently, the filters supported on projects include - 
-- id - ID for the project.
-- customerId - ID of the customer, for whom you are creating the project. 
-- status - Status of the project. Supported values include TODO, OPEN, IN_PROGRESS, COMPLETE, BLOCKED, CANCELLED, DELETED.
+- `id` - ID for the project.
+- `customerId` - ID of the customer, for whom you are creating the project. 
+- `status` - Status of the project. Supported values include TODO, OPEN, IN_PROGRESS, COMPLETE, BLOCKED, CANCELLED, DELETED.
 
 You can create a joint filter by including more than one filterable field.
-For ex, to read all the projects which have status = 'IN_PROGRESS' for the customer with customerId = '', you can execute the following query - 
+For ex, to read all the projects which have status = 'IN_PROGRESS' for the customer with customerId = 'djQuMTo5MTMwMzU1MjAyMDI4NDY2OjlkNjk5ZTk2MDg:1', you can execute the following query - 
 
 Sample query with filters:
 
