@@ -43,7 +43,6 @@ These include a few transactions like -
 ### Sample query header
 
 -   Content-type: **application/json**
--   Scopes: TBD
 
 ### Sample query body
 
@@ -405,7 +404,6 @@ Note: This document shows limited fields from Invoice transaction. For the entir
 ### Sample header
 
 -   Content-type: **application/json**
--   Scopes: TBD
 
 ### Create an Invoice (Mutation)
 Sample mutation:
@@ -883,7 +881,6 @@ Note: This document shows limited fields from Bill transaction. For the entire o
 ### Sample header
 
 -   Content-type: **application/json**
--   Scopes: TBD
 
 ### Create a Bill (Mutation)
 Sample mutation:
