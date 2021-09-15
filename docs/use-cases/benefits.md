@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Benefits
+title: PayrollBenefits
 nav_order: 18
 parent: Use Cases
 ---
@@ -50,7 +50,7 @@ Use the sample queries in the following sections as guides. The field and value 
 
 Use this method to create an Employer Benefit such as HSA, FSA, etc. The field `statutoryBenefitPolicy` depicts the actual benefit type, and can have the following values - 
 
-List of possible `statutoryBenefitPolicy` - 
+List of possible values for `statutoryBenefitPolicy` - 
 
 ```
 TBPO_CUS_MEDICAL - Health Insurance (Medical)
@@ -66,12 +66,12 @@ TBPO_CCA_PRIVATE_MEDICAL
 Mutation Query - 
 
 ```
-mutation createEmployerBenefit ($input: CreateEmployerBenefitInput!){  
-  createEmployerBenefit(benefit: $input){   
-    id   
+mutation createEmployerBenefit($input: CreateEmployerBenefitInput!) {
+  createEmployerBenefit(benefit: $input) {
+    id
     name
     statutoryBenefitPolicy
-  } 
+  }
 }
 ```
 
@@ -94,10 +94,10 @@ An Employer Benefit once created can be assigned against an existing Employee. T
 Mutation Query - 
 
 ```
-mutation createEmployeeBenefit($input: CreateEmployeeBenefitInput!){  
-  createEmployeeBenefit(benefit: $input){   
-    id   
-    active  
+mutation createEmployeeBenefit($input: CreateEmployeeBenefitInput!) {
+  createEmployeeBenefit(benefit: $input) {
+    id
+    active
     employerSetup {
       amount {
         percentage
@@ -122,8 +122,8 @@ mutation createEmployeeBenefit($input: CreateEmployeeBenefitInput!){
       id
       name
       statutoryBenefitPolicy
-    }  
-  } 
+    }
+  }
 }
 ```
 
@@ -182,7 +182,6 @@ query readAllEmployerBenefits {
     }
   }
 }
-
 ```
 
 
@@ -193,7 +192,7 @@ The following query will list all Benefits assigned against a given Employee. Th
 Query - 
 
 ```
-{
+query fetchEmployeeRoster {
   company {
     employees {
       nodes {
@@ -213,7 +212,7 @@ Query -
                 percentage
                 value
               }
-              cappings{
+              cappings {
                 amount
                 timeInterval
               }
@@ -223,15 +222,14 @@ Query -
                 percentage
                 value
               }
-              cappings{
+              cappings {
                 amount
                 timeInterval
               }
             }
           }
-        }   
+        }
       }
-      
     }
   }
 }
@@ -247,18 +245,24 @@ Query (with EmployeeId as filter) -
 ```
 query readAllEmployeePayslips {
   company {
-    employees (filter: {id: {equals: "djQuMTo5MTMwMzUzODUxMTUyODc2OjlkNjk5ZTk2MDg:0020718d03ea5feb4b49f28ff20b9e7e201aa7"}}){
-      pageInfo {
-          hasNextPage
-          startCursor
-          endCursor
-          hasPreviousPage
+    employees(
+     filter: {
+        id: {
+          equals: "djQuMTo5MTMwMzUzODUxMTUyODc2OjlkNjk5ZTk2MDg:0020718d03ea5feb4b49f28ff20b9e7e201aa7"
         }
+      }
+    ) {
+      pageInfo {
+        hasNextPage
+        startCursor
+        endCursor
+        hasPreviousPage
+      }
       nodes {
         id
         firstName
-        lastName 
-        
+        lastName
+
         employeePayslips {
           nodes {
             id
@@ -271,18 +275,20 @@ query readAllEmployeePayslips {
               }
             }
             contributions {
-                type
-                description
-                
-                contributionAmount {
-                  amount
-                  yearToDateAmount
-                }
+              type
+              description
+
+              contributionAmount {
+                amount
+                yearToDateAmount
               }
+            }
           }
         }
-      }    
+      }
     }
+  }
+}
 ```
 
 
