@@ -1,16 +1,16 @@
 ---
 layout: default
-title: refundReciept
+title: RefundReciept
 nav_order: 14
 parent: Use Cases
 ---
 
-## Invoice
+## credit memo
 
-The APIs related to the reFundReceipt entity allow you to manage refund reciepts for your customer to track accomplished payments.
+The APIs related to the reFundReceipt entity allow you to manage refund reciepts for your customers.
 The refundReciept API provides support for create, read, update and delete operations.
 
-### Operations for Invoice entity
+### Operations for credit memo entity
 
 - Read - Query (POST)
 - Create - Mutation (POST)
@@ -25,13 +25,13 @@ The refundReciept API provides support for create, read, update and delete opera
 ### Sample query header
 
 -   Content-type: **application/json**
--   Use the invoice scope **[com.intuit.quickbooks.accounting]** for the authorization header
+-   Use the credit memo scope **[com.intuit.quickbooks.accounting]** for the authorization header
 
 ### Sample query body
 
 Here's an example query using every possible field. Remember, with GraphQL you only need to query for the data you need:
 
-Sample query (Read an Invoice by Id):
+Sample query (Read an credit memo by Id):
 ```
 query fetchRefundReceipt($id: String!) {
   company {
@@ -883,7 +883,7 @@ mutation updateRefundReceipt($input: UpdateRefundReceiptInput!) {
 Required fields:
 - id: ID of an existing refundReciept
 - metadata: you need to provide the entity version returned from a previous create/update/read operation.
-- the entity version must match with the last entity version
+- the entity version must match with the last entity version 
   Variables:
 
 ```

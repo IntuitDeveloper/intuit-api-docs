@@ -1,16 +1,15 @@
 ---
 layout: default
-title: vendorCredit
+title: VendorCredit
 nav_order: 21
 parent: Use Cases
 ---
 
-## Invoice
+## credit memo
 
-The APIs related to the vendorCredit entity allow you to manage vendorCredit for your customer to track accomplished payments.
-The vendorCredit API provides support for create, read, update and delete operations.
+The APIs related to the VendorCredit entity allow you to manage VendorCredit for your Vendors
 
-### Operations for Invoice entity
+### Operations for credit memo entity
 
 - Read - Query (POST)
 - Create - Mutation (POST)
@@ -25,13 +24,13 @@ The vendorCredit API provides support for create, read, update and delete operat
 ### Sample query header
 
 -   Content-type: **application/json**
--   Use the invoice scope **[com.intuit.quickbooks.accounting]** for the authorization header
+-   Use the credit memo scope **[com.intuit.quickbooks.accounting]** for the authorization header
 
 ### Sample query body
 
 Here's an example query using every possible field. Remember, with GraphQL you only need to query for the data you need:
 
-Sample query (Read an Invoice by Id):
+Sample query (Read an credit memo by Id):
 ```
 query fetchVendorCredit($id: String!) {
   company{
