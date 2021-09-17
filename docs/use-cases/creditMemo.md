@@ -238,6 +238,8 @@ query fetchCreditMemo($id: String!) {
    }
    }
 ```
+Required fields:
+- id: ID of an existing refundReciept
 
 Variables:
 
