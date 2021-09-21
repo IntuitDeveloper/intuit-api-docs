@@ -1,16 +1,16 @@
 ---
 layout: default
-title: SalesReciept
+title: SalesReceipt
 nav_order: 16
 parent: Use Cases
 ---
 
-## credit memo
+## Sales Receipt
 
-The APIs related to the salesReciept entity allow you to manage sales receipts for your customers.
-The salesReciept API provides support for create, read, update and delete operations.
+The APIs related to the Sales Receipt entity allow you to manage Sales Receipts for your customers.
+The Sales Receipt API provides support for create, read, update and delete operations.
 
-### Operations for credit memo entity
+### Operations for Sales Receipt entity
 
 - Read - Query (POST)
 - Create - Mutation (POST)
@@ -25,11 +25,11 @@ The salesReciept API provides support for create, read, update and delete operat
 ### Sample query header
 
 -   Content-type: **application/json**
--   Use the credit memo scope **[com.intuit.quickbooks.accounting]** for the authorization header
+-   Use the Sales Receipt scope **[com.intuit.quickbooks.accounting]** for the authorization header
 
 ### Sample query body
 
-Sample query (Read an credit memo by Id):
+Sample query (Read an Sales Receipt by Id):
 ```
 query readSalesReceipts($id: String!) {
   company{
@@ -187,7 +187,7 @@ query readSalesReceipts($id: String!) {
 }
 ```
 Required fields:
-- id: ID of an existing refundReciept
+- id: ID of an existing Sales Receipt
 
 Variables:
 

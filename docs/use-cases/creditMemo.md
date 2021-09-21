@@ -5,12 +5,12 @@ nav_order: 2
 parent: Use Cases
 ---
 
-## credit memo
+## Credit Memo
 
-The APIs related to the credit memo entity allow you to manage credit memos for your customers.
-The credit memo API provides support for create, read, update and delete operations.
+The APIs related to the Credit Memo entity allow you to manage Credit Memos for your customers.
+The Credit Memo API provides support for create, read, update and delete operations.
 
-### Operations for credit memo entity
+### Operations for Credit Memo entity
 
 - Read - Query (POST)
 - Create - Mutation (POST)
@@ -25,13 +25,13 @@ The credit memo API provides support for create, read, update and delete operati
 ### Sample query header
 
 -   Content-type: **application/json**
--   Use the credit memo scope **[com.intuit.quickbooks.accounting]** for the authorization header
+-   Use the Credit Memo scope **[com.intuit.quickbooks.accounting]** for the authorization header
 
 ### Sample query body
 
 Here's an example query using every possible field. Remember, with GraphQL you only need to query for the data you need:
 
-Sample query (Read an Icredit memo by Id):
+Sample query (Read an Credit Memo by Id):
 ```
 query fetchCreditMemo($id: String!) {
   company{
@@ -239,7 +239,7 @@ query fetchCreditMemo($id: String!) {
    }
 ```
 Required fields:
-- id: ID of an existing refundReciept
+- id: ID of an existing Credit Memo
 
 Variables:
 
@@ -672,7 +672,7 @@ Response:
 
 ## Filter support:
 
-You can choose to **query by id of credit memo** (as shown above).
+You can choose to **query by id of Credit Memo** (as shown above).
 
 ### Create mutation
 
@@ -1721,7 +1721,7 @@ mutation deleteCreditMemo($input: ID!) {
 ```
 
 Required fields:
-- id: ID of an existing credit memo
+- id: ID of an existing Credit Memo
 
 Variables:
 ``` 

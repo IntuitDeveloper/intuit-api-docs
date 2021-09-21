@@ -5,11 +5,11 @@ nav_order: 21
 parent: Use Cases
 ---
 
-## credit memo
+## Vendor Credit
 
-The APIs related to the VendorCredit entity allow you to manage VendorCredit for your Vendors
+The APIs related to the Vendor Credit entity allow you to manage VendorCredit for your Vendors
 
-### Operations for credit memo entity
+### Operations for Vendor Credit entity
 
 - Read - Query (POST)
 - Create - Mutation (POST)
@@ -24,13 +24,13 @@ The APIs related to the VendorCredit entity allow you to manage VendorCredit for
 ### Sample query header
 
 -   Content-type: **application/json**
--   Use the credit memo scope **[com.intuit.quickbooks.accounting]** for the authorization header
+-   Use the Vendor Credit scope **[com.intuit.quickbooks.accounting]** for the authorization header
 
 ### Sample query body
 
 Here's an example query using every possible field. Remember, with GraphQL you only need to query for the data you need:
 
-Sample query (Read an credit memo by Id):
+Sample query (Read an Vendor Credit by Id):
 ```
 query fetchVendorCredit($id: String!) {
   company{
@@ -186,7 +186,7 @@ query fetchVendorCredit($id: String!) {
 
 ```
 Required fields:
-- id: ID of an existing refundReciept
+- id: ID of an existing Vendor Credit
 
 Variables:
 

@@ -1,16 +1,16 @@
 ---
 layout: default
-title: RefundReciept
+title: RefundReceipt
 nav_order: 14
 parent: Use Cases
 ---
 
-## credit memo
+## Refund Receipt
 
-The APIs related to the reFundReceipt entity allow you to manage refund reciepts for your customers.
-The refundReciept API provides support for create, read, update and delete operations.
+The APIs related to the ReFund Receipt entity allow you to manage Refund Receipts for your customers.
+The Refund Receipt API provides support for create, read, update and delete operations.
 
-### Operations for credit memo entity
+### Operations for refund receipt entity
 
 - Read - Query (POST)
 - Create - Mutation (POST)
@@ -25,13 +25,13 @@ The refundReciept API provides support for create, read, update and delete opera
 ### Sample query header
 
 -   Content-type: **application/json**
--   Use the credit memo scope **[com.intuit.quickbooks.accounting]** for the authorization header
+-   Use the Refund Receipt scope **[com.intuit.quickbooks.accounting]** for the authorization header
 
 ### Sample query body
 
 Here's an example query using every possible field. Remember, with GraphQL you only need to query for the data you need:
 
-Sample query (Read an credit memo by Id):
+Sample query (Read an Refund Receipt by Id):
 ```
 query fetchRefundReceipt($id: String!) {
   company {
@@ -173,7 +173,7 @@ query fetchRefundReceipt($id: String!) {
 }
 ```
 Required fields:
-- id: ID of an existing refundReciept
+- id: ID of an existing Refund Receipt
 
 Variables:
 
@@ -882,7 +882,7 @@ mutation updateRefundReceipt($input: UpdateRefundReceiptInput!) {
 ```
 
 Required fields:
-- id: ID of an existing refundReciept
+- id: ID of an existing Refund Receipt
 - metadata: you need to provide the entity version returned from a previous create/update/read operation.
 - the entity version must match with the last entity version 
   Variables:
@@ -1191,7 +1191,7 @@ mutation deleteRefundReceipt($input: ID!) {
 ```
 
 Required fields:
-- id: ID of an existing refundReciept
+- id: ID of an existing Refund Receipt
 
 Variables:
 ``` 
