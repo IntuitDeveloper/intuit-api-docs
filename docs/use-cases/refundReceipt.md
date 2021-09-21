@@ -10,7 +10,7 @@ parent: Use Cases
 The APIs related to the ReFund Receipt entity allow you to manage Refund Receipts for your customers.
 The Refund Receipt API provides support for create, read, update and delete operations.
 
-### Operations for refund receipt entity
+### Operations for Refund Receipt entity
 
 - Read - Query (POST)
 - Create - Mutation (POST)
