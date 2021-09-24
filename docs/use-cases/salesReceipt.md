@@ -707,6 +707,10 @@ mutation createSalesReceipt($input: CreateSalesReceiptInput!) {
 }
 
 ```
+Required fields:
+- id: ID of an existing Refund Receipt
+- metadata: you need to provide the entity version returned from a previous create/update/read operation.
+- the entity version must match with the last entity version
 
 Sample Variables:
 ``` 
