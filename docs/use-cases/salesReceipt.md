@@ -32,26 +32,26 @@ The Sales Receipt API provides support for create, read, update and delete opera
 Sample query (Read an Sales Receipt by Id):
 ```
 query readSalesReceipts($id: String!) {
-  company{
-  salesReceipts (filter: {id: {equals : $id}}) {
-    nodes {
-      id
-      metadata {
-        entityVersion
-      }
-    transactionDate
-      referenceNumber
-      amount
-      location {
+  company {
+    salesReceipts(filter: {id: {equals: $id}}) {
+      nodes {
         id
-        name
-      }
-      account {
-        id
-        name
-        fullyQualifiedName
-      }
-      customer {
+        metadata {
+          entityVersion
+        }
+        transactionDate
+        referenceNumber
+        amount
+        location {
+          id
+          name
+        }
+        account {
+          id
+          name
+          fullyQualifiedName
+        }
+        customer {
           id
           displayName
           firstName
@@ -76,73 +76,72 @@ query readSalesReceipts($id: String!) {
             }
           }
         }
-      billingAddress {
-        freeFormAddressLine
-      }
-      currency {
-        name
-        currency
-        symbol
-        exchangeRate
-      }
-      privateMemo
-      customerMemo
-      itemLines {
-        sequence
-        description
-        amount
-        unitPrice
-        class {
-          id
-          name
+        billingAddress {
+          freeFormAddressLine
         }
-        item {
-          id
+        currency {
           name
-            sku
-           }
-        quantity
-        tax {
-          taxAmount
-          taxGroup {
+          currency
+          symbol
+          exchangeRate
+        }
+        privateMemo
+        customerMemo
+        itemLines {
+          sequence
+          description
+          amount
+          unitPrice
+          class {
             id
             name
-            code
-            description
-            saleRates {
-              taxRate {
-                id
-                name
-                endDate
-                description
+          }
+          item {
+            id
+            name
+            sku
+          }
+          quantity
+          tax {
+            taxAmount
+            taxGroup {
+              id
+              name
+              code
+              description
+              saleRates {
+                taxRate {
+                  id
+                  name
+                  endDate
+                  description
+                }
               }
             }
+            taxable
           }
-          taxable
         }
-        
-      }
-      emailDeliveryInfo {
-        to
-        cc
-        bcc
-        status
-      }
-      shipping {
-        shipDate
-        shipVia
-        shipAddress {
-          freeFormAddressLine
+        emailDeliveryInfo {
+          to
+          cc
+          bcc
+          status
         }
-        shipFromAddress {
-          freeFormAddressLine
+        shipping {
+          shipDate
+          shipVia
+          shipAddress {
+            freeFormAddressLine
+          }
+          shipFromAddress {
+            freeFormAddressLine
+          }
+          trackingNumber
+          shippingAmount
         }
-        trackingNumber
-        shippingAmount
-      }
-      tax {
-        totalTaxAmount
-        taxGroup {
+        tax {
+          totalTaxAmount
+          taxGroup {
             id
             name
             code
@@ -159,32 +158,33 @@ query readSalesReceipts($id: String!) {
               }
             }
           }
-        taxable
-        taxDetails {
-          taxAmount
-          taxableAmount
-          taxRate {
-            id
-            name
-            endDate
-            description
-            status
-            startDate
-            rate
+          taxable
+          taxDetails {
+            taxAmount
+            taxableAmount
+            taxRate {
+              id
+              name
+              endDate
+              description
+              status
+              startDate
+              rate
+            }
           }
         }
-      }
-      payment {
-        paymentMethod {
-          id
-          name
-          type
+        payment {
+          paymentMethod {
+            id
+            name
+            type
+          }
         }
       }
     }
   }
-  }
 }
+
 ```
 Required fields:
 - id: ID of an existing Sales Receipt
@@ -555,138 +555,121 @@ You can choose to **query by id of salesReceipt** (as shown above).
 Mutation:
 
 ```
-mutation createSalesReceipt($input : CreateSalesReceiptInput!){
-  createSalesReceipt(salesReceipt: $input) 
-  {
+mutation createSalesReceipt($input: CreateSalesReceiptInput!) {
+  createSalesReceipt(salesReceipt: $input) {
+    id
+    metadata {
+      entityVersion
+    }
+    transactionDate
+    referenceNumber
+    amount
+    voided
+    location {
       id
-      metadata {
-        entityVersion
+      name
+    }
+    account {
+      id
+      name
+      fullyQualifiedName
+    }
+    customer {
+      id
+      displayName
+      firstName
+      lastName
+      companyName
+      notes
+      website
+      email
+      phone
+      mobile
+      fax
+      contactMethods {
+        type
+        primary
+        address {
+          streetAddress1
+          streetAddress2
+          city
+          state
+          country
+          zipCode
+        }
       }
-      transactionDate
-      referenceNumber
+    }
+    billingAddress {
+      freeFormAddressLine
+    }
+    currency {
+      name
+      currency
+      symbol
+      exchangeRate
+    }
+    privateMemo
+    customerMemo
+    itemLines {
+      sequence
+      description
       amount
-      voided
-      location {
+      unitPrice
+      class {
         id
         name
       }
-      account {
+      item {
         id
         name
-        fullyQualifiedName
+        sku
       }
-      customer {
+      quantity
+      tax {
+        taxAmount
+        taxGroup {
           id
-          displayName
-          firstName
-          lastName
-          companyName
-          notes
-          website
-          email
-          phone
-          mobile
-          fax
-          contactMethods {
-            type
-            primary
-            address {
-              streetAddress1
-              streetAddress2
-              city
-              state
-              country
-              zipCode
+          name
+          code
+          description
+          saleRates {
+            taxRate {
+              id
+              name
+              endDate
+              description
             }
           }
         }
-      billingAddress {
+        taxable
+      }
+    }
+    emailDeliveryInfo {
+      to
+      cc
+      bcc
+      status
+    }
+    shipping {
+      shipDate
+      shipVia
+      shipAddress {
         freeFormAddressLine
       }
-       currency {
+      shipFromAddress {
+        freeFormAddressLine
+      }
+      trackingNumber
+      shippingAmount
+    }
+    tax {
+      totalTaxAmount
+      taxGroup {
+        id
         name
-        currency
-        symbol
-        exchangeRate
-      }
-      privateMemo
-      customerMemo
-      itemLines {
-        sequence
+        code
         description
-        amount
-   unitPrice
-     class {
-          id
-          name
-        }
-        item {
-          id
-          name
-          sku
-         }
-        quantity
-        tax {
-          taxAmount
-          taxGroup {
-            id
-            name
-            code
-            description
-            saleRates {
-              taxRate {
-                id
-                name
-                endDate
-                description
-              }
-            }
-          }
-          taxable
-        }
-        
-      }
-      emailDeliveryInfo {
-        to
-        cc
-        bcc
-        status
-      }
-      shipping {
-        shipDate
-        shipVia
-        shipAddress {
-          freeFormAddressLine
-        }
-        shipFromAddress {
-          freeFormAddressLine
-        }
-        trackingNumber
-        shippingAmount
-      }
-      tax {
-        totalTaxAmount
-        taxGroup {
-            id
-            name
-            code
-            description
-            saleRates {
-              taxRate {
-                id
-                name
-                endDate
-                description
-                status
-                startDate
-                rate
-              }
-            }
-          }
-        taxable
-        taxDetails {
-          taxAmount
-          taxableAmount
+        saleRates {
           taxRate {
             id
             name
@@ -698,15 +681,31 @@ mutation createSalesReceipt($input : CreateSalesReceiptInput!){
           }
         }
       }
-      payment {
-        paymentMethod {
+      taxable
+      taxDetails {
+        taxAmount
+        taxableAmount
+        taxRate {
           id
           name
-          type
+          endDate
+          description
+          status
+          startDate
+          rate
         }
       }
     }
+    payment {
+      paymentMethod {
+        id
+        name
+        type
+      }
+    }
+  }
 }
+
 ```
 
 Sample Variables:
@@ -1146,144 +1145,127 @@ Sample response:
 Mutation:
 
 ``` 
-mutation updateSalesReceipt($input : UpdateSalesReceiptInput!){
-  updateSalesReceipt(salesReceipt: $input) 
-  {
-      id
-      metadata {
-        entityVersion
-      }
+mutation updateSalesReceipt($input: UpdateSalesReceiptInput!) {
+  updateSalesReceipt(salesReceipt: $input) {
+    id
+    metadata {
+      entityVersion
+    }
     transactionDate
-      referenceNumber
-      voided
+    referenceNumber
+    voided
+    amount
+    location {
+      id
+      name
+    }
+    account {
+      id
+      name
+      fullyQualifiedName
+    }
+    currency {
+      name
+      currency
+      symbol
+      exchangeRate
+    }
+    customer {
+      id
+      displayName
+      firstName
+      lastName
+      companyName
+      notes
+      website
+      email
+      phone
+      mobile
+      fax
+      contactMethods {
+        type
+        primary
+        address {
+          streetAddress1
+          streetAddress2
+          city
+          state
+          country
+          zipCode
+        }
+      }
+    }
+    billingAddress {
+      freeFormAddressLine
+    }
+    currency {
+      name
+      currency
+      symbol
+      exchangeRate
+    }
+    privateMemo
+    customerMemo
+    itemLines {
+      sequence
+      description
       amount
-      location {
+      unitPrice
+      class {
         id
         name
       }
-      account {
+      item {
         id
         name
-        fullyQualifiedName
+        sku
       }
-      currency {
-        name
-        currency
-        symbol
-        exchangeRate
-      }
-      customer {
+      quantity
+      tax {
+        taxAmount
+        taxGroup {
           id
-          displayName
-          firstName
-          lastName
-          companyName
-          notes
-          website
-          email
-          phone
-          mobile
-          fax
-          contactMethods {
-            type
-            primary
-            address {
-              streetAddress1
-              streetAddress2
-              city
-              state
-              country
-              zipCode
+          name
+          code
+          description
+          saleRates {
+            taxRate {
+              id
+              name
+              endDate
+              description
             }
           }
         }
-      billingAddress {
+        taxable
+      }
+    }
+    emailDeliveryInfo {
+      to
+      cc
+      bcc
+      status
+    }
+    shipping {
+      shipDate
+      shipVia
+      shipAddress {
         freeFormAddressLine
       }
-       currency {
+      shipFromAddress {
+        freeFormAddressLine
+      }
+      trackingNumber
+      shippingAmount
+    }
+    tax {
+      totalTaxAmount
+      taxGroup {
+        id
         name
-        currency
-        symbol
-        exchangeRate
-      }
-      privateMemo
-      customerMemo
-      itemLines {
-        sequence
+        code
         description
-        amount
-        unitPrice
-        class {
-          id
-          name
-        }
-        item {
-          id
-          name
-           sku
-         }
-        quantity
-        tax {
-          taxAmount
-          taxGroup {
-            id
-            name
-            code
-            description
-            saleRates {
-              taxRate {
-                id
-                name
-                endDate
-                description
-              }
-            }
-          }
-          taxable
-        }
-        
-      }
-      emailDeliveryInfo {
-        to
-        cc
-        bcc
-        status
-      }
-      shipping {
-        shipDate
-        shipVia
-        shipAddress {
-          freeFormAddressLine
-        }
-        shipFromAddress {
-          freeFormAddressLine
-        }
-        trackingNumber
-        shippingAmount
-      }
-      tax {
-        totalTaxAmount
-        taxGroup {
-            id
-            name
-            code
-            description
-            saleRates {
-              taxRate {
-                id
-                name
-                endDate
-                description
-                status
-                startDate
-                rate
-              }
-            }
-          }
-        taxable
-        taxDetails {
-          taxAmount
-          taxableAmount
+        saleRates {
           taxRate {
             id
             name
@@ -1295,15 +1277,31 @@ mutation updateSalesReceipt($input : UpdateSalesReceiptInput!){
           }
         }
       }
-      payment {
-        paymentMethod {
+      taxable
+      taxDetails {
+        taxAmount
+        taxableAmount
+        taxRate {
           id
           name
-          type
+          endDate
+          description
+          status
+          startDate
+          rate
         }
       }
     }
+    payment {
+      paymentMethod {
+        id
+        name
+        type
+      }
+    }
+  }
 }
+
 ```
 
 Required fields:

@@ -35,17 +35,17 @@ Sample query (Read an Refund Receipt by Id):
 ```
 query fetchRefundReceipt($id: String!) {
   company {
-    refundReceipts (filter: {id: {equals: $id}}){
+    refundReceipts(filter: {id: {equals: $id}}) {
       nodes {
         id
-       type
+        type
         amount
         voided
         location {
           id
           name
         }
-        tax{
+        tax {
           totalTaxAmount
           taxable
           taxGroup {
@@ -53,7 +53,7 @@ query fetchRefundReceipt($id: String!) {
             name
             description
           }
-           taxDetails {
+          taxDetails {
             taxRate {
               id
               name
@@ -62,7 +62,7 @@ query fetchRefundReceipt($id: String!) {
             taxAmount
           }
         }
-        emailDeliveryInfo{
+        emailDeliveryInfo {
           to
           cc
           bcc
@@ -70,12 +70,12 @@ query fetchRefundReceipt($id: String!) {
         }
         transactionDate
         referenceNumber
-        metadata{
+        metadata {
           entityVersion
         }
         privateMemo
         customerMemo
-        class{
+        class {
           id
           name
         }
@@ -89,12 +89,12 @@ query fetchRefundReceipt($id: String!) {
         billingAddress {
           freeFormAddressLine
         }
-        shipping{
+        shipping {
           shipFromAddress {
             freeFormAddressLine
           }
         }
-        currency{
+        currency {
           name
           currency
           symbol
@@ -125,15 +125,14 @@ query fetchRefundReceipt($id: String!) {
             }
           }
         }
-        payment{
+        payment {
           paymentMethod {
             id
             name
             type
           }
-          
         }
-        account{
+        account {
           id
           name
           fullyQualifiedName
@@ -148,22 +147,22 @@ query fetchRefundReceipt($id: String!) {
             inactive
           }
         }
-        itemLines{
+        itemLines {
           sequence
           description
           quantity
-          item{
+          item {
             id
             name
             sku
           }
           amount
           unitPrice
-          class{
+          class {
             id
-            name        
+            name
           }
-          tax{ 
+          tax {
             taxable
           }
         }
@@ -171,6 +170,7 @@ query fetchRefundReceipt($id: String!) {
     }
   }
 }
+
 ```
 Required fields:
 - id: ID of an existing Refund Receipt
@@ -396,21 +396,21 @@ mutation createRefundReceipt($input: CreateRefundReceiptInput!) {
     tax {
       totalTaxAmount
     }
-    metadata{
+    metadata {
       entityVersion
     }
-    location{
+    location {
       id
       name
     }
-    discount{
+    discount {
       amount {
         percentage
         value
       }
       applyTaxAfterDiscount
     }
-    currency{
+    currency {
       name
       currency
       exchangeRate
@@ -454,7 +454,7 @@ mutation createRefundReceipt($input: CreateRefundReceiptInput!) {
         freeFormAddressLine
       }
     }
-    payment{
+    payment {
       paymentMethod {
         id
         name
@@ -466,7 +466,7 @@ mutation createRefundReceipt($input: CreateRefundReceiptInput!) {
       cc
       bcc
     }
-    customFields{
+    customFields {
       fieldId
       fieldName
       value
@@ -474,7 +474,7 @@ mutation createRefundReceipt($input: CreateRefundReceiptInput!) {
         id
         name
         inactive
-        associatedEntityTypes{
+        associatedEntityTypes {
           type
           subtype
         }
@@ -482,14 +482,14 @@ mutation createRefundReceipt($input: CreateRefundReceiptInput!) {
     }
     privateMemo
     customerMemo
-    itemLines{
+    itemLines {
       sequence
-      description     
+      description
       amount
       quantity
       item {
         id
-        name  
+        name
         sku
       }
       tax {
@@ -503,6 +503,7 @@ mutation createRefundReceipt($input: CreateRefundReceiptInput!) {
     }
   }
 }
+
 ```
 
 Sample Variables:
@@ -772,21 +773,21 @@ mutation updateRefundReceipt($input: UpdateRefundReceiptInput!) {
     tax {
       totalTaxAmount
     }
-    metadata{
+    metadata {
       entityVersion
     }
-    location{
+    location {
       id
       name
     }
-    discount{
+    discount {
       amount {
         percentage
         value
       }
       applyTaxAfterDiscount
     }
-    currency{
+    currency {
       name
       currency
       exchangeRate
@@ -830,7 +831,7 @@ mutation updateRefundReceipt($input: UpdateRefundReceiptInput!) {
         freeFormAddressLine
       }
     }
-    payment{
+    payment {
       paymentMethod {
         id
         name
@@ -842,7 +843,7 @@ mutation updateRefundReceipt($input: UpdateRefundReceiptInput!) {
       cc
       bcc
     }
-    customFields{
+    customFields {
       fieldId
       fieldName
       value
@@ -850,7 +851,7 @@ mutation updateRefundReceipt($input: UpdateRefundReceiptInput!) {
         id
         name
         inactive
-        associatedEntityTypes{
+        associatedEntityTypes {
           type
           subtype
         }
@@ -858,14 +859,14 @@ mutation updateRefundReceipt($input: UpdateRefundReceiptInput!) {
     }
     privateMemo
     customerMemo
-    itemLines{
+    itemLines {
       sequence
-      description     
+      description
       amount
       quantity
       item {
         id
-        name  
+        name
         sku
       }
       tax {
@@ -879,6 +880,7 @@ mutation updateRefundReceipt($input: UpdateRefundReceiptInput!) {
     }
   }
 }
+
 ```
 
 Required fields:
@@ -1183,7 +1185,7 @@ Mutation:
 
 ``` 
 mutation deleteRefundReceipt($input: ID!) {
-  deleteRefundReceipt(id: $input){
+  deleteRefundReceipt(id: $input) {
     id
     success
   }

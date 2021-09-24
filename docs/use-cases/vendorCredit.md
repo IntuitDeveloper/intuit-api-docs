@@ -33,48 +33,48 @@ Here's an example query using every possible field. Remember, with GraphQL you o
 Sample query (Read an Vendor Credit by Id):
 ```
 query fetchVendorCredit($id: String!) {
-  company{
-  vendorCredits (filter: {id: {equals: $id}}){
-    nodes {
-      id
-      metadata{
-   entityVersion
-     }
-      transactionDate
-      permitNumber
-      location{
-      id
-      name
-    }
-     currency{
-      name
-      currency
-      exchangeRate
-      symbol
-    }
-      customFields{
-    fieldId
-    fieldName
-     value
-     fieldDefinition {
-    id
-    name
-    inactive
-    associatedEntityTypes {
-   type
-    subtype
- }
-   }
-    }
-   memo
-      class{
+  company {
+    vendorCredits(filter: {id: {equals: $id}}) {
+      nodes {
         id
-        name
-      }
-      mailingAddress {
-        freeFormAddressLine
-      }
-      vendor {
+        metadata {
+          entityVersion
+        }
+        transactionDate
+        permitNumber
+        location {
+          id
+          name
+        }
+        currency {
+          name
+          currency
+          exchangeRate
+          symbol
+        }
+        customFields {
+          fieldId
+          fieldName
+          value
+          fieldDefinition {
+            id
+            name
+            inactive
+            associatedEntityTypes {
+              type
+              subtype
+            }
+          }
+        }
+        memo
+        class {
+          id
+          name
+        }
+        mailingAddress {
+          freeFormAddressLine
+        }
+        vendor {
           id
           firstName
           displayName
@@ -100,40 +100,40 @@ query fetchVendorCredit($id: String!) {
             }
           }
         }
-      accountLines{
-        sequence
-        description
-        amount
-        account {
-          id
-          name
+        accountLines {
+          sequence
+          description
+          amount
+          account {
+            id
+            name
+          }
+          tax {
+            taxable
+          }
+          billable
+          billableAmount
+          markup {
+            amount
+            percent
+            account {
+              id
+            }
+          }
+          customer {
+            id
+            displayName
+          }
+          class {
+            id
+            name
+          }
         }
-        tax {
-      taxable
-       }
-        billable
-        billableAmount
-      markup {
-        amount
-        percent
-      account{
-        id
-        }
-     }
-      customer{
-          id
-          displayName
-        }
-        class{
-          id
-          name
-        }      
-      }
-      itemLines{
-        sequence
-        description
-        quantity
-        customer{
+        itemLines {
+          sequence
+          description
+          quantity
+          customer {
             id
             firstName
             displayName
@@ -145,45 +145,44 @@ query fetchVendorCredit($id: String!) {
             phone
             mobile
             fax
-            contactMethods{
+            contactMethods {
               type
               primary
-              address{
+              address {
                 streetAddress1
                 streetAddress2
                 city
                 zipCode
-                state 
-                country       
+                state
+                country
               }
             }
           }
-        billable
-        billableAmount
-      markup {
-        amount
-        percent
-      account{
-        id
-        }
-     }
-      item{
-          id
-          name
-          sku
-        }
-        amount
-        unitPrice
-        class{
-          id
-          name        
+          billable
+          billableAmount
+          markup {
+            amount
+            percent
+            account {
+              id
+            }
+          }
+          item {
+            id
+            name
+            sku
+          }
+          amount
+          unitPrice
+          class {
+            id
+            name
+          }
         }
       }
     }
   }
-  }
-  }
-
+}
 ```
 Required fields:
 - id: ID of an existing Vendor Credit
@@ -394,74 +393,74 @@ Mutation:
 mutation createVendorCredit($input: CreateVendorCreditInput!) {
   createVendorCredit(vendorCredit: $input) {
     id
-    metadata{
-   entityVersion
-     }
-     transactionDate
+    metadata {
+      entityVersion
+    }
+    transactionDate
     permitNumber
-    location{
+    location {
       id
       name
     }
-    currency{
+    currency {
       name
       currency
       exchangeRate
       symbol
     }
     vendor {
-          id
-          firstName
-          displayName
-          lastName
-          companyName
-          notes
-          website
-          email
-          phone
-          mobile
-          fax
-          active
-          contactMethods {
-            type
-            primary
-            address {
-              streetAddress1
-              streetAddress2
-              city
-              state
-              zipCode
-              country
-            }
-          }
+      id
+      firstName
+      displayName
+      lastName
+      companyName
+      notes
+      website
+      email
+      phone
+      mobile
+      fax
+      active
+      contactMethods {
+        type
+        primary
+        address {
+          streetAddress1
+          streetAddress2
+          city
+          state
+          zipCode
+          country
         }
+      }
+    }
     mailingAddress {
       freeFormAddressLine
     }
-    customFields{
-    fieldId
-    fieldName
-     value
-     fieldDefinition {
-    id
-    name
-    inactive
-    associatedEntityTypes {
-   type
-    subtype
- }
-   }
+    customFields {
+      fieldId
+      fieldName
+      value
+      fieldDefinition {
+        id
+        name
+        inactive
+        associatedEntityTypes {
+          type
+          subtype
+        }
+      }
     }
-   memo
-    accountLines{
+    memo
+    accountLines {
       sequence
       description
       amount
-      account{
+      account {
         id
         name
       }
-      tax{
+      tax {
         taxable
       }
       billable
@@ -469,10 +468,10 @@ mutation createVendorCredit($input: CreateVendorCreditInput!) {
       markup {
         amount
         percent
-      account{
-        id
+        account {
+          id
         }
-     }
+      }
       customer {
         id
         displayName
@@ -480,11 +479,11 @@ mutation createVendorCredit($input: CreateVendorCreditInput!) {
       class {
         id
         name
-      } 
+      }
     }
-    itemLines{
+    itemLines {
       sequence
-      description     
+      description
       amount
       quantity
       item {
@@ -496,31 +495,31 @@ mutation createVendorCredit($input: CreateVendorCreditInput!) {
         taxable
       }
       unitPrice
-      customer{
-            id
-            firstName
-            displayName
-            lastName
-            companyName
-            notes
-            website
-            email
-            phone
-            mobile
-            fax
-            contactMethods{
-              type
-              primary
-              address{
-                streetAddress1
-                streetAddress2
-                city
-                zipCode
-                state 
-                country       
-              }
-            }
+      customer {
+        id
+        firstName
+        displayName
+        lastName
+        companyName
+        notes
+        website
+        email
+        phone
+        mobile
+        fax
+        contactMethods {
+          type
+          primary
+          address {
+            streetAddress1
+            streetAddress2
+            city
+            zipCode
+            state
+            country
           }
+        }
+      }
       class {
         id
         name
@@ -530,16 +529,13 @@ mutation createVendorCredit($input: CreateVendorCreditInput!) {
       markup {
         amount
         percent
-      account{
-        id
+        account {
+          id
         }
-     }
-      
+      }
     }
-    
   }
-  }
-
+}
 
 ```
 
@@ -810,74 +806,74 @@ Mutation:
 mutation updateVendorCredit($input: UpdateVendorCreditInput!) {
   updateVendorCredit(vendorCredit: $input) {
     id
-    metadata{
-   entityVersion
-     }
-     transactionDate
+    metadata {
+      entityVersion
+    }
+    transactionDate
     permitNumber
-    location{
+    location {
       id
       name
     }
-    currency{
+    currency {
       name
       currency
       exchangeRate
       symbol
     }
     vendor {
-          id
-          firstName
-          displayName
-          lastName
-          companyName
-          notes
-          website
-          email
-          phone
-          mobile
-          fax
-          active
-          contactMethods {
-            type
-            primary
-            address {
-              streetAddress1
-              streetAddress2
-              city
-              state
-              zipCode
-              country
-            }
-          }
+      id
+      firstName
+      displayName
+      lastName
+      companyName
+      notes
+      website
+      email
+      phone
+      mobile
+      fax
+      active
+      contactMethods {
+        type
+        primary
+        address {
+          streetAddress1
+          streetAddress2
+          city
+          state
+          zipCode
+          country
         }
+      }
+    }
     mailingAddress {
       freeFormAddressLine
     }
-    customFields{
-    fieldId
-    fieldName
-     value
-     fieldDefinition {
-    id
-    name
-    inactive
-    associatedEntityTypes {
-   type
-    subtype
- }
-   }
+    customFields {
+      fieldId
+      fieldName
+      value
+      fieldDefinition {
+        id
+        name
+        inactive
+        associatedEntityTypes {
+          type
+          subtype
+        }
+      }
     }
     memo
-    accountLines{
+    accountLines {
       sequence
       description
       amount
-      account{
+      account {
         id
         name
       }
-      tax{
+      tax {
         taxable
       }
       billable
@@ -885,10 +881,10 @@ mutation updateVendorCredit($input: UpdateVendorCreditInput!) {
       markup {
         amount
         percent
-      account{
-        id
+        account {
+          id
         }
-     }
+      }
       customer {
         id
         displayName
@@ -896,11 +892,11 @@ mutation updateVendorCredit($input: UpdateVendorCreditInput!) {
       class {
         id
         name
-      } 
+      }
     }
-    itemLines{
+    itemLines {
       sequence
-      description     
+      description
       amount
       quantity
       item {
@@ -912,31 +908,31 @@ mutation updateVendorCredit($input: UpdateVendorCreditInput!) {
         taxable
       }
       unitPrice
-      customer{
-            id
-            firstName
-            displayName
-            lastName
-            companyName
-            notes
-            website
-            email
-            phone
-            mobile
-            fax
-            contactMethods{
-              type
-              primary
-              address{
-                streetAddress1
-                streetAddress2
-                city
-                zipCode
-                state 
-                country       
-              }
-            }
+      customer {
+        id
+        firstName
+        displayName
+        lastName
+        companyName
+        notes
+        website
+        email
+        phone
+        mobile
+        fax
+        contactMethods {
+          type
+          primary
+          address {
+            streetAddress1
+            streetAddress2
+            city
+            zipCode
+            state
+            country
           }
+        }
+      }
       class {
         id
         name
@@ -946,16 +942,13 @@ mutation updateVendorCredit($input: UpdateVendorCreditInput!) {
       markup {
         amount
         percent
-      account{
-        id
+        account {
+          id
         }
-     }
-      
+      }
     }
-    
   }
-  }
-
+}
 
 ```
 
