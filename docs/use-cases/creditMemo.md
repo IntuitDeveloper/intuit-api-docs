@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CreditMemo
+title: Credit Memo
 nav_order: 2
 parent: Use Cases
 ---
@@ -34,8 +34,8 @@ Here's an example query using every possible field. Remember, with GraphQL you o
 Sample query (Read an Credit Memo by Id):
 ```
 query fetchCreditMemo($id: String!) {
-  company{
-  creditMemos(filter: {id: { equals: $id}}) {
+  company {
+    creditMemos(filter: {id: {equals: $id}}) {
       nodes {
         id
         customFields {
@@ -50,7 +50,6 @@ query fetchCreditMemo($id: String!) {
               type
               subtype
             }
-            
             ... on TextField {
               allowedValues {
                 id
@@ -69,14 +68,14 @@ query fetchCreditMemo($id: String!) {
         }
         privateMemo
         customerMemo
-      currency {
-            currency
-            symbol
-            exchangeRate
+        currency {
+          currency
+          symbol
+          exchangeRate
         }
         location {
-            id
-            name
+          id
+          name
         }
         customer {
           id
@@ -103,140 +102,140 @@ query fetchCreditMemo($id: String!) {
             }
           }
         }
-          billingAddress {
-            freeFormAddressLine
+        billingAddress {
+          freeFormAddressLine
         }
         emailDeliveryInfo {
-            to
-            cc
-            bcc
-            status
+          to
+          cc
+          bcc
+          status
         }
         class {
-            id
-            name
+          id
+          name
         }
         shipping {
-            shipAddress {
-                freeFormAddressLine
-            }
-            shipFromAddress {
-                freeFormAddressLine
-            }
-            shipDate
-            shipVia
-            trackingNumber
-            shippingAmount
+          shipAddress {
+            freeFormAddressLine
+          }
+          shipFromAddress {
+            freeFormAddressLine
+          }
+          shipDate
+          shipVia
+          trackingNumber
+          shippingAmount
         }
         discount {
-            amount {
-                percentage
-                value
-            }
-            applyTaxAfterDiscount
+          amount {
+            percentage
+            value
+          }
+          applyTaxAfterDiscount
         }
         tax {
-            totalTaxAmount
-            taxDetails {
-                taxRate {
-                    id
-                    name
-                    description
-                    rate
-                    status
-                    startDate
-                    endDate
-                }
-                taxAmount
-               taxableAmount
+          totalTaxAmount
+          taxDetails {
+            taxRate {
+              id
+              name
+              description
+              rate
+              status
+              startDate
+              endDate
             }
-            taxGroup {
+            taxAmount
+            taxableAmount
+          }
+          taxGroup {
+            id
+            name
+            code
+            description
+            saleRates {
+              taxRate {
                 id
                 name
-                code
+                rate
                 description
-                saleRates {
-                    taxRate {
-                    id
-                    name
-                    rate
-                    description
-                    status
-                    startDate
-                    endDate
-                    }
-                }
-                purchaseRates {
-                    taxRate {
-                        id
-                        name
-                        description
-                        rate
-                        status
-                        startDate
-                        endDate
-                        }
-                }
+                status
+                startDate
+                endDate
+              }
             }
-            taxable
+            purchaseRates {
+              taxRate {
+                id
+                name
+                description
+                rate
+                status
+                startDate
+                endDate
+              }
+            }
+          }
+          taxable
         }
         itemLines {
-            sequence
-            description
-            amount
-            class {
-                id
-                name
-            }
-            item {
-                id
-                name
-              sku
-              }
-            tax {
-                taxAmount
-                taxGroup {
-                    id
-                    name
-                    code
-                    description
-                    saleRates {
-                        taxRate {
-                        id
-                        name
-                        rate
-                        description
-                        status
-                        startDate
-                        endDate
-                        }
-                    }
-                    purchaseRates {
-                        taxRate {
-                            id
-                            name
-                            description
-                            rate
-                            status
-                            startDate
-                            endDate
-                            }
-                    }
+          sequence
+          description
+          amount
+          class {
+            id
+            name
+          }
+          item {
+            id
+            name
+            sku
+          }
+          tax {
+            taxAmount
+            taxGroup {
+              id
+              name
+              code
+              description
+              saleRates {
+                taxRate {
+                  id
+                  name
+                  rate
+                  description
+                  status
+                  startDate
+                  endDate
                 }
-                taxable
+              }
+              purchaseRates {
+                taxRate {
+                  id
+                  name
+                  description
+                  rate
+                  status
+                  startDate
+                  endDate
+                }
+              }
             }
-            serviceDate
-            quantity
-            unitPrice
-            account {
-                id
-               name
-            }
+            taxable
+          }
+          serviceDate
+          quantity
+          unitPrice
+          account {
+            id
+            name
+          }
         }
+      }
     }
-    }
-   }
-   }
+  }
+}
 ```
 Required fields:
 - id: ID of an existing Credit Memo

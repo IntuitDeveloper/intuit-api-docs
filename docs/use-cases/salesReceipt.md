@@ -1,6 +1,6 @@
 ---
 layout: default
-title: SalesReceipt
+title: Sales Receipt
 nav_order: 16
 parent: Use Cases
 ---

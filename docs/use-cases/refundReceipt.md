@@ -1,6 +1,6 @@
 ---
 layout: default
-title: RefundReceipt
+title: Refund Receipt
 nav_order: 14
 parent: Use Cases
 ---
