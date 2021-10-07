@@ -1,6 +1,6 @@
 ---
 layout: default
-title: VendorCredit
+title: Vendor Credit
 nav_order: 21
 parent: Use Cases
 ---
