@@ -7,7 +7,10 @@ parent: Use Cases
 
 ## Vendor Credit
 
-The APIs related to the Vendor Credit entity allow you to manage VendorCredit for your Vendors
+The APIs related to the Vendor Credit entity allow you to update credits for vendors of your company
+A vendor credit is used in QuickBooks Online to either record returns to vendors or refunds from vendors.
+If a vendor issues you a credit, you can apply that credit manually in the Credit Applied column in Online Bill Pay.
+This page describes how to create/query/update/delete vendor credit.
 
 ### Operations for Vendor Credit entity
 
