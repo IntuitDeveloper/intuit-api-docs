@@ -32,8 +32,8 @@ This page describes how to create/query/update/delete vendor credit.
 ### Sample query body
 
 Here's an example query using every possible field. Remember, with GraphQL you only need to query for the data you need:
-
-Sample query (Read an Vendor Credit by Id):
+Using filter to search for record of a specific id, if no id is specified, all record will be fetched
+#### Sample Query:
 ```
 query fetchVendorCredit($id: String!) {
   company {
@@ -384,13 +384,10 @@ Response:
 }
 ```
 
-## Filter support:
-
-You can choose to **query by id of vendorCredit** (as shown above).
-
 ### Create mutation
+Use this mutation query to create new record with fields you want
 
-Mutation:
+#### Sample Query:
 
 ```
 mutation createVendorCredit($input: CreateVendorCreditInput!) {
@@ -806,8 +803,9 @@ Sample response:
 ```
 
 ### Update mutation
-
-Mutation:
+For update mutation, all other date fields is optional while the entity Version must match with the entity version in record.
+The new entity version is the old entity version plus one.
+#### Sample Query:
 
 ``` 
 mutation updateVendorCredit($input: UpdateVendorCreditInput!) {
