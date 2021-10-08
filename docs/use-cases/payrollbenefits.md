@@ -1,6 +1,6 @@
 ---
 layout: default
-title: PayrollBenefits
+title: Payroll Benefits
 nav_order: 18
 parent: Use Cases
 ---
@@ -50,7 +50,6 @@ Use the sample queries in the following sections as guides. The field and value 
 
 Use this method to create an Employer Benefit such as HSA, FSA, etc. The field `statutoryBenefitPolicy` depicts the actual benefit type, and can have the following values - 
 
-List of possible values for `statutoryBenefitPolicy` - 
 
 ```
 TBPO_CUS_MEDICAL - Health Insurance (Medical)
