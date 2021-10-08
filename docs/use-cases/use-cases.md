@@ -16,11 +16,11 @@ Here is the standard process for every use-case:
 
 ## Step 1: Create your app in the Intuit Developer Portal
 
-If you haven’t already, [create your app](../../getting-started/authentication/) on the developer portal.
+If you haven’t already, [create your app](../getting-started/authentication/) on the developer portal.
 
 ## Step 2: Set your app's scopes
 
-The Intuit Ecosystem API [uses scopes](../../getting-started/scopes/) to limit the type of data your app can access. You'll set scopes when you create your app. 
+The Intuit Ecosystem API [uses scopes](../getting-started/scopes/) to limit the type of data your app can access. You'll set scopes when you create your app. 
 
 ### If you want your app to read or write data
 
@@ -42,11 +42,11 @@ If you haven't already, use your Client ID, Client Secret, and scopes to [set up
 
 ## Step 5: Create and execute queries for your app 
 
-Use the sample queries provided in the respective sections as guides. Introspection can also be very helpful to build queries, with the help of tools such as Insomnia. More information can be found on [this](../../graphql-concepts/introspection/) page.
+Use the sample queries provided in the respective sections as guides. Introspection can also be very helpful to build queries, with the help of tools such as Insomnia. More information can be found on [this](../graphql-concepts/introspection/) page.
 
 ### Endpoints
 
-The endpoint for all queries are listed here : [API endpoints](../../getting-started/endpoints/)
+The endpoint for all queries are listed here : [API endpoints](../getting-started/endpoints/)
 
 ## Step 6: Go live with your app
 
