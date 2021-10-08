@@ -17,7 +17,7 @@ Employees can then sign up directly for payroll benefits. Your app gets accurate
 Use the sample queries in the following sections as guides. The field and value data comes directly from QuickBooks Online Payroll. You don't need to use every field, but we've included most to show what types of data your app can utilize. 
 
 
-## Create an Employer Benefit
+### Create an Employer Benefit
 
 Use this method to create an Employer Benefit such as HSA, FSA, etc. The field `statutoryBenefitPolicy` depicts the actual benefit type, and can have the following values - 
 
@@ -57,7 +57,7 @@ Variables -
 ```
 
 
-## Create an Employee Benefit (i.e. Assign Employer Benefit against an Employee)
+### Create an Employee Benefit (i.e. Assign Employer Benefit against an Employee)
 
 An Employer Benefit once created can be assigned against an existing Employee. The Employer as well as Employee can contribute against an Employee Benefit (e.g HSA plan).
 
@@ -134,7 +134,7 @@ Variables -
 ```
 
 
-## List all Employer Benefits against Company
+### List all Employer Benefits against Company
 
 Use the following query the list of Employer Benefits (HSA plan, FSA plan, etc) defined against the current company. 
 
@@ -155,7 +155,7 @@ query readAllEmployerBenefits {
 ```
 
 
-## Fetch Employee Roster (Benefits)
+### Fetch Employee Roster (Benefits)
 
 The following query will list all Benefits assigned against a given Employee. The Employee benefiit will also inlude information about the Employee and Employer contributions.
 
@@ -206,7 +206,7 @@ query fetchEmployeeRoster {
 ```
 
 
-## Fetch Employee Payslips 
+### Fetch Employee Payslips 
 
 Once Payroll has been executed for the current monthh, the Payroll Benefits should also show up against an Employee Payslip (Contributions and deductions). 
 
