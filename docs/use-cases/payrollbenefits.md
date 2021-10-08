@@ -11,8 +11,12 @@ As a payroll benefit provider, you can build apps that let small businesses conn
 
 Employees can then sign up directly for payroll benefits. Your app gets accurate employee contribution and deduction data from QuickBooks Online Payroll. Each time a change is made or payroll is run, your app receives a webhook event depicting which entities changed.
 
+To read QuickBooks Online Payroll Benefits data, use these scopes:
 
-Please visit this section for AppSetup: [Pre-Requisites](../#build-apps-around-use-cases) 
+* qb.payroll.benefit
+
+
+Please visit this section for AppSetup: [Prerequisites](../#build-apps-around-use-cases) 
 
 
 ## Create queries for your app 
