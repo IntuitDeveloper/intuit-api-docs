@@ -7,6 +7,12 @@ parent: Use Cases
 
 ### Sales Receipt Draft
 
+When Sales Receipt is under creation and yet not submitted, a Sales Receipt Draft is created.
+
+### Operations for Sales Receipt Draft entity
+
+- Create - Mutation (POST)
+
 #### Mutation
 
 ```

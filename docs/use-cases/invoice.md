@@ -7,7 +7,8 @@ parent: Use Cases
 
 ## Invoice
 
-The APIs related to the Invoice entity allow you to manage invoices for your customer to track pending payments.
+The APIs related to the Invoice entity allow you to manage invoices for your customer to track pending payments. \
+Invoices are issued prior to the customer sending the payment.The invoice acts as a request for payment.\
 The Invoice API provides support for create, read, update and delete operations.
 
 ### Operations for Invoice entity

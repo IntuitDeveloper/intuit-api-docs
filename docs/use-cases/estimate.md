@@ -6,8 +6,8 @@ parent: Use Cases
 ---
 
 ## Estimate
-
-The APIs related to the Estimate entity allow you to manage estimates for your customers.
+The APIs related to the Estimate entity allow you to manage estimates for your customers.\
+An estimate is used to create a bid, proposal, or quote. The estimate can later be turned into a sales order or an invoice. These are the steps on how to create an estimate.\
 The Estimate API provides support for create, read, update and delete operations.
 
 ### Operations for Estimate entity

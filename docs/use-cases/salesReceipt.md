@@ -7,7 +7,8 @@ parent: Use Cases
 
 ## Sales Receipt
 
-The APIs related to the Sales Receipt entity allow you to manage Sales Receipts for your customers.
+The APIs related to the Sales Receipt entity allow you to manage Sales Receipts for your customers.\
+A sales receipt is issued after the payment has been received, and the receipt acts as a proof of payment.\
 The Sales Receipt API provides support for create, read, update and delete operations.
 
 ### Operations for Sales Receipt entity
