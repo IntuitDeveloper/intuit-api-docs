@@ -73,13 +73,13 @@ There are four main tasks to set up for retirement benefits apps:
 
 The endpoint for all queries is the same: **https://public.api.intuit.com/2020-04/graphql**
 
-## Get info from small businesses that connect to your app
+## Get information against the Small Businesses company, which connects to your 3rd Party app
 
-When small businesses connect to your retirement benefits app, you need to get info about the small business and their employees. Use this info to connect and map benefits data to the right people. 
+When small businesses connect to your retirement benefits app, you need to get information about the Small Business and their employees. Use this information to connect and map retirment data to the right employees. 
 
 ### Create query
 
-After small businesses connect to your app, use this sample query to call the getCompanyDetails entity and get info about their QuickBooks Online company: 
+After Small Businesses connect to your app, use this sample query to call the `getCompanyDetails` entity and get information about their QuickBooks Online company: 
 
 **Required entities**
 
