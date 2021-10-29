@@ -8,8 +8,8 @@ parent: Use Cases
 ## Credit Memo
 
 The APIs related to the Credit Memo entity allow you to manage Credit Memos for your customers.\
-Credit memo entity is being used when a customer paid more they owe you, returned a product, requested a refund, or if you’re giving them store credit. Once created you can apply the credit memo to an open invoice for that customer at any time.
-
+Credit memo entity is being used when a customer paid more than they owe you, returned a product, requested a refund, or if you’re giving them store credit. \
+Once created you can apply the credit memo to an open invoice for that customer at any time.\
 The Credit Memo API provides support for create, read, update and delete operations.
 
 ### Operations for Credit Memo entity

@@ -8,8 +8,7 @@ parent: Use Cases
 ## Refund Receipt
 
 The APIs related to the ReFund Receipt entity allow you to manage Refund Receipts for your customers.\
-If you havePayments, you can take and process customer refund. Sometimes you may need to void or refund payments. 
-The Refund Receipt API provides support for create, read, update and delete operations.
+After you have received a payment, you can then process a customer refund. Sometimes you may need to void or refund payments.
 
 ### Operations for Refund Receipt entity
 
