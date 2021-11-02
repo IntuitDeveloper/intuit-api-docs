@@ -1,6 +1,6 @@
 ---
 layout: default
-title: JournalEntry
+title: Journal Entry
 nav_order: 13
 parent: Use Cases
 ---
@@ -139,7 +139,7 @@ Variables:
 
 ```
 {
-	"id": "djQuMTo5MTMwMzU1MjAyMDI4NDY2OjgwMjcxZWRkOGE:96"
+  "id": "djQuMTo5MTMwMzU1MjAyMDI4NDY2OjgwMjcxZWRkOGE:96"
 }
 ```
 
@@ -313,35 +313,35 @@ mutation createJournalEntry($input: CreateJournalEntryInput!) {
 Sample Variables: 
 ``` 
 {
-	"input": {
-		"referenceNumber": "11",
-		"transactionDate": "2021-09-09",
-		"memo": "some memo for journal entry",
-		"entryLines": [
-			{
-				"entryLineType": "DEBIT",
-				"description": "test debit",
-				"account": {
-					"id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjUxY2VkODUzNmM:26"
-				},
-				"amount": "200"
-			},
-			{
-				"entryLineType": "CREDIT",
-				"description": "test credit",
-				"account": {
-					"id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjUxY2VkODUzNmM:31"
-				},
-				"amount": "200",
-	            "payee": {
-					"id": "35"
-				},
-				"project": {
-					"id": "djQuMTo5MTMwMzU1MjAyMDI4NDY2OjY4ZDAxMTQ3ZGQ:28392628"
-				}
-			}
-		]
-	}
+  "input": {
+    "referenceNumber": "11",
+    "transactionDate": "2021-09-09",
+    "memo": "some memo for journal entry",
+    "entryLines": [
+      {
+        "entryLineType": "DEBIT",
+        "description": "test debit",
+        "account": {
+          "id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjUxY2VkODUzNmM:26"
+        },
+        "amount": "200"
+      },
+      {
+        "entryLineType": "CREDIT",
+        "description": "test credit",
+        "account": {
+          "id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjUxY2VkODUzNmM:31"
+        },
+        "amount": "200",
+        "payee": {
+          "id": "35"
+        },
+        "project": {
+          "id": "djQuMTo5MTMwMzU1MjAyMDI4NDY2OjY4ZDAxMTQ3ZGQ:28392628"
+        }
+      }
+    ]
+  }
 }
 ```    
 
@@ -424,77 +424,77 @@ Mutation:
 
 ``` 
 mutation updatejournalEntry($input: UpdateJournalEntryInput!) {
-	updateJournalEntry(journalEntry: $input) {
-		id
-		__typename
-		metadata {
-			entityVersion
-		}
-		privateMemo
-		referenceNumber
-		transactionDate
-		entryLines {
-			entryLineType
-			sequence
-			description
-			amount
-			account {
-				id
-				name
-			}
-			billable
-			billableAmount
-			payee {
-				... on Customer {
-					id
-					displayName
-				}
-			}
-			class {
-				id
-				name
-			}
-			markup {
-				account {
-					id
-					name
-				}
-				amount
-				percent
-			}
-			tax {
-				taxAmount
-				taxable
-				taxGroup {
-					id
-					name
-					code
-					description
-					status
-					saleRates {
-						taxRate {
-							id
-							name
-							description
-							status
-							startDate
-							endDate
-						}
-					}
-					purchaseRates {
-						taxRate {
-							id
-							name
-							description
-							status
-							startDate
-							endDate
-						}
-					}
-				}
-			}
-		}
-	}
+  updateJournalEntry(journalEntry: $input) {
+    id
+    __typename
+    metadata {
+      entityVersion
+    }
+    privateMemo
+    referenceNumber
+    transactionDate
+    entryLines {
+      entryLineType
+      sequence
+      description
+      amount
+      account {
+        id
+        name
+      }
+      billable
+      billableAmount
+      payee {
+        ... on Customer {
+          id
+          displayName
+        }
+      }
+      class {
+        id
+        name
+      }
+      markup {
+        account {
+          id
+          name
+        }
+        amount
+        percent
+      }
+      tax {
+        taxAmount
+        taxable
+        taxGroup {
+          id
+          name
+          code
+          description
+          status
+          saleRates {
+            taxRate {
+              id
+              name
+              description
+              status
+              startDate
+              endDate
+            }
+          }
+          purchaseRates {
+            taxRate {
+              id
+              name
+              description
+              status
+              startDate
+              endDate
+            }
+          }
+        }
+      }
+    }
+  }
 }
 ```
 
@@ -506,32 +506,32 @@ Variables:
 
 ```
 {
-	"input": {
-		"id": "djQuMTo5MTMwMzU1MjAyMDI4NDY2OjgwMjcxZWRkOGE:82",
-		"metadata": {
-			"entityVersion": "0"
-		},
-		"referenceNumber": "11",
-		"transactionDate": "2021-04-09",
-		"entryLines": [
-			{
-				"entryLineType": "DEBIT",
-				"description": "test debit",
-				"account": {
-					"id": "djQuMTo5MTMwMzU1MjAyMDI4NDY2OjUxY2VkODUzNmM:35"
-				},
-				"amount": "35"
-			},
-			{
-				"entryLineType": "CREDIT",
-				"description": "test credit",
-				"account": {
-					"id": "djQuMTo5MTMwMzU1MjAyMDI4NDY2OjUxY2VkODUzNmM:13"
-				},
-				"amount": "35"
-			}
-		]
-	}
+  "input": {
+    "id": "djQuMTo5MTMwMzU1MjAyMDI4NDY2OjgwMjcxZWRkOGE:82",
+    "metadata": {
+      "entityVersion": "0"
+    },
+    "referenceNumber": "11",
+    "transactionDate": "2021-04-09",
+    "entryLines": [
+      {
+        "entryLineType": "DEBIT",
+        "description": "test debit",
+        "account": {
+          "id": "djQuMTo5MTMwMzU1MjAyMDI4NDY2OjUxY2VkODUzNmM:35"
+        },
+        "amount": "35"
+      },
+      {
+        "entryLineType": "CREDIT",
+        "description": "test credit",
+        "account": {
+          "id": "djQuMTo5MTMwMzU1MjAyMDI4NDY2OjUxY2VkODUzNmM:13"
+        },
+        "amount": "35"
+      }
+    ]
+  }
 }
 ```
 
@@ -614,7 +614,7 @@ Required fields:
 Variables:
 ``` 
 {
-	"id": "djQuMTo5MTMwMzU1MjAyMDI4NDY2OjgwMjcxZWRkOGE:80"
+  "id": "djQuMTo5MTMwMzU1MjAyMDI4NDY2OjgwMjcxZWRkOGE:80"
 }
 ```
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: DelayedCharge
+title: Delayed Charge
 nav_order: 4
 parent: Use Cases
 ---
@@ -36,72 +36,72 @@ Here's an example query using every possible field. Remember, with GraphQL you o
 Sample query (Read an DelayedCharge by Id):
 ```
 query fetchDelayedCharge($id: String!) {
-	company {
-		delayedCharges(filter: { id: { equals: $id } }) {
-			pageInfo {
-				hasNextPage
-				hasPreviousPage
-				startCursor
-				endCursor
-			}
-			nodes {
-				__typename
+  company {
+    delayedCharges(filter: { id: { equals: $id } }) {
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+        startCursor
+        endCursor
+      }
+      nodes {
+        __typename
 
-				id
-				metadata {
-					entityVersion
-				}
-				amount
-				currency {
-					name
-					currency
-					symbol
-				}
-				customer {
-					id
-					displayName
-				}
+        id
+        metadata {
+          entityVersion
+        }
+        amount
+        currency {
+          name
+          currency
+          symbol
+        }
+        customer {
+          id
+          displayName
+        }
 
-				itemLines {
-					sequence
-					class {
-						id
-						name
-					}
-					description
-					account {
-						id
-						name
-					}
-					item {
-						id
-						name
-						active
-					}
-					quantity
-					unitPrice
-				}
-				location {
-					id
-					name
-				}
-				privateMemo
-				project {
-					id
-					name
-					customer {
-						id
-						displayName
-					}
-				}
-				referenceNumber
-				tax {
-					totalTaxAmount
-				}
-				transactionDate
-			}
-		}
-	}
+        itemLines {
+          sequence
+          class {
+            id
+            name
+          }
+          description
+          account {
+            id
+            name
+          }
+          item {
+            id
+            name
+            active
+          }
+          quantity
+          unitPrice
+        }
+        location {
+          id
+          name
+        }
+        privateMemo
+        project {
+          id
+          name
+          customer {
+            id
+            displayName
+          }
+        }
+        referenceNumber
+        tax {
+          totalTaxAmount
+        }
+        transactionDate
+      }
+    }
+  }
 }
 ```
 

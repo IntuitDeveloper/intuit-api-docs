@@ -1,6 +1,6 @@
 ---
 layout: default
-title: DelayedCredit
+title: Delayed Credit
 nav_order: 5
 parent: Use Cases
 ---
@@ -130,14 +130,13 @@ query fetchDelayedCredit($id: String!) {
     }
   }
 }
-
 ```
 
 Variables:
 
 ```
 {
-	"id": "djQuMTo5MTMwMzUzOTY3NzQ0NjY2OjgwMjcxZWRkOGE:209"
+  "id": "djQuMTo5MTMwMzUzOTY3NzQ0NjY2OjgwMjcxZWRkOGE:209"
 }
 ```
 
@@ -309,28 +308,28 @@ mutation createDelayedCredit($input: CreateDelayedCreditInput!) {
 Sample Variables: 
 ``` 
 {
-	"input": {
-		"transactionDate": "2021-09-10",
-		"customer": {
-			"id": "djQuMTo5MTMwMzU1MjAyMDI4NDY2OjlkNjk5ZTk2MDg:31"
-		},
-		"customerMemo": "test customer memo",
-		"privateMemo": "test private memo",
-		"itemLines": [
-			{
-				"serviceDate": "2021-09-08",
-				"amount": "100.00",
-				"account": {
-					"id": "djQuMTo5MTMwMzU1MjAyMDI4NDY2OjUxY2VkODUzNmM:5"
-				},
-				"item": {
-					"id": "djQuMTo5MTMwMzU1MjAyMDI4NDY2OjExMmRlNzQ2OTk:4"
-				},
-				"description": "test item description",
-				"quantity": "2"
-			}
-		]
-	}
+  "input": {
+    "transactionDate": "2021-09-10",
+    "customer": {
+      "id": "djQuMTo5MTMwMzU1MjAyMDI4NDY2OjlkNjk5ZTk2MDg:31"
+    },
+    "customerMemo": "test customer memo",
+    "privateMemo": "test private memo",
+    "itemLines": [
+      {
+        "serviceDate": "2021-09-08",
+        "amount": "100.00",
+        "account": {
+          "id": "djQuMTo5MTMwMzU1MjAyMDI4NDY2OjUxY2VkODUzNmM:5"
+        },
+        "item": {
+          "id": "djQuMTo5MTMwMzU1MjAyMDI4NDY2OjExMmRlNzQ2OTk:4"
+        },
+        "description": "test item description",
+        "quantity": "2"
+      }
+    ]
+  }
 }
 ```    
 
@@ -727,7 +726,7 @@ Required fields:
 Variables:
 ``` 
 {
-	"input": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjgwMjcxZWRkOGE:124"
+  "input": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjgwMjcxZWRkOGE:124"
 }
 ```
 
