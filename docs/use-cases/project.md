@@ -54,7 +54,8 @@ These include a few transactions like -
 -   Content-type: **application/json**
 -   Use the project scope **[qb.project.write]** for the authorization header for mutations for project.
     This includes createProject, updateProject, deleteProject, recoverProject.
-
+-   Use the accounting scope **[com.intuit.quickbooks.accounting]** in the authorization header for all other calls shown here.
+ 
 ### Sample query body
 
 Do an [introspection query](../../graphql-concepts/introspection) to see the current schema for the InvoicePayment entity.
