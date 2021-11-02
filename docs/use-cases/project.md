@@ -1,32 +1,40 @@
 ---
 layout: default
 title: Project
-nav_order: 11
+nav_order: 14
 parent: Use Cases
 ---
 
 ## Project
 
 The APIs related to the Project entity allow you to manage and track projects.
-The Project API provides support for create, read, update and delete operations.
+The Project API provides support for create, read, update, delete, and recover operations.
 You can also add transactions to your project by configuring the ID for the project while creating the transaction.
 
 This page outlines - 
-- The CRUD operations for Projects.
+- The Create/Read/Update/Delete/Recover operations for Projects.
 - The CRUD operations for Invoice (sales transaction) with Projects. 
 - The CRUD operations for Bill (purchase transaction) with Projects.
 
 Currently, we have added support to a few transactions so that you can configure a project ID. 
 This will allow you to read back information about the project to which this transaction belongs to (if any).
 These include a few transactions like - 
+
 - Supported sales Transactions for your customers -
     - Invoice
     - Invoice payment
     - Estimate
+   
 - Supported purchase transactions for your vendors -     
     - Bill
     - Expense
     - Purchase order
+    
+- Other transactions like - 
+    - Journal entry
+    - Bank deposit
+    - Delayed credit
+    - Delayed charge
 
 ### Operations for Project entity
 
@@ -34,6 +42,7 @@ These include a few transactions like -
 - Create - Mutation (POST)
 - Update - Mutation (POST)
 - Delete - Mutation (POST)
+- Recover - Mutation (POST)
 
 ### Endpoints
 
@@ -43,6 +52,8 @@ These include a few transactions like -
 ### Sample query header
 
 -   Content-type: **application/json**
+-   Use the project scope **[qb.project.write]** for the authorization header for mutations for project.
+    This includes createProject, updateProject, deleteProject, recoverProject.
 
 ### Sample query body
 
@@ -143,8 +154,11 @@ Currently, the filters supported on projects include -
 - `id` - ID for the project.
 - `customerId` - ID of the customer, for whom you are creating the project. 
 - `status` - Status of the project. Supported values include TODO, OPEN, IN_PROGRESS, COMPLETE, BLOCKED, CANCELLED, DELETED.
+- `and` - Combine multiple  filter fields listed above for a GraphQL AND filter.
+- `or` - Combine multiple filter fields listed above for a GraphQL OR filter.
 
 You can create a joint filter by including more than one filterable field.
+
 For ex, to read all the projects which have status = 'IN_PROGRESS' for the customer with customerId = 'djQuMTo5MTMwMzU1MjAyMDI4NDY2OjlkNjk5ZTk2MDg:1', you can execute the following query - 
 
 Sample query with filters:
@@ -211,6 +225,8 @@ Response:
   }
 }
 ```
+
+Similarly, you can implement an OR filter.
 
 ### Create mutation
  
@@ -384,6 +400,61 @@ Response:
 }
 ```
 
+
+### Recover Mutation
+
+The recoverProject mutation takes in the ID for the project, and returns the project with active = "true".
+This mutation is helpful in recovering a project that was previously deleted.
+
+Mutation:
+``` 
+mutation recoverProject($id: ID!) {
+  recoverProject(id: $id) {
+    id
+    name
+    description
+    completedDate
+    active
+    status
+    customer {
+      id
+      displayName    
+    }
+  } 
+}
+```
+
+Required fields:
+- id: ID of an existing project
+
+Variables:
+``` 
+{
+	"id": "djQuMTo5MTMwMzU1MjAyMDI4NDY2OjY4ZDAxMTQ3ZGQ:27462404"
+}
+```
+
+Response:
+
+```
+{
+  "data": {
+    "recoverProject": {
+      "id": "djQuMTo5MTMwMzU1MjAyMDI4NDY2OjY4ZDAxMTQ3ZGQ:27462404",
+      "name":"MyProject",
+      "description": "My project to track progress for a customer",
+      "completedDate": null,
+      "active": true,
+      "status": "IN_PROGRESS",
+      "customer": {
+        "id": "djQuMTo5MTMwMzU1MjAyMDI4NDY2OjlkNjk5ZTk2MDg:1",
+        "displayName": "Alisha Kamat"
+      }
+    }
+  }
+}
+```
+
 ### Operations for Invoice
 - Create - Mutation (POST)
     - Create an Invoice for a Project 
@@ -406,6 +477,12 @@ Note: This document shows limited fields from Invoice transaction. For the entir
 -   Content-type: **application/json**
 
 ### Create an Invoice (Mutation)
+
+Note: The create/update transaction can accept a project ID along with a customer ID.
+For a creating a transaction/line item for a project, the customer ID can be -
+ - Left blank (ideal scenario)
+ - Filled with the customer ID of the customer associated with the project.
+ 
 Sample mutation:
 ```
 mutation createinvoice($input: CreateInvoiceInput!) {
