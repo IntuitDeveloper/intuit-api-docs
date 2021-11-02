@@ -24,5 +24,7 @@ Here are the current scopes for Intuit Ecosystem API.
 | qb.employee.birthdate.read                    | Grants access to employee birth date | |
 | qb.payroll.compensation.read                  | Grants access to payroll compensation | |
 | qb.payroll.benefits                           | Grants access to payroll benefits | |
+| qb.project.write                              | Grants access to create/update/delete/recover projects for the company | |
+
 
 **Note**: Sensitive data requires additional legal agreement and manual onboarding with our support team. 
