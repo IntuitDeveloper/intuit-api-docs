@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Invoice Draft
-nav_order: 10
+nav_order: 12
 parent: Use Cases
 ---
 

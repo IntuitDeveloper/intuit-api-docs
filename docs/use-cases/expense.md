@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Expense
-nav_order: 8
+nav_order: 10
 parent: Use Cases
 ---
 
