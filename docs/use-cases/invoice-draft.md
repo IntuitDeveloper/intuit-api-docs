@@ -8,6 +8,13 @@ parent: Use Cases
 
 ### Invoice Draft
 
+When Invoice is under creation and yet not submitted, an Invoice Draft is created.
+
+### Operations for Invoice Draft entity
+
+- Create - Mutation (POST)
+
+
 #### Mutation
 
 ```
