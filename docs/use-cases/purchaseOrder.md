@@ -57,17 +57,6 @@ query fetchPurchaseOrders($id: String) {
           currency
           exchangeRate
         }
-        project {
-          id
-          name
-          active
-          completedDate
-          description
-          customer {
-            id
-            displayName
-          }
-        }
         memo
         vendorMemo
         emailDeliveryInfo {
@@ -148,6 +137,17 @@ query fetchPurchaseOrders($id: String) {
             id
             displayName
           }
+          project {
+            id
+            name
+            active
+            completedDate
+            description
+            customer {
+                id
+                displayName
+            }
+          }
           tax {
             taxable
             taxAmount
@@ -178,6 +178,17 @@ query fetchPurchaseOrders($id: String) {
           customer {
             id
             displayName
+          }       
+          project {
+            id
+            name
+            active
+            completedDate
+            description
+            customer {
+              id
+              displayName
+            }
           }
           account {
             id
@@ -266,7 +277,6 @@ Response:
               "currency": "USD",
               "exchangeRate": 1.00
             },
-            "project": null,
             "memo": "This is updated memo",
             "vendorMemo": "Update vendor memo!",
             "emailDeliveryInfo": {
@@ -371,6 +381,7 @@ Response:
                   "id": "djQuMTo5MTMwMzUyMzI1NzU4Mjk2OjlkNjk5ZTk2MDg:5",
                   "displayName": "HubSpot Customer 2"
                 },
+                "project": null,
                 "tax": {
                   "taxable": false,
                   "taxAmount": null,
@@ -394,6 +405,7 @@ Response:
                   "id": "djQuMTo5MTMwMzUyMzI1NzU4Mjk2OjlkNjk5ZTk2MDg:3",
                   "displayName": "Saurabh Jaiswal"
                 },
+                "project": null,
                 "account": {
                   "id": "djQuMTo5MTMwMzUyMzI1NzU4Mjk2OjUxY2VkODUzNmM:33",
                   "name": "Purchases"
@@ -447,17 +459,6 @@ mutation createPurchaseOrder($input0: CreatePurchaseOrderInput!) {
       name
       currency
       exchangeRate
-    }
-    project {
-      id
-      name
-      active
-      completedDate
-      description
-      customer {
-        id
-        displayName
-      }
     }
     memo
     vendorMemo
@@ -539,6 +540,17 @@ mutation createPurchaseOrder($input0: CreatePurchaseOrderInput!) {
         id
         displayName
       }
+      project {
+        id
+        name
+        active
+        completedDate
+        description
+        customer {
+          id
+          displayName
+        }
+      }
       tax {
         taxable
         taxAmount
@@ -569,6 +581,17 @@ mutation createPurchaseOrder($input0: CreatePurchaseOrderInput!) {
       customer {
         id
         displayName
+      }
+      project {
+        id
+        name
+        active
+        completedDate
+        description
+        customer {
+          id
+          displayName
+        }
       }
       account {
         id
@@ -722,7 +745,6 @@ Sample response:
         "currency": "USD",
         "exchangeRate": 1.00
       },
-      "project": null,
       "memo": "This is test memo",
       "vendorMemo": "Vendor memo!",
       "emailDeliveryInfo": {
@@ -824,6 +846,7 @@ Sample response:
             "name": "Class1"
           },
           "customer": null,
+          "project": null,
           "tax": {
             "taxable": false,
             "taxAmount": null,
@@ -847,6 +870,7 @@ Sample response:
             "id": "djQuMTo5MTMwMzUyMzI1NzU4Mjk2OjlkNjk5ZTk2MDg:3",
             "displayName": "Saurabh Jaiswal"
           },
+          "project": null,
           "account": {
             "id": "djQuMTo5MTMwMzUyMzI1NzU4Mjk2OjUxY2VkODUzNmM:33",
             "name": "Purchases"
@@ -893,17 +917,6 @@ mutation updatePurchaseOrder($input0: UpdatePurchaseOrderInput!) {
       name
       currency
       exchangeRate
-    }
-    project {
-      id
-      name
-      active
-      completedDate
-      description
-      customer {
-        id
-        displayName
-      }
     }
     memo
     vendorMemo
@@ -985,6 +998,17 @@ mutation updatePurchaseOrder($input0: UpdatePurchaseOrderInput!) {
         id
         displayName
       }
+      project {
+        id
+        name
+        active
+        completedDate
+        description
+        customer {
+          id
+          displayName
+        }
+      }
       tax {
         taxable
         taxAmount
@@ -1015,6 +1039,17 @@ mutation updatePurchaseOrder($input0: UpdatePurchaseOrderInput!) {
       customer {
         id
         displayName
+      }
+      project {
+        id
+        name
+        active
+        completedDate
+        description
+        customer {
+          id
+          displayName
+        }
       }
       account {
         id
@@ -1168,7 +1203,6 @@ Response:
         "currency": "USD",
         "exchangeRate": 1.00
       },
-      "project": null,
       "memo": "This is updated memo",
       "vendorMemo": "Update vendor memo!",
       "emailDeliveryInfo": {
@@ -1273,6 +1307,7 @@ Response:
             "id": "djQuMTo5MTMwMzUyMzI1NzU4Mjk2OjlkNjk5ZTk2MDg:5",
             "displayName": "HubSpot Customer 2"
           },
+          "project": null,
           "tax": {
             "taxable": false,
             "taxAmount": null,
@@ -1296,6 +1331,7 @@ Response:
             "id": "djQuMTo5MTMwMzUyMzI1NzU4Mjk2OjlkNjk5ZTk2MDg:3",
             "displayName": "Saurabh Jaiswal"
           },
+          "project": null,
           "account": {
             "id": "djQuMTo5MTMwMzUyMzI1NzU4Mjk2OjUxY2VkODUzNmM:33",
             "name": "Purchases"
