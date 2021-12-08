@@ -2,7 +2,7 @@
 layout: default
 title: Journal Entry
 nav_order: 13
-parent: Use Cases
+parent: Schema Entities
 ---
 
 ## Journal Entry

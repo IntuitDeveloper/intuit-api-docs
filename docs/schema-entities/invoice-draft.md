@@ -1,17 +1,18 @@
 ---
 layout: default
-title: Sales Receipt Draft
-nav_order: 17
-parent: Use Cases
+title: Invoice Draft
+nav_order: 12
+parent: Schema Entities
 ---
 
-### Sales Receipt Draft
+
+### Invoice Draft
 
 #### Mutation
 
 ```
-mutation createSalesReceiptDraft($salesReceiptDraftDetails: SalesReceiptDraftInput!) {
-  createSalesReceiptDraft(salesReceiptDraftDetails: $salesReceiptDraftDetails) {
+mutation createInvoiceDraft($invoiceDraftDetails: InvoiceDraftInput!) {
+  createInvoiceDraft(invoiceDraftDetails: $invoiceDraftDetails) {
     id
     transactionDraftStatus
   }
@@ -21,7 +22,7 @@ Variables
 
 ```
 {
-    "salesReceiptDraftDetails": {
+    "invoiceDraftDetails": {
       "externalMetadata": [
         {
           "name": "account_id",
@@ -34,7 +35,8 @@ Variables
       ],
       "transactionDate": "2020-09-16",
       "customer": {
-        "id": "djQuMTo5MTMwMzUyMzI1NzU4Mjk2OjlkNjk5ZTk2MDg:123"
+        "id": "djQuMTo5MTMwMzUyMzI1NzU4Mjk2OjlkNjk5ZTk2MDg:123",
+        "displayName": "HubSpot Customer"
       },
       "amount": 22.95,
       "currency": {
@@ -43,7 +45,7 @@ Variables
         "exchangeRate": 1.34444
       },
       "privateMemo": "Message displayed on statement",
-      "customerMemo": "Message displayed on sales receipt",
+      "customerMemo": "Message displayed on invoice",
       "itemLines": [
         {
           "description": "2017 model, color steel",
@@ -57,6 +59,9 @@ Variables
           "class": {
             "id": "302300000000001842721"
           }
+        },
+        {
+          "description": "Description only line"
         }
       ],
       "emailDeliveryInfo": {
@@ -73,7 +78,10 @@ Variables
           "b@bcc.com"
         ]
       },
-      "referenceNumber": "SomeReferenceNumber",
+      "referenceNumber": "Test 123",
+      "billingAddress": {
+        "freeFormAddressLine": "1075 Space Parkway\r\nMountain View, CA 94043\r\nUS"
+      },
       "shipping": {
         "shipDate": "2020-12-25",
         "shipVia": "FedEx1234",
@@ -83,28 +91,15 @@ Variables
         "shipFromAddress": {
           "freeFormAddressLine": "2700 Coast Ave., Mountain View, CA, 94043, USA"
         },
-        "trackingNumber": "SomeTrackingNumber"
+        "trackingNumber": "1234567"
       },
       "department": {
-        "id": "1",
-        "name": "SomeDepartment"
-      },
-      "billingAddress": {
-        "freeFormAddressLine": "1075 Space Parkway\r\nMountain View, CA 94043\r\nUS"
+        "id": "Dept 123",
+        "name": "Dept 123"
       },
       "class": {
-        "id": "302300000000001842721",
-        "name": "Abcd"
-      },
-      "account": {
-        "id": "123",
-        "name": "Undeposited Funds"
-      },
-      "payment": {
-        "paymentMethod": {
-          "type": "CASH",
-          "name": "Cash"
-        }
+        "id": "Misc",
+        "name": "Misc"
       },
       "discount": {
         "amount": {
@@ -112,6 +107,10 @@ Variables
           "percentage": false
         },
         "applyTaxAfterDiscount": false
+      },
+      "dueDate": "2020-12-09",
+      "term": {
+        "name": "Net 30"
       }
     }
 }
@@ -124,11 +123,12 @@ Variables
 {
   company{
     transactionDraft(id: "<id>") {
-      ... on SalesReceiptDraft {
+      ... on InvoiceDraft {
         id
         transactionDraftStatus
-        salesReceiptDraftDetails {
-          transactionDate
+        invoiceDraftDetails {
+       transactionDate
+          dueDate
           amount
           customer {
             id
@@ -139,13 +139,17 @@ Variables
             currency
             exchangeRate
           }
+          term {
+            id
+            name
+          }
           privateMemo
           customerMemo
           itemLines {
             sequence
             description
-            amount
             serviceDate
+            amount
             item {
               id
               name
@@ -153,15 +157,19 @@ Variables
             }
             quantity
             unitPrice
-            class {
+            class 
+            { 
               id 
-            } 
+            }  
           }
           referenceNumber
           emailDeliveryInfo {
             to
             cc
             bcc
+          }
+          billingAddress{
+            freeFormAddressLine
           }
           shipping {
             shipDate
@@ -174,9 +182,6 @@ Variables
             }
             trackingNumber
           }
-          billingAddress {
-            freeFormAddressLine
-          }
           department {
             id
             name
@@ -184,18 +189,6 @@ Variables
           class {
             id
             name
-          }
-          payment {
-            paymentMethod {
-              id
-              name
-              type
-            }
-          }
-          account {
-            id
-            name
-            fullyQualifiedName
           }
           discount {
             percentage
@@ -206,5 +199,4 @@ Variables
     }
   }
 }
-
 ```

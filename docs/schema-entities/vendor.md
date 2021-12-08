@@ -2,7 +2,7 @@
 layout: default
 title: Vendor
 nav_order: 20
-parent: Use Cases
+parent: Schema Entities
 ---
 
 ## Vendor

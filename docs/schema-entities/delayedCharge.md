@@ -2,7 +2,7 @@
 layout: default
 title: Delayed Charge
 nav_order: 4
-parent: Use Cases
+parent: Schema Entities
 ---
 
 ## Delayed Charge

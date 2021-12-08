@@ -2,7 +2,7 @@
 layout: default
 title: Refund Receipt
 nav_order: 14
-parent: Use Cases
+parent: Schema Entities
 ---
 
 ## Refund Receipt

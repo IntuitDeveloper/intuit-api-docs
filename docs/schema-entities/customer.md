@@ -2,7 +2,7 @@
 layout: default
 title: Customer
 nav_order: 3
-parent: Use Cases
+parent: Schema Entities
 ---
 
 # Customer entity

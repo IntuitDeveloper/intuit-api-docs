@@ -1,18 +1,18 @@
 ---
 layout: default
-title: Invoice Draft
-nav_order: 12
-parent: Use Cases
+title: Estimate Draft
+nav_order: 9
+parent: Schema Entities
 ---
 
 
-### Invoice Draft
+### Estimate Draft
 
 #### Mutation
 
 ```
-mutation createInvoiceDraft($invoiceDraftDetails: InvoiceDraftInput!) {
-  createInvoiceDraft(invoiceDraftDetails: $invoiceDraftDetails) {
+mutation createEstimateDraft($estimateDraftDetails: EstimateDraftInput!) {
+  createEstimateDraft(estimateDraftDetails: $estimateDraftDetails) {
     id
     transactionDraftStatus
   }
@@ -22,7 +22,8 @@ Variables
 
 ```
 {
-    "invoiceDraftDetails": {
+    "estimateDraftDetails": {
+      "amount": 22.95,
       "externalMetadata": [
         {
           "name": "account_id",
@@ -36,25 +37,24 @@ Variables
       "transactionDate": "2020-09-16",
       "customer": {
         "id": "djQuMTo5MTMwMzUyMzI1NzU4Mjk2OjlkNjk5ZTk2MDg:123",
-        "displayName": "HubSpot Customer"
+        "displayName": "Test Customer"
       },
-      "amount": 22.95,
       "currency": {
         "name": "USD",
         "currency": "USD",
         "exchangeRate": 1.34444
       },
       "privateMemo": "Message displayed on statement",
-      "customerMemo": "Message displayed on invoice",
+      "customerMemo": "Message displayed on estimate",
       "itemLines": [
         {
           "description": "2017 model, color steel",
           "amount": 22.95,
+          "unitPrice": 22.95,
           "quantity": 1,
           "item": {
             "id" : "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjExMmRlNzQ2OTk:4"
           },
-          "unitPrice": 22.95,
           "serviceDate": "2020-12-09",
           "class": {
             "id": "302300000000001842721"
@@ -64,6 +64,7 @@ Variables
           "description": "Description only line"
         }
       ],
+      "expirationDate": "2020-07-20",
       "emailDeliveryInfo": {
         "to": [
           "a@to.com",
@@ -79,9 +80,6 @@ Variables
         ]
       },
       "referenceNumber": "Test 123",
-      "billingAddress": {
-        "freeFormAddressLine": "1075 Space Parkway\r\nMountain View, CA 94043\r\nUS"
-      },
       "shipping": {
         "shipDate": "2020-12-25",
         "shipVia": "FedEx1234",
@@ -97,6 +95,14 @@ Variables
         "id": "Dept 123",
         "name": "Dept 123"
       },
+      "billingAddress": {
+        "freeFormAddressLine": "1075 Space Parkway\r\nMountain View, CA 94043\r\nUS"
+      },
+      "acceptStatus": {
+        "status": "PENDING",
+        "by": "Rohit1234",
+        "date": "2020-12-17"
+      },
       "class": {
         "id": "Misc",
         "name": "Misc"
@@ -107,13 +113,9 @@ Variables
           "percentage": false
         },
         "applyTaxAfterDiscount": false
-      },
-      "dueDate": "2020-12-09",
-      "term": {
-        "name": "Net 30"
       }
     }
-}
+  }
 ```
 
 
@@ -121,14 +123,14 @@ Variables
 
 ```
 {
-  company{
+  company {
     transactionDraft(id: "<id>") {
-      ... on InvoiceDraft {
+      ... on EstimateDraft {
         id
         transactionDraftStatus
-        invoiceDraftDetails {
-       transactionDate
-          dueDate
+        estimateDraftDetails {
+          transactionDate
+          expirationDate
           amount
           customer {
             id
@@ -139,9 +141,10 @@ Variables
             currency
             exchangeRate
           }
-          term {
-            id
-            name
+          acceptStatus {
+            status
+            by
+            date
           }
           privateMemo
           customerMemo
@@ -157,10 +160,10 @@ Variables
             }
             quantity
             unitPrice
-            class 
+            class
             { 
-              id 
-            }  
+             id
+            }
           }
           referenceNumber
           emailDeliveryInfo {
@@ -199,4 +202,6 @@ Variables
     }
   }
 }
+
+
 ```

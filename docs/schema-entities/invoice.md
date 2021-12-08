@@ -2,7 +2,7 @@
 layout: default
 title: Invoice
 nav_order: 11
-parent: Use Cases
+parent: Schema Entities
 ---
 
 ## Invoice

@@ -2,7 +2,7 @@
 layout: default
 title: Delayed Credit
 nav_order: 5
-parent: Use Cases
+parent: Schema Entities
 ---
 
 ## Delayed Credit

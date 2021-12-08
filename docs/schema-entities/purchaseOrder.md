@@ -2,7 +2,7 @@
 layout: default
 title: PurchaseOrder
 nav_order: 17
-parent: Use Cases
+parent: Schema Entities
 ---
 
 ## PurchaseOrder

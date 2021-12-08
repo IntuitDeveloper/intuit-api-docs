@@ -2,7 +2,7 @@
 layout: default
 title: Expense
 nav_order: 10
-parent: Use Cases
+parent: Schema Entities
 ---
 
 ## Expense
