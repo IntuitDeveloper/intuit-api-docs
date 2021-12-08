@@ -2,7 +2,7 @@
 layout: default
 title: User Role
 nav_order: 19
-parent: Use Cases
+parent: Schema Entities
 ---
 
 <!-- Copy and paste the converted output. -->

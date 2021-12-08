@@ -1,16 +1,18 @@
 ---
 layout: default
-title: Bill
-nav_order: 1
-parent: Use Cases
+title: Vendor Credit
+nav_order: 21
+parent: Schema Entities
 ---
 
-## Bill
+## Vendor Credit
 
-The APIs related to the Bill entity allow you to manage bills so that you can pay your vendors in the future.
-The Bill API provides support for create, read, update and delete operations.
+The APIs related to the Vendor Credit entity allow you to update credits for vendors of your company
+A vendor credit is used in QuickBooks Online to either record returns to vendors or refunds from vendors.
+If a vendor issues you a credit, you can apply that credit manually in the Credit Applied column in Online Bill Pay.
+This page describes how to create/query/update/delete vendor credit.
 
-### Operations for Bill entity
+### Operations for Vendor Credit entity
 
 - Read - Query (POST)
 - Create - Mutation (POST)
@@ -25,35 +27,23 @@ The Bill API provides support for create, read, update and delete operations.
 ### Sample query header
 
 -   Content-type: **application/json**
--   Use the bill scope **[com.intuit.quickbooks.accounting]** for the authorization header 
+-   Use the Vendor Credit scope **[com.intuit.quickbooks.accounting]** for the authorization header
 
 ### Sample query body
 
-Do an [introspection query](../../graphql-concepts/introspection) to see the current schema for the Bill entity.
 Here's an example query using every possible field. Remember, with GraphQL you only need to query for the data you need:
-
-Sample query (Read a Bill by Id):
+Using filter to search for record of a specific id, if no id is specified, all record will be fetched
+#### Sample Query:
 ```
-query fetchBill($id: String!) {
+query fetchVendorCredit($id: String!) {
   company {
-    bills(filter: {id: {equals: $id}}) {
+    vendorCredits(filter: {id: {equals: $id}}) {
       nodes {
         id
         metadata {
           entityVersion
         }
-        project {
-          id
-          name
-          customer {
-            id
-            displayName
-          }
-        }
         transactionDate
-        dueDate
-        billNumber
-        referenceNumber
         permitNumber
         location {
           id
@@ -80,10 +70,6 @@ query fetchBill($id: String!) {
           }
         }
         memo
-        term {
-          id
-          name
-        }
         class {
           id
           name
@@ -129,6 +115,14 @@ query fetchBill($id: String!) {
             taxable
           }
           billable
+          billableAmount
+          markup {
+            amount
+            percent
+            account {
+              id
+            }
+          }
           customer {
             id
             displayName
@@ -168,6 +162,14 @@ query fetchBill($id: String!) {
             }
           }
           billable
+          billableAmount
+          markup {
+            amount
+            percent
+            account {
+              id
+            }
+          }
           item {
             id
             name
@@ -184,41 +186,38 @@ query fetchBill($id: String!) {
     }
   }
 }
-
 ```
+Required fields:
+- id: ID of an existing Vendor Credit
 
 Variables:
 
 ```
 {
-	"id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjgwMjcxZWRkOGE:6494"
+	"id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjgwMjcxZWRkOGE:6891"
 }
 ```
 
 Response:
 ``` 
-{
+ {
   "data": {
     "company": {
-      "bills": {
+      "vendorCredits": {
         "nodes": [
           {
-            "id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjgwMjcxZWRkOGE:6494",
+            "id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjgwMjcxZWRkOGE:6891",
             "metadata": {
               "entityVersion": "0"
             },
-            "project": null,
             "transactionDate": "2021-03-12",
-            "dueDate": "2021-04-11",
-            "billNumber": "SomeBillNumber",
-            "referenceNumber": "SomeBillNumber",
             "permitNumber": "SomePermitNumber",
             "location": {
               "id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OmJmN2IzNDhiNzk:1",
               "name": "SomeLocation"
             },
             "currency": {
-              "name": "United States Dollar",
+              "name": null,
               "currency": "USD",
               "exchangeRate": 1.00,
               "symbol": "$"
@@ -248,10 +247,6 @@ Response:
               }
             ],
             "memo": "Some Memo",
-            "term": {
-              "id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjE0Yjg0YjBkZmE:3",
-              "name": "Net 30"
-            },
             "class": null,
             "mailingAddress": {
               "freeFormAddressLine": "2535 Garcia Avenue, Mountain View CA 94043\r\n"
@@ -297,6 +292,14 @@ Response:
                   "taxable": true
                 },
                 "billable": true,
+                "billableAmount": 16.80,
+                "markup": {
+                  "amount": 12.00,
+                  "percent": "40%",
+                  "account": {
+                    "id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjUxY2VkODUzNmM:6"
+                  }
+                },
                 "customer": {
                   "id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjlkNjk5ZTk2MDg:1",
                   "displayName": "Mr. SomeFirstName SomeLastName"
@@ -352,6 +355,14 @@ Response:
                   ]
                 },
                 "billable": true,
+                "billableAmount": 84.38,
+                "markup": {
+                  "amount": 62.50,
+                  "percent": "35%",
+                  "account": {
+                    "id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjUxY2VkODUzNmM:28"
+                  }
+                },
                 "item": {
                   "id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjExMmRlNzQ2OTk:4",
                   "name": "SomeNewProduct",
@@ -373,97 +384,94 @@ Response:
 }
 ```
 
-## Filter support:
-
-You can choose to **query by id** (as shown above) or query for all bills by removing the filter.
-
 ### Create mutation
- 
-Mutation:
- 
+Use this mutation query to create new record with fields you want
+
+#### Sample Query:
+
 ```
-mutation createBill($input: CreateBillInput!) {
-  createBill(billDetails: $input) {
+mutation createVendorCredit($input: CreateVendorCreditInput!) {
+  createVendorCredit(vendorCredit: $input) {
     id
-    metadata{
-   entityVersion
-     }
-     transactionDate
-    billNumber
-   referenceNumber
-    dueDate
+    metadata {
+      entityVersion
+    }
+    transactionDate
     permitNumber
-    location{
+    location {
       id
       name
     }
-    currency{
+    currency {
       name
       currency
       exchangeRate
       symbol
     }
     vendor {
-          id
-          firstName
-          displayName
-          lastName
-          companyName
-          notes
-          website
-          email
-          phone
-          mobile
-          fax
-          active
-          contactMethods {
-            type
-            primary
-            address {
-              streetAddress1
-              streetAddress2
-              city
-              state
-              zipCode
-              country
-            }
-          }
+      id
+      firstName
+      displayName
+      lastName
+      companyName
+      notes
+      website
+      email
+      phone
+      mobile
+      fax
+      active
+      contactMethods {
+        type
+        primary
+        address {
+          streetAddress1
+          streetAddress2
+          city
+          state
+          zipCode
+          country
         }
+      }
+    }
     mailingAddress {
       freeFormAddressLine
     }
-    term {
-      id
-      name
-      type
+    customFields {
+      fieldId
+      fieldName
+      value
+      fieldDefinition {
+        id
+        name
+        inactive
+        associatedEntityTypes {
+          type
+          subtype
+        }
+      }
     }
-        customFields{
-    fieldId
-    fieldName
-     value
-     fieldDefinition {
-    id
-    name
-    inactive
-    associatedEntityTypes {
-   type
-    subtype
- }
-   }
-    }
-   memo
-    accountLines{
+    memo
+    accountLines {
       sequence
       description
       amount
-      account{
+      account {
         id
         name
       }
-      tax{
+      tax {
         taxable
       }
       billable
+      billableAmount
+      markup {
+        amount
+        percent
+        account {
+          id
+        }
+      }
       customer {
         id
         displayName
@@ -471,11 +479,11 @@ mutation createBill($input: CreateBillInput!) {
       class {
         id
         name
-      } 
+      }
     }
-    itemLines{
+    itemLines {
       sequence
-      description     
+      description
       amount
       quantity
       item {
@@ -487,132 +495,141 @@ mutation createBill($input: CreateBillInput!) {
         taxable
       }
       unitPrice
-      customer{
-            id
-            firstName
-            displayName
-            lastName
-            companyName
-            notes
-            website
-            email
-            phone
-            mobile
-            fax
-            contactMethods{
-              type
-              primary
-              address{
-                streetAddress1
-                streetAddress2
-                city
-                zipCode
-                state 
-                country       
-              }
-            }
+      customer {
+        id
+        firstName
+        displayName
+        lastName
+        companyName
+        notes
+        website
+        email
+        phone
+        mobile
+        fax
+        contactMethods {
+          type
+          primary
+          address {
+            streetAddress1
+            streetAddress2
+            city
+            zipCode
+            state
+            country
           }
+        }
+      }
       class {
         id
         name
       }
       billable
-      
+      billableAmount
+      markup {
+        amount
+        percent
+        account {
+          id
+        }
+      }
     }
-
   }
 }
 
 ```
- 
-Sample Variables: 
+Required fields:
+- id: ID of an existing Refund Receipt
+- metadata: you need to provide the entity version returned from a previous create/update/read operation.
+- the entity version must match with the last entity version
+
+Sample Variables:
 ``` 
 {
-    "input": {
-      "billNumber": "SomeBillNumber",
-      "transactionDate" : "2021-03-12",
-      "dueDate" : "2021-04-11",
-      "permitNumber" : "SomePermitNumber",
-      "memo": "Some Memo",
-      "vendor" : {
-        "id" : "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjlkNjk5ZTk2MDg:375"
-      },
-      "currency" : {
-        "name" : "United States Dollar",
-        "currency": "USD",
-        "exchangeRate": 1
-      },
-      "mailingAddress" : {
-        "freeFormAddressLine" : "2535 Garcia Avenue, Mountain View CA 94043"
-      },
-      "term" : {
-        "id" : "3"
-      },
-      "location" : {
-        "id" : "djQuMTo5MTMwMzUzNzIyMjc5NDA2OmJmN2IzNDhiNzk:1"
-      },
-      "customFields": [
-        {
-          "fieldId": "djQ6OTEzMDM1MzcyMjI3OTQwNjovY29tbW9uL0N1c3RvbUZpZWxkRGVmaW5pdGlvbjo:302300000000000060446",
-          "value": "text cf value"
-        }],
-      "accountLines" :[
-        {
-          "description" : "Some Account description",
-          "amount" : "12",
-          "account": {
-            "id" : "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjlkNjk5ZTk2MDg:6"
-          },
-          "tax" : {
-            "taxable": true
-          },
-          "billable": true,
-          "customer": {
-            "id" : "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjlkNjk5ZTk2MDg:1"
-          },
-          "class": {
-            "id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjIyYzE1MDQ2NzU:302300000000001849620"
-          }
-        }
-      ],
-      "itemLines" : [
-        {
-          "description" : "Some item description",
-          "item" : {
-            "id" : "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjExMmRlNzQ2OTk:4"
-          },
-          "tax" : {
-            "taxable" : true
-          },
-          "unitPrice" : "12.5",
-          "customer" : {
-            "id" : "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjlkNjk5ZTk2MDg:1"
-          },
-          "class" : {
-            "id" : "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjIyYzE1MDQ2NzU:302300000000001849620"
-          },
-          "quantity" : "5",
-          "billable" : true,
-          "amount" : "62.5"
-        }
-      ]
-    }
-  }
+	"input": {
+		"transactionDate": "2021-03-12",
+		"permitNumber": "SomePermitNumber",
+		"memo": "Some Memo",
+		"vendor": {
+			"id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjlkNjk5ZTk2MDg:375"
+		},
+		"currency": {
+			"name": "United States Dollar",
+			"currency": "USD",
+			"exchangeRate": 1
+		},
+		"mailingAddress": {
+			"freeFormAddressLine": "2535 Garcia Avenue, Mountain View CA 94043"
+		},
+		"location": {
+			"id": "1"
+		},
+		"customFields": [
+			{
+				"fieldId": "djQ6OTEzMDM1MzcyMjI3OTQwNjovY29tbW9uL0N1c3RvbUZpZWxkRGVmaW5pdGlvbjo:302300000000000060446",
+				"value": "text cf value"
+			}
+		],
+		"accountLines": [
+			{
+				"description": "Some Account description",
+				"amount": "12",
+				"account": {
+					"id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjUxY2VkODUzNmM:6"
+				},
+				"tax": {
+					"taxable": true
+				},
+				"billable": true,
+				"markup": {
+					"percent": "40%"
+				},
+				"customer": {
+					"id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjlkNjk5ZTk2MDg:1"
+				},
+				"class": {
+					"id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjIyYzE1MDQ2NzU:302300000000001849620"
+				}
+			}
+		],
+		"itemLines": [
+			{
+				"description": "Some item description",
+				"item": {
+					"id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjExMmRlNzQ2OTk:4"
+				},
+				"tax": {
+					"taxable": true
+				},
+				"unitPrice": "12.5",
+				"customer": {
+					"id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjlkNjk5ZTk2MDg:1"
+				},
+				"class": {
+					"id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjIyYzE1MDQ2NzU:302300000000001849620"
+				},
+				"quantity": "5",
+				"billable": true,
+				"markup": {
+					"percent": "35%"
+				},
+				"amount": "62.5"
+			}
+		]
+	}
+}
 ```    
 
 Sample response:
 ```
 {
   "data": {
-    "createBill": {
-      "id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjgwMjcxZWRkOGE:6494",
+    "createVendorCredit": {
+      "id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjgwMjcxZWRkOGE:6891",
       "metadata": {
         "entityVersion": "0"
       },
       "transactionDate": "2021-03-12",
-      "billNumber": "SomeBillNumber",
-      "referenceNumber": null,
-      "dueDate": "2021-04-11",
       "permitNumber": "SomePermitNumber",
       "location": {
         "id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OmJmN2IzNDhiNzk:1",
@@ -655,11 +672,6 @@ Sample response:
       "mailingAddress": {
         "freeFormAddressLine": "2535 Garcia Avenue, Mountain View CA 94043\r\n"
       },
-      "term": {
-        "id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjE0Yjg0YjBkZmE:3",
-        "name": "Net 30",
-        "type": "STANDARD"
-      },
       "customFields": [
         {
           "fieldId": "djQ6OTEzMDM1MzcyMjI3OTQwNjovY29tbW9uL0N1c3RvbUZpZWxkRGVmaW5pdGlvbjo:302300000000000060446",
@@ -698,6 +710,14 @@ Sample response:
             "taxable": true
           },
           "billable": true,
+          "billableAmount": 16.80,
+          "markup": {
+            "amount": 12.00,
+            "percent": "40%",
+            "account": {
+              "id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjUxY2VkODUzNmM:6"
+            }
+          },
           "customer": {
             "id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjlkNjk5ZTk2MDg:1",
             "displayName": "Mr. SomeFirstName SomeLastName"
@@ -766,7 +786,15 @@ Sample response:
             "id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjIyYzE1MDQ2NzU:302300000000001849620",
             "name": "SomeClass"
           },
-          "billable": true
+          "billable": true,
+          "billableAmount": 84.38,
+          "markup": {
+            "amount": 62.50,
+            "percent": "35%",
+            "account": {
+              "id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjUxY2VkODUzNmM:28"
+            }
+          }
         }
       ]
     }
@@ -775,20 +803,18 @@ Sample response:
 ```
 
 ### Update mutation
-
-Mutation:
+For update mutation, all other date fields is optional while the entity Version must match with the entity version in record.
+The new entity version is the old entity version plus one.
+#### Sample Query:
 
 ``` 
-mutation updateBill($input: UpdateBillInput!) {
-  updateBill(billDetails: $input) {
+mutation updateVendorCredit($input: UpdateVendorCreditInput!) {
+  updateVendorCredit(vendorCredit: $input) {
     id
     metadata {
       entityVersion
     }
     transactionDate
-    billNumber
-    referenceNumber
-    dueDate
     permitNumber
     location {
       id
@@ -829,11 +855,6 @@ mutation updateBill($input: UpdateBillInput!) {
     mailingAddress {
       freeFormAddressLine
     }
-    term {
-      id
-      name
-      type
-    }
     customFields {
       fieldId
       fieldName
@@ -861,6 +882,14 @@ mutation updateBill($input: UpdateBillInput!) {
         taxable
       }
       billable
+      billableAmount
+      markup {
+        amount
+        percent
+        account {
+          id
+        }
+      }
       customer {
         id
         displayName
@@ -914,25 +943,34 @@ mutation updateBill($input: UpdateBillInput!) {
         name
       }
       billable
+      billableAmount
+      markup {
+        amount
+        percent
+        account {
+          id
+        }
+      }
     }
   }
 }
-```
-Required fields:
-- id: ID of an existing bill
-- metadata: you need to provide the entity version returned from a previous create/update/read operation. 
 
-Variables:
+```
+
+Required fields:
+- id: ID of an existing vendorCredit
+- metadata: you need to provide the entity version returned from a previous create/update/read operation.
+- the entity version must match with the last entity version
+  Variables:
+
 ```
 {
 	"input": {
-		"id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjgwMjcxZWRkOGE:6494",
+		"id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjgwMjcxZWRkOGE:6891",
 		"metadata": {
 			"entityVersion": "0"
 		},
-		"billNumber": "SomeUpdatedBillNumber",
 		"transactionDate": "2021-03-12",
-		"dueDate": "2021-04-11",
 		"permitNumber": "SomeUpdatedPermitNumber",
 		"memo": "Some Memo",
 		"vendor": {
@@ -945,9 +983,6 @@ Variables:
 		},
 		"mailingAddress": {
 			"freeFormAddressLine": "2700 Coast Avenue, Mountain View CA 94043"
-		},
-		"term": {
-			"id": "3"
 		},
 		"location": {
 			"id": "1"
@@ -971,6 +1006,9 @@ Variables:
 					"taxable": true
 				},
 				"billable": true,
+				"markup": {
+					"percent": "40%"
+				},
 				"customer": {
 					"id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjlkNjk5ZTk2MDg:1"
 				},
@@ -998,6 +1036,9 @@ Variables:
 				},
 				"quantity": "5",
 				"billable": true,
+				"markup": {
+					"percent": "35%"
+				},
 				"amount": "60"
 			},
 			{
@@ -1010,33 +1051,29 @@ Variables:
 				},
 				"unitPrice": "13",
 				"customer": {
-					"id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjlkNjk5ZTk2MDg:1"
+					"id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjlkNjk5ZTk2MDg:0020714ef993c9ed524b0994946be3c4932ff0"
 				},
 				"class": {
 					"id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjIyYzE1MDQ2NzU:302300000000001849620"
 				},
 				"quantity": "5",
-				"billable": true,
+				"billable": false,
 				"amount": "65"
 			}
 		]
 	}
 }
 ```
-
 Response:
 ```
 {
   "data": {
-    "updateBill": {
-      "id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjgwMjcxZWRkOGE:6494",
+    "updateVendorCredit": {
+      "id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjgwMjcxZWRkOGE:6891",
       "metadata": {
         "entityVersion": "1"
       },
       "transactionDate": "2021-03-12",
-      "billNumber": "SomeUpdatedBillNumber",
-      "referenceNumber": "SomeUpdatedBillNumber",
-      "dueDate": "2021-04-11",
       "permitNumber": "SomeUpdatedPermitNumber",
       "location": {
         "id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OmJmN2IzNDhiNzk:1",
@@ -1079,11 +1116,6 @@ Response:
       "mailingAddress": {
         "freeFormAddressLine": "2700 Coast Avenue, Mountain View CA 94043\r\n"
       },
-      "term": {
-        "id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjE0Yjg0YjBkZmE:3",
-        "name": "Net 30",
-        "type": "STANDARD"
-      },
       "customFields": [
         {
           "fieldId": "djQ6OTEzMDM1MzcyMjI3OTQwNjovY29tbW9uL0N1c3RvbUZpZWxkRGVmaW5pdGlvbjo:302300000000000060446",
@@ -1122,6 +1154,14 @@ Response:
             "taxable": true
           },
           "billable": true,
+          "billableAmount": 16.80,
+          "markup": {
+            "amount": 12.00,
+            "percent": "40%",
+            "account": {
+              "id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjUxY2VkODUzNmM:6"
+            }
+          },
           "customer": {
             "id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjlkNjk5ZTk2MDg:1",
             "displayName": "Mr. SomeFirstName SomeLastName"
@@ -1190,7 +1230,15 @@ Response:
             "id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjIyYzE1MDQ2NzU:302300000000001849620",
             "name": "SomeClass"
           },
-          "billable": true
+          "billable": true,
+          "billableAmount": 81.00,
+          "markup": {
+            "amount": 60.00,
+            "percent": "35%",
+            "account": {
+              "id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjUxY2VkODUzNmM:28"
+            }
+          }
         },
         {
           "sequence": "3",
@@ -1249,7 +1297,9 @@ Response:
             "id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjIyYzE1MDQ2NzU:302300000000001849620",
             "name": "SomeClass"
           },
-          "billable": true
+          "billable": null,
+          "billableAmount": null,
+          "markup": null
         }
       ]
     }
@@ -1261,8 +1311,9 @@ Response:
 Mutation:
 
 ``` 
-mutation deleteBill($input: ID!) {
-  deleteBill(id: $input){
+mutation deleteVendorCredit($input : ID!){
+  deleteSalesReceipt(id: $input) 
+  {
     id
     success
   }
@@ -1270,13 +1321,12 @@ mutation deleteBill($input: ID!) {
 ```
 
 Required fields:
-- id: ID of an existing bill
-- metadata: you need to provide the entity version returned from a previous create/update/read operation. 
+- id: ID of an existing vendorCredit
 
 Variables:
 ``` 
 {
-	"input": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjgwMjcxZWRkOGE:6494"
+	"input": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjgwMjcxZWRkOGE:6860"
 }
 ```
 
@@ -1284,8 +1334,8 @@ Response:
 ```
 {
   "data": {
-    "deleteBill": {
-      "id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjgwMjcxZWRkOGE:6494",
+    "deleteInvoice": {
+      "id": "djQuMTo5MTMwMzUzNzIyMjc5NDA2OjgwMjcxZWRkOGE:32",
       "success": true
     }
   }

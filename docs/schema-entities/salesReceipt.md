@@ -2,7 +2,7 @@
 layout: default
 title: Sales Receipt
 nav_order: 16
-parent: Use Cases
+parent: Schema Entities
 ---
 
 ## Sales Receipt

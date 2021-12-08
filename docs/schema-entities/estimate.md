@@ -2,7 +2,7 @@
 layout: default
 title: Estimate
 nav_order: 8
-parent: Use Cases
+parent: Schema Entities
 ---
 
 ## Estimate

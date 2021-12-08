@@ -2,7 +2,7 @@
 layout: default
 title: Credit Memo
 nav_order: 2
-parent: Use Cases
+parent: Schema Entities
 ---
 
 ## Credit Memo

@@ -2,7 +2,7 @@
 layout: default
 title: Custom Fields
 nav_order: 3
-parent: Use Cases
+parent: Schema Entities
 ---
 
 

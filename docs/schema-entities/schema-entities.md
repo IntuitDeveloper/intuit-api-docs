@@ -1,18 +1,16 @@
 ---
 layout: default
-title: Use Cases
-nav_order: 18
+title: Schema Entities
+nav_order: 19
 has_children: true
-permalink: /docs/use-cases/
+permalink: /docs/schema-entities/
 ---
 
-# Build apps around use cases
+# See basic API documentation to help you follow the below steps to release and APP
 
-If you already know what you want to develop, [create custom queries](../graphql-concepts/query/) to build a bespoke experience. Head over too look at the [schema defintions](../schema-entities)
+If you already know what you want to develop, [create custom queries](../graphql-concepts/query/) to build a bespoke experience. 
 
-If you need inspiration, we've got you covered. Here are common use cases and small business workflows. You can use these guides as a foundation for your app.
-
-Here is the standard process for every use-case:
+If you need inspiration, we've got you covered. Or if you don't see what you are looking for, check over in our more detailed [use-cases section.](../use-cases) You can use these guides as a foundation for your app.
 
 ## Step 1: Create your app in the Intuit Developer Portal
 
