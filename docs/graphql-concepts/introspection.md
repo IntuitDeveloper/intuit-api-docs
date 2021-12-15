@@ -7,7 +7,7 @@ parent: GraphQL Concepts
 
 # Get schema info with introspection
 
-Introspection is a unqie feature of GraphQL that lets you query the server any time to see the current schema. 
+Introspection is a unique feature of GraphQL that lets you query the server any time to see the current schema. 
 
 When you make an introspection query, the server returns the entire schema. This includes all possible fields, data types, and their relationships. It also tells you what operations the server supports.
 
