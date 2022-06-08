@@ -23,8 +23,8 @@ There are many GraphQL IDEs available. Use the one you prefer.
 
 Here are a couple we recommend. In particular, we prefer Insomnia for its collection and built-in authorization features. 
 
-* [Set up and test with Insomnia](./insomnia/)
-* [Set up and test with GraphiQL](./graphiql/)
+* [Set up and test with Insomnia](./insomnia)
+* [Set up and test with GraphiQL](./graphiql)
 
 ## Step 3: Send a test query
 
