@@ -10,7 +10,7 @@ description: Documentation for Intuit's APIs
 
 aux_links:
   "These capabilities are under Closed BETA (Not publicly available)":
-    - "//intuit.com"
+    - "//help.developer.intuit.com"
 
 # Makes Aux links open in a new tab. Default is false
 aux_links_new_tab: false  
