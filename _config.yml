@@ -8,6 +8,13 @@ remote_theme: bcole/just-the-docs
 title: Intuit API Docs
 description: Documentation for Intuit's APIs
 
+aux_links:
+  "These capabilities are part of a closed beta program and are not publicly available":
+    - "//help.developer.intuit.com"
+
+# Makes Aux links open in a new tab. Default is false
+aux_links_new_tab: true  
+
 permalink: pretty
 
 gh_edit_link: true
