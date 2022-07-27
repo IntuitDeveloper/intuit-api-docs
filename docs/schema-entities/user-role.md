@@ -114,7 +114,7 @@ We'll use the following fields:
    </td>
    <td>Boolean
    </td>
-   <td>Value will be "TRUE" if the company has the payroll feature turned on
+   <td>Value will be "TRUE" if the current user has access to Payroll features
    </td>
   </tr>
 </table> 
