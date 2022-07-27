@@ -8,6 +8,9 @@ remote_theme: bcole/just-the-docs
 title: Intuit API Docs
 description: Documentation for Intuit's APIs
 
+aux_links:
+  "Just the Docs on GitHub"
+
 permalink: pretty
 
 gh_edit_link: true
