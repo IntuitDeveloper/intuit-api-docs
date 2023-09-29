@@ -1,9 +1,11 @@
 ---
 layout: default
-title: Introspection
-nav_order: 3
-parent: GraphQL Concepts
 ---
+
+{% Old header pieces; removing so that this page is hidden %}
+{% title: Introspection %}
+{% nav_order: 3 %}
+{% parent: GraphQL Concepts %}
 
 # Get schema info with introspection
 
